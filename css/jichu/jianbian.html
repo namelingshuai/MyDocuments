@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+         <style type="text/css">
+         	.line {
+         		height: 100px;
+         		       /* 线性渐变 */
+         		background-image: linear-gradient( 
+                        /* 渐变方向从左到右 */
+                        to right,
+                        /* 渐变颜色 */
+                        blue,
+                        red
+         			 );
+         	       }
+         	 .cc {
+         	 	height: 100px;
+         	 	background-image: linear-gradient( 
+                      /* to right, */
+                      130deg,
+                      red 20%,
+                      blue 20%,
+                      blue 40%,
+                      pink 40%,
+                      pink 60%,
+                      green 60%,
+                      green 80%,
+                      gray 80%
+         	 		 );
+         	 	margin: 30px;
+         	 	      /* background-size: 100px 100px; */
+         	      }
+         	      .vv {
+         	      	width: 300px;
+         	      	height: 300px;
+         	      	 /* 径向渐变 */
+         	      	background-image: radial-gradient( 
+                         100px at 30px 30px,
+                         red,
+                         green
+         	      		);
+         	      	margin: 10px;
+         	      	padding-right: 200px;
+         	            }
+
+                   :link {
+                    text-decoration: none;
+                   }
+                   a:hover {
+                    text-decoration: underline;
+                   }
+
+         </style>
+    </head>
+    <body>
+         <fieldset>
+         	<legend>第三天</legend>
+         	<ol>
+                <a href="#qq">多背景</a>
+                <a href="#ww">渐变</a>
+                <a href="#ee">盒子模型介绍（重点）</a>
+                <a href="#rr">边框</a>
+                <a href="#tt">内边距</a>
+                <a href="#yy">盒子大小计算</a>
+                <a href="#uu">padding值的使用</a>
+                <a href="#ii">外边距</a>
+                <a href="#oo">边框圆角</a>
+                <a href="#pp">盒子阴影</a>
+
+
+         	    <div class="line"></div>
+         	    <div class="cc"></div>
+         	    <div class="vv"></div>
+         		<li> <a id="qq" href="">多背景</a></li>
+         		<li> background:url（）no-repeat&nbsp;  30px &nbsp;5opx,background:url（）no-repeat&nbsp;  30px &nbsp;5opx, </li>
+                <br>
+                <img src="图片11.png">
+         		<li>总结：</li>
+         		<ul>
+         			<li>在多背景写法中，一般需要将设置的背景颜色单独放到多背景写法后面</li>
+         		</ul>
+         		<li>
+         			<a id="ww" href="">渐变：</a>
+         			<ul>
+         				<li>线性渐变
+         				<ul>
+         					<li>组成：
+                                <ul>
+                                	<li>开始颜色</li>
+                                	<li>结束颜色</li>
+                                	<li>渐变方向</li>
+                                	<li>渐变范围</li>
+                                </ul>
+                                <li>语法：
+                                <ul>
+
+                                	<li>height: 100px;
+         		                  <br>
+         		                   background-image: linear-gradient( 
+                                  <br>
+                                to right,
+                               
+                                 <br> blue,
+                                 <br>  red}
+                                 <br>
+                                 <img src="图片12.png">
+                                 </li>
+                                 <li>
+                                 	通过角度可以表示方向：
+                                 	<br>
+                                 	odeg:从下向上渐变
+                                 	<br>
+                                 	90deg:从左向右渐变
+                                    <br>
+                                    <img src="图片13.png">
+                                 </li>
+                                 <li>
+                                 	总结：
+                                 	<ul>
+                                 		<li>
+                                 			默认如果不设置backgrung-size，那么百分比是相对父元素的宽度
+                                 		</li>
+                                 		<li>
+                                 			如果设置了backgrung-size，百分比是相对于当前backgrung-size的值
+                                 		</li>
+                                 	</ul>
+                                 </li>
+                                </ul>
+  
+                                </li>
+         				    </li>
+
+         				</ul>
+                        
+
+
+         				</li>
+         			
+         			<li>
+         				径向渐变：
+         				<ul>
+         					<li>
+         						组成：
+         						<ul>
+         							<li>
+         								圆心位置
+         							</li>
+         							<li>
+         								半径(范围)
+         							</li>
+         							<li>
+         								开始颜色
+         							</li>
+         						    <li>
+         						    	结束颜色
+         						    </li>
+                                    语法：
+                                    <br>
+                                    <img src="图片14.png">
+         						    <br>
+         						    backgrung-image:radial-gradient
+         						    （100px&nbsp;at&nbsp;left&nbsp;buttom,
+         						    <br>
+         						    red,
+         						    <br>
+         						    green);
+         						</ul>
+         						<li>
+         							总结：
+         							<br>
+         							设置圆心位置可以使用关键字（center|top|right|bottom)
+         							<br>
+         							通过位置具体值可以设置圆心位置
+                                    <br>
+                                    <img src="图片15.png">
+         							<br>
+         							如果要实现一个正圆形，则半径设置一个值或设置两个相同的值，反之就为一个小椭圆
+         						</li>
+         					</li>
+                            
+         				</ul>
+
+         				<li>
+         					行高：行高单位及常见应用
+         					<ul>
+         						<li>
+         							默认情况下：文字大小为16px
+         						</li>
+         						<li>
+         							默认情况下：行高大小为18px
+         						</li>
+         						<li>
+         							行高=文字大小+上间距+下间距&nbsp;&nbsp;&nbsp;行高=文字两条基线之间的距离
+         						</li>
+         						<li>
+         							总结：
+         							<ul>
+         								<li>
+         									行高就是改变文字的上下间距
+         								</li>
+         								<li>
+         									实现文字在容器中垂直居中，（行高=容器的高度）
+         								</li>
+         								<li>
+         									文字大小可以影响行高值
+         								</li>
+         								<li>
+         									文字字体可以影响行高值
+         								</li>
+                                        <img src="图片16.png">
+         							</ul>
+         						</li>
+         					
+         					<li>
+         						行高单位：px，em,%,不带单位
+         						<br>
+         						给子元素设置行高
+         						<ul>
+         							<li>
+         								px：最终文字的行高就是我们设置的行高
+         							</li>
+         							<li>
+         								em：最终文字的行高=文字大小X行高值
+         							</li>
+         							<li>
+         								%:最终文字的行高=文字大小X行高值
+         							</li>
+         							<li>
+         								不带单位：最终的文字行高=文字大小X行高值
+         							</li>
+         						</ul>
+                                <li>
+                                    如果 给父元素设置行高，子元素的行高特点：
+                                    <ul>
+                                        <li>父元素行高单位是px：子元素的行高=父元素的行高(继承）</li>
+                                        <li>
+                                            em:子元素的行高=父元素的文字大小*行高值（先计算后继承）
+                                        </li>
+                                        <li>
+                                            %:子元素的行高=父元素的文字大小*行高值（先计算后继承）
+                                        </li>
+                                        <li>
+                                            不带单位：子元素的行高=子元素的文字大小*行高值（先继承后计算）
+                                        </li>
+                                        
+                                    </ul>
+                                    <li>
+                                        总结：如果没有设置行高，文字大小或字体影响行高值
+                                    </li>
+                                </li>
+         					</li>
+         				</li>
+                        </ul>
+
+
+         			
+         			</li>
+                    </ul>
+                    <li>
+                     <a id="ee" href="">盒子模型介绍（重点）</a>   
+                    
+                    <ul>
+                     <li>
+                        作用：
+                        <br>
+                        网页布局（在网页中画盒子）
+                    </li>
+                    <li>
+                        盒子的组成：
+                        <ul>
+                            <li>
+                                margin：盒子与盒子这间的距离（外边距）
+                            </li>
+                            <li>
+                                border（边框）
+                            </li>
+                            <li>
+                                padding:内容与盒子边框之间的距离（内边距）
+                                <br>
+                                <img src="图片17.png">
+                            </li>
+                        </ul>
+                         </li>
+                     </ul>
+                 </li>
+
+                 <li>
+                   <a id="rr" href=""> 边框（border）</a> 
+                     <ul>
+                         <li>
+                             border
+                             <ul>
+                                 <li>
+                                     border-width&nbsp;边框宽度
+                                 </li>
+                                 <li>
+                                     border-color&nbsp;边框颜色
+                                 </li>
+                                 <li>
+                                     border-style&nbsp;设置边框样式
+                                     <ul>
+                                         <li>
+                                             none:没有边框
+                                         </li>
+                                         <li>
+                                             dotted:点线
+                                         </li>
+                                         <li>
+                                             dashed:虚线
+                                         </li>
+                                         <li>
+                                             solid:实线
+                                         </li>
+                                         <br>
+                                         <img src="图片18.png">
+                                     </ul>
+                                 </li>
+                                 <li>
+                                     联写：
+                                     <br>
+                                     <img src="图片19.png">
+                                     <br>
+                                     <img src="图片20.png">
+                                 </li>
+                                 <li>
+                                     去掉边框：border：0&nbsp;或者border:none;
+
+                                 </li>
+                                 <li>
+                                    去掉轮廓线：outline-style:none;
+                                 </li>
+                                 <li>
+                                     点击文字输入框获取焦点：
+                                     <br>
+                                     <img src="图片21.png">
+                                 </li>
+                                 <li>
+                                     表格中的边框合并
+                                     <br>
+                                     <img src="图片22.png">
+                                 </li>
+                             </ul>
+                         </li>
+                     </ul>
+                 </li>
+                 <li>
+                     <a id="tt" href="">内边距（padding)</a> 
+                     <ul>
+                     <li>
+                         盒子中的内容与边框之间的距离
+                     </li>
+                     <li>
+                         总结：
+                         <ul>
+                             <li>
+                                 通过内边距可以移动盒子中的内容的位置
+                             </li>
+                             <li>
+                                 内边距可以改变盒子大小
+                             </li>
+                             <li>
+                                 边框可以改变盒子大小
+                                 <br>
+                                 <img src="图片23.png">
+                             </li>
+                         </ul>
+                     </li>
+                     </ul>
+                 </li>
+                 <li>
+                   <a id="yy" href=""> 盒子大小计算</a> 
+                     <ul>
+                         <li>
+                             width和height&nbsp;盒子中的内容区域的大小
+                         </li>
+                         <li>
+                             border和padding&nbsp;影响盒子大小
+                         </li>
+                         <li>
+                             盒子实际大小=内容+边框+内边距
+                         </li>
+                     </ul>
+
+                 </li>
+
+                 <li>
+                   <a id="uu" href="">padding值得特使用法</a>  
+                     <ul>
+                         <li>
+                             总结：
+                             <br>
+                             在子元素中，如果子元素没有设置宽度，那么给该子元素设置padding值，在父元素的宽度范围内，子元素的大小没有变化。
+                         </li>
+                     </ul>
+                 </li>
+                 <li>
+                    <a id="ii" href="">外边距（margin)</a> 
+                     <ul>
+                         <li>
+                             盒子与盒子之间的距离
+                         </li>
+                         <li>
+                            总结：
+                            <ul>
+                                <li>
+                                    外边距不会改变盒子大小
+                                </li>
+                                <li>
+                                    外边距移动盒子位置
+                                </li>
+                                <li>
+                                    margin属性联写的方式与padding一样
+                                </li>
+                                盒子水平居中：margin:0&nbsp;auto;
+                            </ul>
+                         </li>
+                         <li>
+                             外边距的特点：
+                             <ul>
+                                 <li>
+                                     垂直外边距塌陷
+                                 </li>
+                                 <li>
+                                     给父元素设置边框
+                                 </li>
+                                 <li>
+                                     给父元素设置overflow:hidden;
+                                     <br>
+                                     因为：overflow:hidden;可以出发元素的bfc
+                                     <br>
+                                     bfc：元素的格式化上下文
+                                 </li>
+                                 <li>
+                                     垂直外边距合并
+                                     <br>
+                                     在垂直方向设置外边距，外边距会以最大值为准，不会叠加。
+                                 </li>
+                             </ul>
+                         </li>
+                     </ul>
+                 </li>
+                 
+                 <li>
+                   <a id="oo" href=""> 边框圆角</a> 
+                     <ul>
+                         <li>
+                             border-redius:;
+                         </li>
+                         <li>
+                             注意：
+                             <br>
+                             如果设置一组参数，那么代表的是垂直半径和水平半径一样，如果要设置垂直半径，设置/+值
+                             <br>
+                             <img src="图片24.png">
+                             <br>
+                             如果水平半径和垂直半径一样，设置一个值就可以了。
+                             <br>
+                             <img src="图片25.png">
+                         </li>
+                     </ul>
+                 </li>
+
+                 <li>
+                   <a id="pp" href="">盒子阴影</a>  
+                     <ul>
+                         <li>
+                             box-shadow:;
+                             <br>
+                             <img src="图片26.png">
+                             <br>
+                             默认设置的外阴影，设置内阴影加inset
+                             <br>
+                             <img src="图片27.png">
+                         </li>
+                     </ul>
+                 </li>
+
+
+                    
+
+                   
+         		
+         		
+         		
+         			
+         	</ol>
+         </fieldset>
+    </body>
+</html>

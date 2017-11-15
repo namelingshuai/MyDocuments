@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="css/index.css">-->
+    <!--<link rel="stylesheet" href="css/index.css"/>-->
+</head>
+<body>
+    <!--<div class="container">-->
+       <!--<div class="jichu">-->
+           <!--<a href="jichu/Css1.html">Css基础1</a>-->
+       <!--</div>-->
+        <!--<div class="jichu">-->
+            <!--<a href="jichu/Css2.html">Css基础2</a>-->
+        <!--</div>-->
+        <!--<div class="jichu">-->
+            <!--<a href="jichu/jianbian.html">渐变</a>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="list-group">
+        <a href="lianjie.html" class="list-group-item active">
+            返回总链接页面
+        </a>
+    </div>
+    <div class="box">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            表格和表单
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <fieldset>
+                            <ul>
+                                <li>
+                                    <h4>表格</h4>
+                                <li>table表格标签</li>
+                                <ol>
+                                    <li>tr&nbsp;代表行</li>
+                                    <li>td&nbsp;代表列</li>
+                                    <li>border&nbsp;边框</li>
+                                    <li>width&nbsp;设置标签的宽度</li>
+                                    <li>height&nbsp;设置标签高度</li>
+                                    <li>cellpadding&nbsp;改变内容与边框的距离，默认值为2</li>
+                                    <li>align&nbsp;设置表格或者内容的对齐方式
+                                        <ol>
+                                            <li>
+                                                left&nbsp;左
+                                            </li>
+                                            <li>
+                                                center&nbsp;中
+                                            </li>
+                                            <li>
+                                                right&nbsp;右
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        cellspacing&nbsp;设置单元格之间的距离
+                                    </li>
+                                    <li>bgcolor颜色</li>
+                                </ol>
+                                </li>
+                                <li>th标签用来设置表格的表头，该标签中文字默认居中加粗显示用法与tb一样</li>
+                                <li>
+                                    合并单元格
+                                </li>
+                                <ul>
+                                    <li>横向合并：colspan&nbsp;横向合并几列就设置几列的数字</li>
+                                    <li>纵向合并：rowspan&nbsp;
+                                        纵向合并几行就设置对应数字</li>
+                                </ul>
+                                <li>
+                                    <h4>表单</h4>
+                                </li>
+                                <ul>
+                                    <li>作用 ：收集信息</li>
+                                    <li>重点：表单控件及属性</li>
+                                    <li>组成：表单控件,提示信息，表单域</li>
+                                    <li>&lt;form&nbsp;action="1.php"&nbsp;method="get或post”&gt;</li>
+                                    <li>action:设置处理题文数据的一个后台程序(1.php)</li>
+                                    <li>methos:设置提交数据的方式，get或post</li>
+                                    <li>输入框：&lt;input&nbsp;type="text"&gt;</li>
+                                    <li>属性：</li>
+                                    <ul>
+                                        <li>name:设置表单控件的名称</li>
+                                        <li>placeholder:提示信息</li>
+                                        <li>maxlength:设置控件中最多能输入多少个字符</li>
+                                        <li>readonly:设置控件为只读模式（只能看，不能编辑）</li>
+                                        <li>disabled:当前控件没有被激活（只能看不能编辑）</li>
+                                    </ul>
+                                    <li>密码输入框：&lt;input&nbsp;type="password'&gt;</li>
+                                    <ul>
+                                        <li>注意！！！该控件的属性与输入框的属性一样</li>
+                                    </ul>
+                                    <li>单选控件：&lt;input&nbsp;type="radio"&gt;</li>
+                                    <ul>
+                                        <li>注意！！！</li>
+                                        <ol>
+                                            <li>如果要实现单选的效果需要设置name值一样即可</li>
+                                            <li>
+                                                如果要实现默认选中的效果，设置属性checked即可
+                                            </li>
+                                        </ol>
+                                    </ul>
+                                    <li>下拉控件</li>
+                                    <ul>
+                                        <li>
+                                            &lt;select&gt;
+                                            <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;option&gt;&lt;/option&gt;
+                                            <br>
+                                            &lt;/select&gt;
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>属性</li>
+                                        <ol>
+                                            <li>设置默认选中项设置属性&nbsp;selected</li>
+                                            <li>多选效果属性&nbsp;multiple</li>
+                                            <li>或者如下写法
+                                                <br>
+                                                &lt;select&gt;
+                                                <br>
+                                                &nbsp;&lt;optgroup&nbsp;label=""&gt;
+                                                <br>
+                                                &nbsp;&nbsp;&lt;option&gt;&lt;/option&gt;
+                                                <br>
+                                                &nbsp;&lt;optgroup&gt;
+                                                <br>
+                                                &lt;/select&gt;
+                                            </li>
+                                        </ol>
+
+                                    </ul>
+                                    <li>
+                                        多选控件
+                                        <br>
+                                        <ul>
+                                            <li>&lt;input&nbsp;type="checkbox"&gt;</li>
+
+                                            <li>属性：checked默认选中效果</li>
+                                        </ul>
+                                    </li>
+                                    <li>上传控件
+                                        <ul>
+                                            <li>&lt;input&nbsp;type="file"&gt;</li>
+                                        </ul>
+                                    </li>
+                                    <li> 多行文本域
+                                        <ul>
+                                            <li>
+                                                &lt;textarea&gt;&lt;/textarea&gt;
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>按钮：
+                                        <ol>
+                                            <li>普通按钮&lt;input&nbsp;type="button"&nbsp;value="按钮"&gt;</li>
+                                            <li>提交按钮&lt;input&nbsp;type="submit"可以提交数据"&gt;</li>
+                                            <li>重置按钮&lt;input&nbsp;type="reset"*&gt;</li>
+                                            <li>图片提交按钮&lt;input&nbsp;type="image"&nbsp;sre=""&gt;</li>
+                                        </ol>
+                                    </li>
+                                    <li>新的表单元素
+                                        <br>
+                                        &lt;fieldset&gt;
+                                        <br>
+                                        &nbsp;&nbsp;&lt;legend&gt;
+                                        <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;input&gt;&lt;/input&gt;
+                                        <br>
+                                        &nbsp;&nbsp;&lt;/legend&gt;
+                                        <br>
+                                        &lt;fieldset&gt;
+                                    </li>
+                                </ul>
+                            </ul>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                           定位
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                        <fieldset>
+                            <ol>
+                                <li>
+                                    定位（重点）
+                                    <ul>
+                                        <li>
+                                            作用：改变元素位置
+                                        </li>
+
+                                        <li>
+                                            分类：
+                                            <ul>
+                                                <li>
+                                                    静态定位
+                                                </li>
+                                                <li>
+                                                    绝对定位
+                                                </li>
+                                                <li>
+                                                    相对定位
+                                                </li>
+                                                <li>
+                                                    固定定位
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <ol>
+                                            <li>
+                                                静态定位：positin:static;
+                                                <ol>
+                                                    总结：
+                                                    <li>
+                                                        元素无法通过静态定位的方式移动位置
+                                                    </li>
+
+                                                    <li>
+
+                                                        静态定位的元素就是标准流的元素
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                            <li>
+                                                绝对定位：positin:absolute;
+                                                <ul>
+                                                    <li>
+                                                        总结：
+                                                        <ol>
+                                                            <li>
+                                                                通过绝对定位可以改变元素的位置
+                                                            </li>
+                                                            <li>
+                                                                如果父元素没哟设置定位或者设置了静态定位。那么父元素中的的绝对定位的子元素，该子元素是以浏览器可视区域左上角为参照进行移动。
+                                                            </li>
+                                                            <li>
+                                                                如果父元素设置了除静态定位以外的其他定位，那么该绝对定位子元素会以父元素左上角为参照进行位置移动。
+                                                            </li>
+                                                            <li>
+                                                                绝对定位的元素不占位置（脱标）
+                                                            </li>
+                                                            <li>
+                                                                绝对定位可以实现模式转换
+                                                            </li>
+                                                        </ol>
+                                                    </li>
+                                                    <li>
+                                                        使用场景：
+                                                        <br>
+                                                        一般在网页布局中如果出现盒子压盒子（标签压标签）的效果时，该考虑用绝对定位。
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    相对定位:position:relative;
+                                    <ol>
+                                        <li>
+                                            总结：
+                                            <ol>
+                                                <li>
+                                                    相对定位可以改变元素位置
+                                                </li>
+                                                <li>
+                                                    相对定位的元素始终是相对于元素原来的位置进行移动
+                                                </li>
+                                                <li>
+                                                    相对定位的元素没有脱标。占位置
+                                                </li>
+                                                <li>
+                                                    相对定位的元素不能实现模式转换
+                                                </li>
+                                                <li>
+
+                                                </li>
+                                            </ol>
+                                        </li>
+
+                                        <li>
+                                            使用场景：
+                                            <ol>
+
+                                                <li>
+                                                    如果一个子元素设置了绝对定位，那么其父元素一般设置相对定位（子绝父相）
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </li>
+
+                                <li>
+                                    固定定位：position:fixed;
+                                    <br>
+
+                                    总结：
+                                    <ol>
+                                        <li>
+                                            通过固定定位可以移动元素位置
+                                        </li>
+                                        <li>
+                                            固定定位的元素始终是以body（浏览器）可视区域左上角为参照进行位置移动
+                                        </li>
+                                        <li>
+                                            固定定位的元素不占位置（脱标）
+                                        </li>
+                                        <li>
+                                            固定定位可以实现模式转换
+                                        </li>
+                                    </ol>
+                                </li>
+
+                            </ol>
+                            </ul>
+                            </li>
+
+                            <li>
+                                定位层级关系（重点）
+                                <ol>
+                                    <li>
+                                        层级特点只适用于定位（除静态定位） 的元素
+                                    </li>
+                                    <li>
+                                        通过z-index属性可以改变元素的层级关系
+                                    </li>
+                                    <li>
+                                        z-index层级关系总结：
+                                        <ol>
+                                            <li>
+                                                一个元素设置了（除静态定位）定位，那么该元素的z-index默认值就是auto。
+                                            </li>
+                                            <li>
+                                                定位的元素层级高于标准流的元素和浮动的元素。
+                                            </li>
+                                            <li>
+                                                如果z-index值越大，那么层级越高。
+                                            </li>
+                                            <li>
+                                                如果z-index值相同，那么最后的定位元素会压着前面的定位元素（后来居上）。
+                                            </li>
+                                            <li>
+                                                如果父元素设置了层级关系，那么父元素的z-index值越大，子元素的值就大。
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+
+
+
+                            <li>
+                                定位居中：
+                                <ol>
+                                    <li>
+                                        margin: 0 auto;只能让标准流的元素居中
+                                    </li>
+                                    <li>
+                                        总结：
+                                        先通过left：50%先走父元素的一半
+                                        <br>
+                                        通过margin-left：负的自己的一半
+                                    </li>
+                                </ol>
+                            </li>
+
+                            <li>
+                                标签包含规范（了解）
+                                <ul>
+                                    <li>
+                                        段落标签中不能放标题标签
+                                    </li>
+                                    <li>
+                                        段落中不能放div
+                                    </li>
+                                    <li>
+                                        行内元素最好包含行内元素
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                网页布局规避脱标流（了解）
+                                <ul>
+                                    <li>
+                                        优先考虑标准流
+                                    </li>
+                                    <li>
+                                        然后考虑使用浮动（块级元素一行显示）
+                                    </li>
+                                    <li>
+                                        最后考虑使用定位（盒子压盒子）
+                                    </li>
+                                    <li>
+                                        网页中要实现模式转换，必须使用display
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                Vertical-align属性介绍
+                                <ul>
+                                    <li>
+                                        Vertical-align； baseline；
+                                        <br>
+                                        top|bottom|middle|middle中部
+                                        注意：
+                                        <ul>
+                                            <li>
+                                                该属性只有行内块
+                                                元素才能设置
+                                            </li>
+                                            <li>
+                                                table标签中也可以设置该属性
+                                            </li>
+                                        </ul>
+                                        作用：
+                                        <ul>
+                                            <li>
+                                                解决父元素如果没有高度，那么父元素中如果有行内块元素，会导致父元素底部有3像素的空白，设置Vertical-align不等幽baseline属性即可。
+                                            </li>
+                                            <li>
+                                                实现图片垂直居中
+                                                <ul>
+                                                    <li>
+                                                        设置盒子中的行高等于容器的高度
+                                                    </li>
+                                                    <li>
+
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                元素隐藏：
+                                <ul>
+                                    <li>
+                                        overflow:hidden;溢出隐藏
+                                    </li>
+                                    <li>
+                                        dispaly：none；元素隐藏，不占位置
+                                    </li>
+                                    <li>
+                                        display：block；显示隐藏
+                                    </li>
+                                    <li>
+                                        visibility:hidden;元素隐藏，占位置
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                logo内容移除
+                                <ul>
+                                    <li>
+                                        logo要给a标签设置背景图片
+                                    </li>
+                                    <li>
+                                        text-indent或color:transparent或font-size
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                精灵图使用（掌握）
+                                <ul>
+                                    <li>
+                                        作用：
+                                        <ul>
+                                            <li>
+                                                将精灵图作为元素的背景图片
+                                            </li>
+
+                                        </ul>
+                                        使用：
+                                        <ul>
+                                            <li>
+                                                现将精灵图作为元素的背景图片
+                                            </li>
+                                            <li>
+                                                通过backgrund-position
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            </ol>
+
+
+
+
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                           浮动
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                        <fieldset>
+                            <ul>
+                                <li>补充
+                                    <br>
+                                    注意：不能给行内元素设置上下内外边距
+
+                                </li>
+                                <!-- 盒子大小计算 -->
+                                <li>
+                                    盒子大小计算
+                                    <ul>
+                                        <li>
+                                            with和height在默认情况下指的盒子内容区域的大小
+                                        </li>
+                                        <li>
+                                            在默认情况下盒子实际大小=内容+边框+内边距
+                                        </li>
+                                        <li>
+                                            总结：
+                                            <br>
+                                            如果一个盒子没有设置box-sizing: border-box，那么盒子中设置的宽度
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- 网页标准流 -->
+                                <li>
+                                    网页标准流
+                                    <ul>
+                                        <li>
+                                            在网页标准流的作用下，所有的块级元素独占一行显示，所有的行内元素一行显示，不能设置宽度和高度。
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- 浮动及特点 -->
+                                <li>
+                                    浮动及特点（重点）
+                                    <ul>
+                                        <li>
+                                            属性：float:left|right
+                                            <!-- float：left 左浮动 -->
+                                            <!-- float：right 右浮动 -->
+                                        </li>
+                                        <!-- 作用 -->
+                                        <li>
+                                            作用：
+                                            <ul>
+                                                <li>
+                                                    图片环绕文字的效果（浮动出现的最原始的目的）
+                                                </li>
+                                                <li>
+                                                    网页布局（让块级元素在一行上显示）
+                                                </li>
+                                                <li>
+                                                    网页导航制作（让块级元素在一行上显示）
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <!-- 特点 -->
+                                        <li>
+                                            特点：
+                                            <ul>
+                                                <li>
+                                                    浮动可以让块级元素在一行上显示（图标）
+                                                </li>
+                                                <li>
+                                                    设置完浮动都该元素不占位置（脱标）
+                                                </li>
+                                                <li>
+                                                    浮动的元素只会影响其后面的元素
+                                                </li>
+                                                <li>
+                                                    如果要让元素在一行上显示（块级元素），
+                                                    那么这些元素都要设置浮动
+                                                </li>
+                                                <li>
+                                                    浮动可以实现模式转换（脱标）
+                                                    <br>
+                                                    注意：如果要让元素实现模式转换，只能使用display。
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- 浮动作用 -->
+                                <li>
+                                    浮动作用（使用场景）
+                                    <ul>
+                                        <li>
+                                            实现图片环绕文字效果（图片设置浮动）
+                                            <br>
+                                            文字不会受浮动的影响
+                                        </li>
+                                        <li>
+                                            在网页布局中（画盒子），要实现块级元素（div）在一行上显示，那么就设置浮动。
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- 清除浮动 -->
+                                <li>
+                                    清除浮动（重点）
+                                    <ul>
+                                        <li>
+                                            清除浮动：
+                                            <br>
+                                            清除浮动的元素对后面元素的影响
+                                        </li>
+                                        <li>
+                                            删除浮动:不使用浮动
+                                        </li>
+                                        <li>
+                                            方式：
+                                            <ul>
+                                                <li>
+                                                    使用clear属性清除浮动。先使用空标签放在需要清除浮动的后面。clear:both；全部清除
+                                                </li>
+                                                <li>
+                                                    给父元素设置overflow:hidden;
+                                                    <ul>
+                                                        <li>
+                                                            注意：
+                                                            <br>
+                                                            如果父元素中没有定位的元素，那么可以使用该属性，反之不推荐
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    使用伪元素去清除浮动：<br>.clearfx：after{
+                                                    content:"";
+                                                    <br>display:block;<br>height:0;
+                                                    <br>line-height:0;
+                                                    <br>clear:both;
+                                                    <br>visibility:hidden;
+                                                    }
+                                                    <br>.wrapper{
+                                                    zoom:1;
+                                                    }兼容IE浏览器
+                                                </li>
+                                                <li>
+                                                    总结：
+                                                    <ul>
+                                                        <li>
+                                                            什么时候需要清除浮动？
+                                                            <br>
+                                                            &nbsp;&nbsp;如果一个父元素没有设置高度，而且该父元素中的所有子元素都设置了浮动。那么后面的元素如果跑到了父元素的下面====》，这个时候我们考虑只用浮动。
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- 样式初始化 -->
+                                <li>
+                                    样式初始化（了解）
+                                    <ul>
+                                        <li>
+                                            样式初始化：
+                                            <br>
+                                            将页面中的标签默认自带样式设置为统一的样式。
+                                        </li>
+                                        <li>
+                                            或者规定一些初始化的样式。
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- overflow属性介绍 -->
+                                <li>
+                                    overflow属性介绍
+                                    <ul>
+                                        <li>
+                                            overflow:hidden;溢出隐藏：将超出父容器的部分隐藏
+                                            <br>
+                                            overflow:visible;默认：超出父元素的部分可见
+                                        </li>
+                                        <li>
+                                            overflow：scroll：设置滚动条
+                                            overflow:aout(自适应)；超出就会出现滚动条，没超出就没有滚动条
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="panel panel-default">-->
+                <!--<div class="panel-heading" role="tab" id="headingFour">-->
+                    <!--<h4 class="panel-title">-->
+                        <!--<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">-->
+                            <!--Collapsible Group Item #2-->
+                        <!--</a>-->
+                    <!--</h4>-->
+                <!--</div>-->
+                <!--<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">-->
+                    <!--<div class="panel-body">-->
+
+                    <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+            <!--<div class="panel panel-default">-->
+                <!--<div class="panel-heading" role="tab" id="headingFive">-->
+                    <!--<h4 class="panel-title">-->
+                        <!--<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">-->
+                            <!--Collapsible Group Item #1-->
+                        <!--</a>-->
+                    <!--</h4>-->
+                <!--</div>-->
+                <!--<div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">-->
+                    <!--<div class="panel-body">-->
+                        <!--Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="panel panel-default">-->
+                <!--<div class="panel-heading" role="tab" id="headingSix">-->
+                    <!--<h4 class="panel-title">-->
+                        <!--<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">-->
+                            <!--Collapsible Group Item #1-->
+                        <!--</a>-->
+                    <!--</h4>-->
+                <!--</div>-->
+                <!--<div id="collapseSix" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSix">-->
+                    <!--<div class="panel-body">-->
+                        <!--Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="panel panel-default">-->
+                <!--<div class="panel-heading" role="tab" id="headingSeven">-->
+                    <!--<h4 class="panel-title">-->
+                        <!--<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">-->
+                            <!--Collapsible Group Item #1-->
+                        <!--</a>-->
+                    <!--</h4>-->
+                <!--</div>-->
+                <!--<div id="collapseSeven" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSeven">-->
+                    <!--<div class="panel-body">-->
+                        <!--Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="panel panel-default">-->
+                <!--<div class="panel-heading" role="tab" id="headingEight">-->
+                    <!--<h4 class="panel-title">-->
+                        <!--<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">-->
+                            <!--Collapsible Group Item #1-->
+                        <!--</a>-->
+                    <!--</h4>-->
+                <!--</div>-->
+                <!--<div id="collapseEight" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingEight">-->
+                    <!--<div class="panel-body">-->
+                        <!--Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="panel panel-default">-->
+                <!--<div class="panel-heading" role="tab" id="headingNine">-->
+                    <!--<h4 class="panel-title">-->
+                        <!--<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">-->
+                            <!--Collapsible Group Item #1-->
+                        <!--</a>-->
+                    <!--</h4>-->
+                <!--</div>-->
+                <!--<div id="collapseNine" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingNine">-->
+                    <!--<div class="panel-body">-->
+                        <!--Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="panel panel-default">-->
+                <!--<div class="panel-heading" role="tab" id="headingTen">-->
+                    <!--<h4 class="panel-title">-->
+                        <!--<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">-->
+                            <!--Collapsible Group Item #1-->
+                        <!--</a>-->
+                    <!--</h4>-->
+                <!--</div>-->
+                <!--<div id="collapseTen" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTen">-->
+                    <!--<div class="panel-body">-->
+                        <!--Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+
+
+
+
+        </div>
+    </div>
+
+
+    <script src="assets/jquery/jquery.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

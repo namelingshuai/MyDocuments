@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link href="../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+        	.qq {
+        		text-indent: 2em;
+        	}
+        	.ww {
+        		word-spacing: 2em;
+        	}
+            .qw {
+                color: red;
+                font-size: 20px;
+            }
+            table {
+                text-align: center;
+                background-color: rgba(192,192,192,1);
+                text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            table a {
+                color: #e5ea00;
+            }
+            a:link {
+
+                text-decoration: none;
+            }
+            a:hover {
+                color: #ff786d;
+            }
+
+            .q {
+                color: red;
+
+            }
+        </style>
+
+    </head>
+    <body>
+    <div class="list-group">
+        <a href="../lianjie.html" class="list-group-item active">
+            返回总链接页面
+        </a>
+    </div>
+         <fieldset>
+         	<legend class="red">Css基础</legend> 
+      <table align="center" border="1" cellspacing="0" width="100%" height="200px"  align="center">
+        <tr>
+            <td><a href="#ee">Css作用</a></td>
+            <td><a href="#rr">Css概念</a></td>
+            <td><a href="#uu">Css书写方式</a></td>
+            <td> <a href="#tt">Css语法</a></td>
+            <td><a href="#ii">选择器分类</a></td>
+            <td><a href="#oo">基本的属性介绍</a></td>
+            <td><a href="#pp">标签选择器</a></td>
+            <td><a href="#aa">类选择器（重要）</a></td>
+            <td> <a href="#ss">类样式的命名规范</a></td>
+            <td><a href="#dd">通配符选择器</a></td>
+            <td> <a href="#ff">文本修饰</a></td>
+        </tr>
+            <tr>
+            <td> <a href="#gg">文字属性介绍</a></td>
+            <td><a href="#hh">文字复合属性写法</a></td>
+            <td><a href="#jj">复合选择器</a></td>
+            <td><a href="#kk">后代选择器</a></td>
+            <td><a href="#ll">并集选择器</a></td>
+            <td><a href="#zz">其他选择器</a></td>
+            <td><a href="#xx">id选择器</a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+      </table>
+
+
+
+         	<ol>
+         		<li class="qw">新知识学习</li>
+         		<ol>
+         			<li>
+         			    
+                        <a id="ee" href="" class="qw">Css作用：</a> 
+         			    <br>
+
+         			    设置网页样式或者进行网页布局
+
+         			</li>
+         			<li>
+         			    <a id="rr" href="" class="qw">Css概念：</a> 
+         			    <br>
+         			    CaScadingStyleSheetsc层叠样式或者级联样式表
+                       <br>
+         			    层叠：指的是Css中的一个特性
+                       <br>
+                       总结:通过Css控制标签的样式（文字，大小，颜色，背景颜色，过度，动画。。。。。)美化网页的作用
+         			</li>
+         			<li>
+         				<a id="uu" href="" class="qw">Css书写方式</a> 
+         				<ol>
+         				    <li>外联式写法（工作）
+         					
+         					<br>
+         					先新建一个Css文件
+         					<br>
+         					通过link标签引用Css文件到html页面中
+                            <br>
+                            <img src="1.png">
+                            <br>
+                            注意:一个网页中可以同时引用多个外部Css文件
+         				   </li>
+         				   <li>
+         				   	内嵌式写法
+         				   	<br>
+         				   	此写法是将Css代码直接写到html页面中
+         				   	<br>
+         				   	注意：在html页面中head标签中设置style标签，在style标签中写Css代码
+                            <br>
+                            <img src="2.png">
+
+         				   </li>
+         				   <li>
+         				   	行内写法
+         				   </li>
+                         </ol>
+         				   
+         			<><a id="tt" href="" class="qw"> Css语法</a>
+                    <ol>
+         				   	
+                       <li><a class="qw">选择器{属性：值；.....}</a> </li>
+         				   	
+                       <li><a class="qw">选择器：选中页面中标签的方式</a> </li>
+         				   
+         				
+         			
+         			
+                       <li><a id="ii" href="" class="qw">选择器分类:</a> </li>
+         				<ol>
+         					<li>
+         						基础选择器：
+                                <ul>
+                                    <li>标签</li>
+                                    <li>类</li>
+                                    <li>id</li>
+                                    <li>通配符选择器</li>
+                                </ul>
+         					</li>
+         					<li>
+         						复合选择器
+                                <ul>
+                                    <li>标签指定式选择器（交集选择器）</li>
+                                    <li>后代选择器(交集选择器）</li>
+                                    <li>子代选择器</li>
+                                    <li>并集选择器</li>
+                                </ul>
+         					</li>
+         					<li>
+         						其他选择器（伪类，伪元素，属性）
+         					</li>
+         				</ol>
+         			</ol>>
+         			<li>
+         			   <a id="oo" href="" class="qw">基本的属性介绍：</a> 
+                       <br>
+         			   color:设置文字颜色(设置前景色)
+         			   <br>
+         			   background-color:设置背景色
+         			   <br>
+         			   font-size：设置文字大小，需要单位px，em
+         			   <br>
+         			   width:设置宽度，需要单位px，em
+         			   <br>
+         			   height:设置高度，需要单位px，em
+         			   <br>
+         			   text-align:left|center|right&nbsp;设置内容的对齐方式（注意：该属性只能用在块属性中
+         			   <br>
+         			   text-indent:首行缩进
+         			   <br>
+         			   letter-spacing:控制字间距
+         			   <br>
+         			   word-spacing：设置单词间之间的距离（单词与单词之间需要设置空格）
+         			   <br>
+         			   word-break：break-all|keep-all；控制换行
+                       <br>
+                       注意：
+                       <div class="qq">keep-all可以实现换行，但是需要在链接字符处换行（需要在换行位置设置空格或者“-”）</div>
+         			</li>
+         			<li>
+         			   <a id="pp" href="" class="qw">标签选择器:</a> 
+         			    <ol>
+                        <li>
+         			        html：标签选择器，标签名{属性：值；....}
+                            <br>
+                            <img src="3.png">
+                        </li>
+         			        <li>总结：
+         			        
+         			        <div class="qq">1.通过标签选择器可以将页面中所有符号    标签选择器的对应标签选中</div>
+         			    
+         			         <div class="qq">     2.默认情况下不能给span或者a....设置宽度和高度</div>
+                        </li>   
+                        
+         			     <li>    补充：
+         			         <br>
+         			         <div class="qq">单位：px，em</div>
+         			        
+         			    <div class="qq">px:像素</div>
+         			  
+         			         <div class="qq"> em:1em代表一个文字的大小</div>
+         			    
+         			      </li>
+                          <li>
+                              颜色的表示方式：    
+                              <div class="qq">比如：color，red</div>
+         			          <div class="qq">1.通过颜色对应的单词表示一个颜色</div      >
+         			          <div class="qq">2.通过十六进制表示颜色#000-fff；</div>
+                          <br>
+                          <div><img src="4.png"></div>
+         			      <br>
+
+         			      <div class="qq">3.通过三原色表示颜色</div>
+
+         			      <br>
+         			      <div class="ww">r red 0-255</div>
+         			      <div class="ww">g green 0-255</div>
+         			      <div class="ww">b blue 0-255</div>
+                          <br>
+                          <div><img src="5.png"></div>
+         			    
+         			    
+         			    
+         			      <div class="qq">4.通过rgba（）可以实现颜色透明的效果  </div>
+                          <div><img src="6.png"></div>
+         			    
+         			      <div class="qq">a:alpha&nbsp;透明度&nbsp;0-1</div>
+                        </li>
+                     </ol>  
+                     <li>
+                         <a id="aa" href="" class="qw"> 类选择器（重要）:</a>
+                         <ol>
+                             <li>语法：</li>
+                             <ul>
+                                 <li>定义类样式:通过.+自定义类名
+                                 {属性：值；....}</li>
+                                 <li>调用类样式：标签通过class属性调用类样式</li>
+                                 <br>
+                                 如:
+                                 <br>
+                                 .one {color:red;}&lt;p class=”one”&gt;</p>
+                                 <br>
+                                 <img src="7.png">
+                             </ul>
+                             <li>
+                                 总结：
+                                 <ul>
+                                   <li>类样式属于一个公共的样式，任何标签都可以通过class属性调用。</li>
+                                   <br>
+                                   <div class="qq"><img src="8.png"></div>
+                                   <li>一个标签可以同时调用多个类样式</li>
+                                   <br>
+                                   <div class="qq"><img src="9.png"></div>
+                                 </ul>
+                             </li>
+                             
+                         </ol>
+                    <li>
+                        <a id="ss" href="" class="qw">类样式的命名规范:</a> 
+                         <ol>
+                             <li>不能使用纯数字或者以数字开头定义类名</li>
+                             <li>不推荐（不能）使用汉字定义类名</li>
+                             <li>不能以特殊字符或以特殊字符定义类名</li>
+                             <br>
+                             <div class="qq"><img src="10.png"></div>
+
+                         </ol>
+                    </li>
+                    <li>
+                        <a id="xx" href="" class="qw">Id选择器（了解）:</a> 
+                         <br>
+                         <div class="qq"><img src="11.png"></div>
+
+                         <ul>
+                             <li>
+                                id选择器与类选择器的区别
+                                <ol>
+                                    <li>一个标签只有唯一的一个id值（身份证号）</li>
+                                    <li>一个标签只能调用一个id样式</li>
+                                </ol> 
+                             </li>
+                         </ul>
+                    </li>
+                    <li>
+                        <a id="dd" href="" class="qw">通配符选择器:</a> 
+                        <ul>
+                            <li>
+                                语法：
+                                <ul>
+                                    <li>* {属性: 值;...}</li>
+                                    <br>
+                                    <img src="12.png">
+
+                                </ul>
+                                
+                            </li>
+                            <li>
+                                特点:
+                                <ul>
+                                    <li>该选择器可以将页面中所有的标签选中。</li>
+                                </ul>
+                            </li>
+                         </ul>
+                    </li>
+                    <li>
+                        <a id="ff" href="" class="qw">文本修饰</a> 
+                         <ul>
+                           <li>
+                               文字阴影
+                               <ul>
+                                   <li>text-shadow:阴影的水平的偏移量  垂直的偏移量  阴影的模糊度  阴影的颜色；</li>
+                                   <br>
+                                   <img src="13.png">
+                               </ul>
+                           </li>
+                           <li> 
+                                总结：
+                                <ol>
+                                    <li>水平方向，如果设置正数，那么水平向右移动反之向左移动</li>
+                                    <li>垂直方向，如果设置正数，那么垂直向下移动反之向上移动。</li>
+                                    <li>模糊度不能设置负数。</li>
+                                    <li>如果要设置多个文字阴影，使用逗号隔开即可。</li>
+                                    <br>
+                                    <img src="14.png">
+                                </ol>
+                           </li>
+                           </ul>
+                    </li>
+                    <li>
+                        <a id="gg" href="" class="qw">文字属性介绍:</a> 
+                        <ul>
+                            <li>font-size&nbsp;   改变文字大小</li>
+                            <li>font-weight 设置文字是否加粗显示</li>
+                                    
+                            bold | 700   加粗的效果
+                            <br>
+                            normal | 400  没有加粗的效果（正常显示）
+                            <li>font-style: 设置文字是否斜体显示</li>
+                                    
+                             默认值  normal | italic
+                             <li>line-height: 设置文字的行高</li>
+                             <li>font-family: 设置文字字体</li>
+                             <ol>
+                                 <li>直接设置字体对应的汉字</li>
+                                 <li>设置字体对应的英文的表示</li>
+                                 <li>Unicode 编码表示字体</li>
+                                        
+                                 <img src="15.png">
+                                 <br>
+                                 <img src="16.png">
+                                 <br>
+                                 <img src="17.png">
+                             </ol>
+                                
+                        
+                     </ul>
+                    </li>
+                    <li>
+                        <a id="hh" href="" class="qw">文字复合属性写法:</a>   
+                       <ol>
+                           <li>
+                               语法：
+                               <div class="qq">font: font-weight  font-style  font-size/line-height font-family;</div>
+                               <br>
+                               <img src="18.png">
+                           </li>
+                           <li>
+                               总结
+                               <ol>
+                                   <li>在font属性联写中必须设置font-size和font-family</li>
+                                   <li>在font属性联写中font-size必须在font-family之前设置</li>
+                                   <img src="19.png">
+                               </ol>
+                           </li>
+                           
+                            
+                       </ol>
+
+                    </li>
+                    <li>
+                       <a id="jj" href="" class="qw"> 复合选择器:</a> 
+                        <ol>
+                            <li>标签指定式选择器</li>
+                            <li>语法：</li>
+                            <div class="qq">标签名.类名 {}</div>
+                            <br>
+                            <div class="qq">标签名#id名{}</div>
+                            <br>
+                            <img src="20.png">
+                            <li>关系</li>
+                            <div class="qq">既。。。。又的关系</div>
+
+                        </ol>
+                    </li>
+                    <li>
+                        <a id="kk" href="" class="qw">后代选择器:</a> 
+                        <ol>
+                            <li>语法：</li>
+                            <div class="qq">选择器  选择器 {属性:值;...}</div>
+                            <li>总结：</li>
+                            <ol>
+                                <li>在后代选择器中，选择器与选择器之间必须设置空格</li>
+                                <li>后代选择器只能用在嵌套结构的标签中</li>
+                                <li>后代选择器不能选中父元素，只能选中所有的后代元素（直接子代元素，间接子代元素）</li>
+                                <img src="21.png">
+                            </ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a id="ll" href="" class="qw">并集选择器:</a> 
+                        <ol>
+                            <li>语法：</li>
+                            <div class="qq">选择器,选择器 {属性: 值；}</div>
+                            <li>注意：</li>
+                            <ol>
+                                <li>选择器与选择器之间使用逗号隔开</li>
+                                <li>并集选择器标签可以是任何一种结构。</li>
+                                <img src="22.png">
+                            </ol>
+                        </ol>
+                    </li>
+                    <li>
+                        <a id="zz" href="" class="qw"> 其他选择器:</a>
+                        <ol>
+                            <li>
+                                子代选择器
+                                <ul>
+                                    <li>语法：</li>
+                                    <div class="qq">选择器>选择器 {属性: 值;....}</div>
+                                    <br>
+                                    <img src="23.png">
+                                    <li>总结：</li>
+                                    <ol>
+                                        <li>子代选择器中标签必须是嵌套结构</li>
+                                        <li>子代选择器只能选中直接子元素</li>
+                                    </ol>
+                                </ul>
+                            </li>
+                            <li>
+                                目标伪类选择器
+                                <ul>
+                                    <li>注意：</li>
+                                    <div class="qq">伪类选择器是通过:
+                                                :target {属性:值;....}</div>
+                                    <img src="24.png">
+                                    <li>目标伪类选择器配合锚链接使用</li>
+                                    <li>当该标签被锚链接指向的时候，那么才会执行里面的css代码。</li>
+
+                                </ul>
+                            </li>
+                            <li>
+                               结构伪类选择器
+                               <div class="qq">:first-child{}选中父元素中的第一个子元素</div>
+                               <div class="qq">:last-child{}选中父元素中的最后一个子元素</div>
+                               <div class="qq">:nth-child(n){}选中父元素中第n个子元素</div>
+                               <ul>
+                                 <li>n的取值方式:</li>
+                                    <ul>
+                                       <li>n可以取任何数字 0到正无穷</li>
+                                       <li>n可以设置关键字</li>
+                                       <div class="qq">    odd:获取父元素中第奇数个位置的标签</div>
+                                       <div class="qq">even：获取父元中第偶数个位置的标签</div>
+                                       <li>◆n可以是表达式&nbsp;&nbsp;an+b； a和b的取值可以任意整数数字</li>
+
+                                     </ul>
+                                 </ul>
+                               <div class="qq">:nth-last-child(n){} 选中父元素中倒数第n个子元素</div>
+                           </li>
+
+                        </ol>
+                    </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                     </li>
+
+                    
+
+
+
+         			    
+
+
+         			</li>
+
+         		</ol>
+         		
+         	</ol>
+         </fieldset>
+
+
+
+
+    </body>
+</html>

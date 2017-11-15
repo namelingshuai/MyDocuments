@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<style type="text/css">
+		.ee {
+			color: red;
+			font-size: 20px;
+		}  
+	</style>
+</head>
+<body>
+
+	<fieldset>
+		<div class="list-group">
+			<a href="lianjie.html" class="list-group-item active">
+				返回总链接页面
+			</a>
+		</div>
+		<ul>
+			hover&nbsp;鼠标悬停标签的样式
+			<br>
+			transform-origin:方向
+
+
+			<li>
+				web字体
+				<ul>
+					<li>
+						http://www.icnfnont.cn/n
+					</li>
+				</ul>
+			</li>
+			<li>
+				图标字体
+				<ul>
+					<li>
+
+					</li>
+				</ul>
+			</li>
+
+			<>
+				过度
+				<ul>
+					<li>
+						{
+						参加过度的属性：
+						transition-property:width,height,vackground-color;<br>过度的时间：transition-duration:1s;
+					}<br>过度的延时执行:transition-delay:2ss;<<br>过度的类型(速度类型)
+					sition-timing-function:rasej简单;eas-in ；ease--in-out;linear线性匀速;
+
+					</li>
+					<ul>
+						连写
+						<li>
+							transition；all&nbsp; 1s &nbsp;1s&nbsp;linear;
+						</li>
+					</ul>>
+					<li>
+						注意如果要在复合写法中设置延迟执行，那么该属性值必须设置到  tiansition的后面
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<li>
+			2D转换
+			<ul>
+				<li>
+					transform:translate;
+				</li>
+				<li>
+					总结：
+
+					<ul>
+						<li>通过translate可以移动元素位置
+						</li>
+						<li>
+							translate让元素位置移动的时候，是相对元素自己本身原来 的位置（位置的数字可以设置百分比
+						</li>
+						<li>
+							translate最多能设置两个值，第一个代表水平方向，第二值代表垂直方向的位移
+						</li>
+						<li>
+							translate的方向：正数代表正方向，负数代表反方向
+						</li>
+					</ul>
+
+				</li>
+
+				<li>
+					旋转：ransform:rotate（--deg）
+					<br>
+					ransform-origin可以改变旋转的原点
+					<ul>
+						<li>
+							可以设置关键字left|
+						</li>
+						<li>
+							也可以设置具体数值
+						</li>
+					</ul>
+					<ul>
+						<li>
+							2D旋转transform:rotate（）
+						</li>
+						<li>
+							总结：
+							<ul>
+								<li>
+									旋转的单位是deg
+								</li>
+								<li>
+									旋转如果设置的是正数，那么顺时针旋转，反之逆时针旋转
+								</li>
+								<li>
+									只能设置一个参数
+								</li>
+								<li>
+									默认元素是绕着自己的中心点位置旋转
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					缩放(scale)
+					<ul>
+						<li>
+							总结
+							<ul>
+								<li>
+									缩放提供的是两个参数，代表的是倍数关系
+								</li>
+								<li>
+									如果设施一个值，那么代表当前宽度和高度同事放大或缩小相应的倍数
+								</li>
+								<li>
+									如果设置两个值，那么第一个值代表水平方向的倍数，
+									第二值代表垂直方向的倍数
+								</li>
+								<li>
+									如果设置的数字是0-1之间的值，代表的是缩小的倍数。
+								</li>
+								<li class="ee">
+									不能设置负数
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					倾斜（skew）
+					<ul>
+						<li>
+							总结：
+							<ul>
+								<li>
+									设置第一个值代表水平方向，设置第两个值代表垂直方向。
+								</li>
+								<li>
+									设置正数是往左移，这是负数往右移。
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+
+			</ul>
+		</li>
+
+		<li>
+			3D转换（transform）
+			<ul>
+				<li>
+					位移
+					<ul>
+						<li>
+							transform:translateX;水平移动
+						</li>
+						<li>
+							transform:translateY；垂直移动
+						</li>
+						<li>
+							transform:translateZ;
+
+						</li>
+						<li>
+							在3D位移中设置的正数是沿坐标轴的正方向移动，反之沿坐标轴的负方向移动。
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					旋转：
+					<ul>
+						<li>
+
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					缩放
+					<ul>
+						<li>
+							在3d缩放中，沿着Z轴无任何现象
+						</li>
+					</ul>
+				</li>
+
+			</ul>
+		</li>
+
+		<li>
+			透视
+			<ul>
+				<li>
+					perspective: 1000px;
+				</li>
+				<li>
+					总结：
+					<ul>
+						<li>
+							该属性不是一个必须要设置的属性（为了视觉方便）近大远小的效果
+						</li>
+						<li>
+							perspective的取值一般定在600-1000之间
+						</li>
+						<li>
+							将该属性设置给变形元素（transform:translate）的父元素
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			teansform-sryle：preserve-3d；
+			<br>
+			transform-origin:方向
+		</li>
+
+		<li>
+			动画：animation  
+			<br>
+			keyframes
+			<li>
+				动画是复合属性
+				<br>
+				用法：
+				<ul>
+					<li>
+						先通过animion来制定一个动画集@keyframes&nbsp;自定义个名称{
+						form(开始){}to(结束){}
+					}
+				</li>
+				<li>
+					标签通过animation调用动画集
+					<ul>
+						<li>
+							animation-name设置动画序列名称
+						</li>
+						<li>
+							animation-duration动画持续时间
+						</li>
+						<li>
+							animation-delay动画延时时间
+						</li>
+						<li>
+							animation-timing-function动画执行速度，linear、ease等
+						</li>
+						<li>
+							animation-play-state动画播放状态，running、paused等
+						</li>
+						<li>
+							animation-direction动画逆播，alternate等
+						</li>
+						<li>
+							animation-fill-mode动画执行完毕后状态，forwards、backwards等
+						</li>
+						<li>
+							animation-iteration-count动画执行次数，inifinate等
+						</li>
+						<li>
+							steps(60) 表示动画分成60步完成
+						</li>
+						<li>
+							让动画暂停：animation-play-state:paused;
+						</li>
+						<li class="ee">
+							animation-fill-mode该属性必须与animation-iteration-count配合使用。animation-iteration-count属性不能为inifinate
+						</li>
+						<li>
+							注意：一个元素可以同时调用多个动画集使用逗号隔开
+							调用动画集的时候，必须设置时间和动作
+							<li>
+								百分比是相对动画执行的时间
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</li>
+		<li>
+			伸缩布局（弹性布局）：
+			<ul>
+				<li>
+					伸缩布局的步骤：
+					<ul>
+						<li>
+							先直接给父元素设置成伸缩盒子display: flex;
+						</li>
+						<li>
+							伸缩盒子特点：
+							<ul>
+								<li>
+									伸缩盒子具有主轴（默认盒子方向从左向右）
+								</li>
+								<li>
+									伸缩盒子还有侧轴（侧轴始终要垂直于主轴）
+								</li>
+								<li>
+									在伸缩盒子中所有的子元素都要按照主轴的方向显示
+								</li>
+							</ul>
+						</li>
+						<li>
+							内容：
+							<ul>
+								<li>
+									<p class="ee">主轴的方向：</p>
+									flex-direction调整主轴方向（默认为水平方向）row从左到右显示|row-reverrse从右到左显示|column从上往下|column-reverrse从下网上显示
+								</li>
+								<li>
+									<p class="ee">设置子元素在主轴的对齐方式：</p>
+									justify-content调整主轴对齐flex-start开始处|flex-end结束处|flex-center中间处|space-around环绕对齐|space-between左右两侧对齐中间的处正中间
+								</li>
+								<li>
+									<p class="ee">设置子元素在侧轴的对齐方式：</p>
+									align-items调整侧轴对齐align-items:flex-start|flex-end|center|stretch拉伸（默认值）
+								</li>
+								<li>
+									<p class="ee">flex-wrap控制是否换行:</p>
+									nowrop不换行|wrap换行|flrx-start换行以后的对齐方式：
+									align-content:
+									|flex-end换行后的对齐方式底部|center中间|space-between|space-around|stretch(默认)
+								</li>
+								
+							</ul>
+						</li>
+						<li>
+							伸缩盒子子元素的属性：order|flex|
+							<ul>
+								<li>
+                                  order： 值越大在浏览器的显示位置越靠后
+
+								</li>
+								<li>
+									如果父元素中有固定的大小的盒子，子元素如果设置了flex属性，那么flex该属性的值代表的意思是：占父元素减去
+								</li>
+								<li>
+									flex：控制盒子的伸缩比
+								</li>
+							</ul>
+
+						</li>
+						
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+
+
+
+
+
+
+
+
+
+
+	</ul>
+
+</fieldset>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        	.q {
+        		color: red;
+
+        	}
+        </style>
+		<link href="../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    </head>
+    <body>
+	<div class="list-group">
+		<a href="../lianjie.html" class="list-group-item active">
+			返回总链接页面
+		</a>
+	</div>
+        <fieldset>
+             <legend>选择器和样式转换、背景</legend>
+         <ol>
+         	<li>
+         	     Placeholder样式设置 
+         	</li>
+         	 <br>
+         	 <img src="图片1.png">
+         	<li>
+         	     属性选择器
+         	     <ul>
+         	     	<li>
+         	     	    语法：
+         	     	    <br>
+         	     	     【属性】{属性：值；}
+         	     	     <br>
+         	     	     <img src="图片2.png">
+         	     	</li>
+         	     </ul>
+         	</li>
+
+         	<li>
+         		伪元素选择器
+         		<ul>
+         			<li>
+         				第一行伪元素选择器   ::first-line{属性: 值}
+         				<br>
+         				<img src="图片3.png">
+         			</li>
+
+         			<li>
+         				选中第一个字符（字母或汉字）的样式::first-letter {}
+         				<br>
+         				<img src="图片4.png">
+         			</li>
+                         
+         			<li>
+         				设置鼠标选中区域的样式
+         				<br>
+         				<img src="图片5.png">
+         			</li>
+
+         			<li>
+         				注意：
+         				<ul>
+         					<li class="q">
+         						该选择器只能设置与颜色相关的属性。
+         					</li>
+         				</ul>
+         			</li>
+         		</ul>
+         	</li>
+
+         	<li>
+         		行内样式写法
+         		<br>
+         		<img src="图片6.png">
+         		<br>
+         		总结：
+         		<ul>
+         			<li>
+         				行内样式只能影响当前标签的样式
+         			</li>
+         			<li>
+         				内嵌式写法可以影响整个页面
+         			</li>
+         			<li>
+         				外链式写法可以影响整个站点，实现样式与结构的分离 
+         			</li>
+         		</ul>
+         	</li>
+           
+            <li>
+            	元素显示方式分类
+            	<ul>
+            		<li>
+            		    块级元素
+            		</li>
+            		<li>
+            			行内元素
+            		</li>
+            		<li>
+            			行内块元素
+            		</li>
+            	</ul>
+            </li>
+
+            <li>
+            	块级元素
+            	<ul>
+
+            		<li>
+            			 典型代表：
+            			 <ul>
+            			 	<li>
+            			 		div,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dd,p....
+            			 	</li>
+            			 </ul>
+            		</li>
+            		<li>
+            			特点：
+            			<ul>
+            				<li>
+            					一个块级如果没有设置宽度，那么该块级元素的宽度等于其父元素的宽度。
+            				</li>
+            				<li>
+            					块级元素独占一行显示
+            				</li>
+            				<li>
+            					块级元素可以设置宽度和高度
+            				</li>
+            			</ul>
+            		</li>
+            	</ul>
+            </li>
+
+            <li>
+            	行内元素
+            	<ul>
+            		<li>
+            			典型代表
+            			<ul>
+            				<li>
+            					a，span,font,b,s,i,em,strong....
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			特点：
+            			<ul>
+            				<li>
+            					行内元素不能直接设置宽度和高度
+            				</li>
+            				<li>
+            					所有的行内元素都在一行上显示。
+            				</li>
+            			</ul>
+            		</li>
+            	</ul>
+            </li>
+
+            <li>
+            	行内块元素
+            	<ul>
+            		<li>
+            			代表：
+            			<ul>
+            				<li>
+            					 img， input...
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			特点：
+            			<ul>
+            				<li>
+            					元素可以在一行上显示
+            				</li>
+            				<li>
+            					行内块元素可以设置宽度和高度
+            				</li>
+            			</ul>
+            		</li>
+            	</ul>
+            </li>
+
+            <li>
+            	元素的转换方式（模式转换）
+            	<ul>
+            		<li>
+            			转换为块级元素:&nbsp;display: block;
+            		</li>
+            		<li>
+            			转换为行内元素&nbsp;display: inline;
+            		</li>
+            		<li>
+            			转换为行内块元素&nbsp;display: inline-block;
+            		</li>
+            	</ul>
+            </li>
+
+            <li>
+            	伪元素
+            	<ul>
+            		<li>
+            			::before {}
+            		</li>
+            		<li>
+            			::after{}
+            		</li>
+            		<li>
+            			总结：
+            			<ul>
+            				<li>
+            					伪元素属于行内元素（与操作页面中的实际元素一样一样滴）
+            				</li>
+            				<li>
+            					伪元素中必须设置content属性
+            				</li>
+            				<li>
+            					伪元素一般情况下要作为子元素使用
+            				</li>
+            				<li>
+            					 注意：
+            					 <ul>
+            					 	<li class="q">
+            					 		以后如果设置before或者after伪元素的时候，推荐使用单冒号。
+            					 	</li>
+            					 </ul>
+            				</li>
+            			</ul>
+            		</li>
+            	</ul>
+            </li>
+
+            <li>
+            	CSS特性
+            	<ul>
+            		<li>
+            			层叠性：
+            			<ul>
+            				<li>
+            					同一个标签，如果优先级（权重）相同且有样式冲突，那么最后定义的样式会将前面定义的样式覆盖掉。
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			继承性：
+            			<ul>
+            				<li>
+            					当一个子元素在默认情况下没有设置样式，那么该子元素会受父元素的样式影响。
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			总结：
+            			<ul>
+            				<li>
+            					继承性标签必须是嵌套关系。
+            				</li>
+            				<li>
+            					文字颜色可以被继承
+            				</li>
+            				<li>
+            					font-size可以被继承
+            				</li>
+            				<li>
+            					font-weight可以被继承
+            				</li>
+            				<li>
+            					与font属性相关的都可以被继承
+            				</li>
+            				<li>
+            					text-align可以被继承
+            				</li>
+            				<li>
+            					宽度和高度不能被继承
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			继承的特殊标签；
+            			<ul>
+            				<li>
+            					a标签默认情况下不会受父元素的文字颜色影响
+		                         标题标签默认情况下不会等于父元素设置的文字大小
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			优先级
+            			<br>
+            			标签选择器&lt;类选择器&lt;ID选择器&lt;行内样式&lt;!important
+            			<ul>
+            				<li>
+            					继承的权重为0
+            				</li>
+            				<li>
+            					权重可以叠加
+            				</li>
+            			</ul>
+            		</li>	
+            	</ul>
+            </li>
+
+            <li>
+            	伪类
+            	<ul>
+            		<li>
+            			a:link{属性:值;....}&nbsp;&nbsp;&nbsp;   设置a标签的默认样式
+            			<br>
+            			注意：以后少用！！！！
+            		</li>
+            		<li>
+            			a:visited{属性:值;...}  设置a标签被访问过后的样式
+            			<br>
+            			注意：
+            			<ul>
+            				<li>
+            					该伪类存在浏览器缓存问题
+            				</li>
+            				<li>
+            					只能设置与颜色相关的属性
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			a:hover {属性:值；} 鼠标悬停标签上的样式
+            			<ul>
+            				<li>
+            					text-decoration: none; 去掉下划线
+            				</li>
+            				<li>
+            					text-decoration: underline; 显示下划线
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			a:active {属性: 值;...} 设置标签被激活状态下的样式
+            		</li>
+            		<li>
+            			input:focus {属性: 值；...}  设置获取鼠标焦点的时候的样式
+            		</li>
+            	</ul>
+            </li>
+
+            <li>
+            	背景（background）
+            	<ul>
+            		<li>
+            			background-color &nbsp;&nbsp;    设置背景颜色
+            		</li>
+            		<li>
+            			background-image: url（） 设置背景图片
+            		</li>
+            		<li>
+            			background-repeat：repeat | no-repeat | repeat-x| repeat-y  设置背景图片平铺方式
+            		</li>
+            		<li>
+            			background-position 设置背景图片的位置
+            		</li>
+            		<br>
+            		<img src="图片7.png">
+            		<li>
+            			注意：
+            			<ul>
+            				<li>
+            					 如果background-position只设置一个值，那么第二值代表默认垂直居中（center）
+            				</li>
+            				<br>
+            				<img src="图片8.png">
+            			</ul>
+            		</li>
+            	</ul>
+            </li>
+
+            <li>
+            	Background复合属性写法
+            	<br>
+            	<img src="图片9.png">
+            </li>
+
+            <li>
+            	背景尺寸
+            	<ul>
+            		<li>
+            			background-size: cover；
+            			<br>
+            			背景图片按照自己的缩放比例，自动铺满整个父元素
+            		</li>
+            		<li>
+            			background-size: contain;
+            			<br>
+            			背景图片按照自己的缩放比，自动完整的将自己显示到父元素中。
+            			<br>
+            			<img src="图片10.png">
+            		</li>
+            	</ul>
+            </li>
+         </ol>
+
+
+
+
+
+
+
+
+
+        </fieldset>
+    </body>
+</html>

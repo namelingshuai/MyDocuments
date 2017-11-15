@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 实现下面的效果得引css一个包还有最底下的两个js包 -->
+    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+    </style>
+    <!-- 去除放在a标签上有下划线的样式
+         a:link {
+
+            text-decoration: none;
+        }
+    -->
+
+
+</head>
+<body>
+
+    <!-- 手风琴样式 -->
+    <!--
+         1.id="accordion" 要是一个网页有多个这个样式就得改这个id名
+         2.data-parent="#accordion" 这里面的accordion得写的和最上面的id上的名称一样
+         3.下面注释的地方看看公共点，然后也得修改，每一块都得修改
+     -->
+    <div class="panel-group" id="accordion"  aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading"  id="headingOne">
+                <!--  id="headingOne" -->
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" >
+                                                                                    <!--href="#collapseOne"              aria-controls="collapseOne"-->
+                        Collapsible Group Item #1
+                    </a>
+                </h4>
+            </div>
+                <!--  id="collapseOne"                                              aria-labelledby="headingOne"  -->
+            <div id="collapseOne" class="panel-collapse collapse in" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading"  id="headingTwo">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" >
+                        Collapsible Group Item #2
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse"  aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading"  id="headingThree">
+                <h4 class="panel-title">
+                    <a class="collapsed"  data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" >
+                        Collapsible Group Item #3
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /手风琴样式 -->
+
+    <!-- 固定导航条 -->
+    <!--
+        用固定导航条得设置
+            body {
+                padding-top: 50px;
+            }
+        最好给a标签外面的盒子设置一个padding-top: 8px;
+     -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <a href="#j-1" class="btn btn-danger btn-register">体验js</a>
+            <a href="#j-2" class="btn btn-danger btn-register">JS的书写位置</a>
+            <a href="#j-3" class="btn btn-danger btn-register">js的注释</a>
+            <a href="#j-4" class="btn btn-danger btn-register">变量命名规则</a>
+            <a href="#j-5" class="btn btn-danger btn-register">变量交换</a>
+            <a href="#j-6" class="btn btn-danger btn-register">数据类型</a>
+            <a href="#j-7" class="btn btn-danger btn-register">运算符</a>
+            <a href="#j-8" class="btn btn-danger btn-register">流程控制</a>
+            <a href="#j-9" class="btn btn-danger btn-register">数组</a>
+            <a href="#" class="btn btn-danger btn-register">免费注册</a>
+            <a href="#" class="btn btn-danger btn-register">免费注册</a>
+            <a href="#" class="btn btn-danger btn-register">免费注册</a>
+        </div>
+    </nav>
+    <!-- /固定导航条 -->
+
+
+    <!-- 标签页 -->
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" data-toggle="tab">Home</a></li>
+        <li role="presentation"><a href="#profile" data-toggle="tab">Profile</a></li>
+        <li role="presentation"><a href="#messages" data-toggle="tab">Messages</a></li>
+        <li role="presentation"><a href="#settings" data-toggle="tab">Settings</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">1</div>
+        <div role="tabpanel" class="tab-pane" id="profile">2</div>
+        <div role="tabpanel" class="tab-pane" id="messages">3</div>
+        <div role="tabpanel" class="tab-pane" id="settings">4</div>
+    </div>
+    <!-- /标签页 -->
+
+
+    <!-- 链接页的布局 -->
+
+    <!--
+        给每个分页顶部可也写个这个实现跳回作用
+        <div class="list-group">
+            <a href="index.html" class="list-group-item active">
+                返回总链接页面
+            </a>
+        </div>
+
+     -->
+
+
+
+    <div class="list-group">
+        <a href="#" class="list-group-item active">
+            Cras justo odio
+        </a>
+        <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+        <a href="#" class="list-group-item">Morbi leo risus</a>
+        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+        <a href="#" class="list-group-item">Vestibulum at eros</a>
+    </div>
+
+
+    <script src="assets/jquery/jquery.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

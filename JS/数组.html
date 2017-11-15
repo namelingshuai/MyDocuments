@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css"/>
+    <style>
+
+        .nav-tabs {
+            padding-left: 500px ;
+            /*text-align: center;*/
+        }
+        /*body {*/
+            /*padding-top: 50px;*/
+        /*}*/
+        /*.container {*/
+            /*padding-top: 8px;*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+
+    <div class="list-group">
+        <a href="index.html" class="list-group-item active">
+            返回总链接页面
+        </a>
+    </div>
+
+
+    <h3><a id="j-1" href="#">数组定义、数组API、字符串API</a></h3>
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" ><a href="#home" data-toggle="tab">数组定义</a></li>
+            <li role="presentation" class="active"><a href="#profile" data-toggle="tab">数组API</a></li>
+            <li role="presentation"><a href="#messages" data-toggle="tab">字符串API</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    数组的定义
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                               <pre>
+                                    为什么要学习数组？
+                                    因为，原来都是一个一个操作，现在我们要一把一把操作...
+
+                                    为什么不用字符串，字符串不方便；
+                                    数组的定义方法：两种;
+
+                                    1.字面量法;
+                                    var array1 = ["a","b","c"];
+
+                                    2.构造函数法;
+                                    为了创建对象做铺垫;(有的复杂数据类型没有字面量，只能构造函数法；
+                                        比方说：Date(),Stirng(),Number(),Boolean()...)
+                                    var array2 = new Array("d","e");
+
+                                    构造函数里面如果写了一个数值不是元素的意思；而是数组的长度;
+                                    var array3 = new Array(5);//一个数组里面有5个undefined；长度为5；
+                                    var array4 = new Array();
+                                    array4[0] = 5;//赋值；
+
+                                    console.log(array1);
+                                    console.log(array2);
+                                    console.log(array3);
+                                    console.log(array4);
+                                    console.dir(array2);//以对象类型打印数据
+                               </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <!--  id="headingOne" -->
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <!--href="#collapseOne"              aria-controls="collapseOne"-->
+                                   数组的操作
+                                </a>
+                            </h4>
+                        </div>
+                        <!--  id="collapseOne"                                              aria-labelledby="headingOne"  -->
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                               <pre>
+                                    var arr = ["鸣人","佐助","小樱"];
+
+                                    数组的操作1: 数组中元素的个数 == 数组的长度;   arr.length;
+                                    console.log(arr);
+                                    //获取
+                                    console.log(arr.length);
+                                    //赋值: 没有的位用undefined补齐;
+                                    arr.length = 6;
+                                    console.log(arr);
+
+                                    数组的操作2: 数组中的索引值;(元素的编号)
+                                        索引值从0开始;  最大索引值为数组的长度-1;
+                                    console.log(arr);
+
+                                    数组的操作3: 数组中元素的获取和赋值;
+                                            重点：需要使用索引值；
+
+                                    获取值: 数组名[索引值]
+                                    console.log(arr[0]);
+                                    console.log(arr[1]);
+                                    console.log(arr[2]);
+
+                                    赋值： 数组名[索引值] = 值;
+                                    arr[1] = "雏田";
+                                    arr[2] = "博人";
+                                    console.log(arr);
+                               </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    数组的遍历
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                               <pre>
+                                     var arr = ["鸣人","佐助","小樱"];
+
+                                    ！！！重点！！！:遍历：把数组中的每一个元素获取到，能够获取
+                                     值还能够赋值，还能够计算;
+                                        数组和for循环更配！！！
+
+                                    i=0是因为数组索引值从0开始；
+                                    arr.length:是因为我们想少写内容;
+                                    for(var i=0;i&lt;arr.length;i++){
+                                        获取数组中的每一个值: arr[i];
+                                        console.log(arr[i]);
+
+                                        赋值或者修改值：(在每个元素最末尾添加一个内容)
+                                        arr[i] = arr[i] + ": 我是第七班！！！";
+                                    }
+
+                                    console.log(arr);
+                               </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-1">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree-1" aria-expanded="false" aria-controls="collapseThree-1">
+                                    数组的拓展
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-1">
+                            <div class="panel-body">
+                               <pre>
+                                    var arr = [];
+
+                                    1.二维数组; 数组中的元素依然是数组;
+                                    var arr1 = [111,222,333];
+                                    var arr2 = [444,555,666];z
+                                    var arr3 = [777,888,999];
+
+                                    //组合一个二维数组；
+                                    arr[0] = arr1;
+                                    arr[1] = arr2;
+                                    arr[2] = arr3;
+                                    console.log(arr);
+                                    console.log(arr[1][1]);//获取可以赋值也可以
+
+                                    2.数组中元素的添加;   利用数组的长度可以作为数组中的下一项，进行添加元素;
+                                        在数组的最末尾添加一个元素;  利用数组的长度，作为数组中并
+                                         不存在的下一项的索引值进行赋值；
+                                    arr[arr.length] = 111;//在数组中没有元素的时候，长度为0;添加完毕
+                                                            // ，变为1；
+                                    arr[arr.length] = 222;//数组中有一个元素，长度为1；做索引值就
+                                                          // 代表第二项;添加第二项
+                                    arr[arr.length] = 333;//......
+                                    console.log(arr);
+                               </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-2">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree-2" aria-expanded="false" aria-controls="collapseThree-2">
+                                    数组的案例
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-2">
+                            <div class="panel-body">
+                               <pre>
+                                      1.求一组数中的所有数的和和平均值
+                                    var arr = [11,22,33];
+                                    var sum = 0;
+                                    var avg = 0;
+                                    //for循环遍历出数组中的每一个然后累加
+                                    for(var i=0;i&lt;arr.length;i++){
+                                        sum += arr[i];//数组中的每一项累加到sum中
+                                    }
+                                    alert(sum);
+                                    //  avg = sum/i;//从0开始，不用-1;
+                                    avg = sum/arr.length;//有多少个元素除以多少
+                                    alert(avg);
+
+                                    2.求一组数中的最大值和最小值，以及所在位置
+
+                                    求最大值：两两比较；我设置一个值，然后和数组中的每一个比较；
+                                            如果我的大，那么就继续比较，如果数组中的元素大，那么赋值给定义的变量;继续比较;
+                                    var arr = [-1,-2,-31,-4,-5];
+                                    //bug:不能用数组之外的进行比较，万一比数组中的每一个都大，就不对了；
+                                    var max = arr[0];//第一个和最后一个最好，因为数组可以少比较一次；
+
+                                    //for循环遍历出每一个数组中的元素，进行比较
+                                    for(var i=1;i&lt;arr.length;i++){//能少比较一次算一次;
+                                        //判断：如果数组中的元素大，给max重新赋值；否则不用管;继续比较下一个;
+                                        if(max < arr[i]){
+                                            //数组中的元素如果大，就重新赋值给max；
+                                            max = arr[i];
+                                        }
+                                        //     else{
+                                         //继续;
+                                        //  }
+                                    }
+                                    alert(max);
+
+                                    最大值和最小值,及所在位置;
+                                    var arr = [1,2,31,4,5];
+                                    var maxValue = arr[0];//定义数组中的第一个;
+                                    var minValue = arr[0];//定义数组中的第一个;
+                                    //位置(上面设置的哪一项，一定要保证索引值也对应)
+                                    var maxIndex = 0;
+                                    var minIndex = 0;
+
+                                    //遍历每一项
+                                    for(var i=1;i&lt;arr.length;i++){
+                                        //比较谁大SEI给max/minValue重新赋值;
+                                        if(maxValue < arr[i]){
+                                            maxValue = arr[i];//数组中的元素如果大于最大值，就为他重新赋值;
+                                            //赋值索引值
+                                            maxIndex = i;
+                                        }
+                                        //大于最大值，小于最小值才重新赋值;而不是不大于最大值就赋值(不一定时最小值);
+                                        if(minValue > arr[i]){
+                                            minValue = arr[i];
+                                            //赋值索引值
+                                            minIndex = i;
+                                        }
+                                    }
+
+                                    console.log(maxValue);
+                                    console.log(maxIndex);
+                                    console.log(minValue);
+                                    console.log(minIndex);
+
+                                    3.将字符串数组用|或其他符号分割
+                                        var arr = ["关羽","张飞","赵云","马超","黄忠"];
+                                        //用竖线分隔，链接成一个字符串;
+                                        var str = arr[0];
+                                        var separator = "|";//separator==分隔符的意思;
+                                        //遍历数组中的每一项;
+                                        for(var i=1;i&lt;arr.length-1;i++){
+                                            str += separator+arr[i];
+                                        }
+
+                                        console.log(str);
+
+                                    4.要求将数组中的0项去掉，将不为0的值存入一个新的数组，生成新的数组
+                                        var oldArr = ["关羽",0,0,"张飞",0,"刘备",0];
+                                        //新创建一个数组，然后变量老数组，然后判断，如果不是0就添加尽新数组;
+                                        var newArr = [];
+                                        for(var i=0;i&lt;oldArr.length;i++){
+                                            //判断
+                                            if(oldArr[i] !== 0){
+                                                //不是0就添加到新数组
+                                                newArr[newArr.length] = oldArr[i];//i不能用，向数组中
+                                                添加元素，应该是  arr[arr.length]
+                                            }
+                                        }
+                                        console.log(newArr);
+
+                                    拓展：数组长度之外的元素也是undefined;
+                                    console.log(oldArr[10000]);//和只设置长度不设置内容一样都是undefined;
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-3">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree-3" aria-expanded="false">
+                                    数组反转
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-3">
+                            <div class="panel-body">
+                               <pre>
+                                     反转数组：让元素前后交换位置;
+                                        1.使用新数组接收;(不修改原数组)
+                                            a.正向遍历,反向添加;
+                                            b.反向遍历,正向添加;
+                                        2.不使用新数组接收;(修改原数组)
+                                            a.原数组中的元素前后交换位置;(第一和倒数第一交换，第二和倒数第二交换...)
+
+                                    var arr = [1,2,3,4,5,6];
+                                    1.使用新数组接收;(不修改原数组)
+                                    var newArr = [];
+                                        a.正向遍历,反向添加;
+                                    for(var i=0;i&lt;arr.length;i++){
+                                        //反向添加;
+                                        newArr[newArr.length] = arr[arr.length-1-i];//第一次添加的是倒数第一个;
+                                            //倒数第一个： arr.length-1-0;//i代表的就是要减去的数值;
+                                            //倒数第二个： arr.length-1-1;//i代表的就是要减去的数值;
+                                            //倒数第三个： arr.length-1-2;//i代表的就是要减去的数值;
+                                            //...
+                                    }
+
+                                        b.反向遍历,正向添加;
+                                    for(var i=arr.length-1;i>=0;i--){//反向遍历，索引值从最大到最小
+                                        //添加元素；怎么遍历怎么添加;
+                                        newArr[newArr.length] = arr[i];
+                                    }
+
+                                    2.不使用新数组接收;(修改原数组)
+                                        a.原数组中的元素前后交换位置;(第一和倒数第一交换，第二和倒数第二交换...)
+                                            bug: 6个元素只要3次，5个元素需要2-3；
+                                    for(var i=0;i&lt;arr.length/2;i++){//不能写等号，偶数就会多一次；
+                                        //前后交换位置;(第一和倒数第一交换，第二和倒数第二交换...)
+                                        var temp = arr[i];
+                                        arr[i] = arr[arr.length-1-i];//第一次是倒数第一个，第二次是倒数第二个...
+                                        arr[arr.length-1-i] = temp;
+                                    }
+
+                                    console.log(arr);
+                                    console.log(newArr);
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-4">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree-4" aria-expanded="false" style="color:red&lt;"/>
+                                    冒泡排序
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-4">
+                            <div class="panel-body">
+                               <pre>
+                                   冒泡排序：给元素排列顺序;
+                                   思路：共比较元素个数-1轮，每轮比较元素个数-1次(轮数和次数都用for循环)
+                                   满足某一条件，相邻两个元素就前后交换位置；
+                                   如果想要优化冒泡排序：只能从两个方向：1.次数;    2.轮数;
+                                   1.次数;(每多比较一轮少比较一次)(每轮找到一个最合适的)
+                                   2.轮数;(如果这一轮比较中已经完成就不需要下一轮在比较了)
+                                            在整轮比较过程中，没有任何两个相邻的元素前后交换位置;(跳出外循环)
+                                    var arr = [1,2,3,4,5,6,7];
+                                    console.log(arr);
+                                    var n = 0;//次数
+                                    var m = 0;//轮数
+                                    //外循环控制轮数，内循环控制次数，轮数和次数都是元素个数-1;
+                                    for(var i=0;i&lt;arr.length-1;i++){
+                                        //开闭原则：类似一个开关，默认是开启的，有一个说关闭，我们就把他关闭掉;
+                                        var bool = true;//必须写在两个for循环之间,下一轮开始的时候才会初始化bool值为true；
+                                        //1.次数;(每多比较一轮少比较一次)(每轮找到一个最合适的)
+                                            //第一轮-0；
+                                            //第二轮-1；
+                                            //第三轮-2；......
+                                        for(var j=0;j&lt;arr.length-1-i;j++){//每多比较一轮少比较一次
+                                            //满足条件,交换位置
+                                            if(arr[j] > arr[j+1]){
+                                                var temp = arr[j];
+                                                arr[j] = arr[j+1];
+                                                arr[j+1] = temp;
+                                                //能够尽量就说明交换位置了
+                                                bool = false;//false将不允许跳出外循环;
+                                            }
+                                            n++;
+                                        }
+                                        m++; //如果在m++之前，未来会少一次;
+                                        //判断bool值，如果是true，就没有任何元素前后交换位置，
+                                                    //如果是false，就说明有元素交换位置，还要继续比较;
+                                        if(bool){
+                                            break;
+                                        }
+                                    }
+                                    console.log(arr);console.log(n);console.log(m);
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="profile">
+                <div class="panel-group" id="accordion-1" role="tablist" aria-multiselectable="true">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-5">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseThree-5" aria-expanded="false">
+                                    数组体验方法
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-5">
+                            <div class="panel-body">
+                                   <pre>
+                                       API: Application Programming Interface,应用程序编程接口;
+                                       js中对象提供的方法就叫做API；
+
+                                        1.检测一个对象是否是数组;(用来对付复杂数据类型;)
+                                            简单数据类型 typeof ;
+                                            a. A instanceof B; A是不是B造出来的;
+                                            var arr = [1,2,3];
+                                            var str = "123";
+                                            console.log(arr instanceof Array);//arr是不是Array造出来的;
+                                            console.log(str instanceof Array);//arr是不是Array造出来的;
+                                            var stu1 = new Stu("张三");
+                                            console.log(stu1 instanceof Stu);//是Stu造出来的
+                                            console.log(stu1 instanceof Array);//不是Array造出来的
+                                            console.log(stu1 instanceof Object);//js是基于对象语言，object;
+
+                                            function Stu(name){
+                                                this.name = name;
+                                            }
+
+                                          2.Array.isArray(参数);判断参数是不是数组;
+                                            var arr = [1,2,3];
+                                            var num = 123;
+                                            console.log(Array.isArray(arr));
+                                            console.log(Array.isArray(num));
+
+                                        3.数组.toString(); 把数组变成字符串;
+                                            去除[]，内容用逗号链接;
+                                            var arr = ["aaa","bbb","ccc"];
+                                            console.log(arr.toString());
+
+                                        4.数组.valueOf();数组本身;
+                                            console.log(arr.valueOf());
+
+                                        5.数组.join(参数);   数组中的元素可以按照参数进行链接变成一个字符串;
+                                            console.log(arr.join());//和toString()一样用逗号链接
+                                            console.log(arr.join("|"));//用参数链接
+                                            console.log(arr.join("&"));//用参数链接
+                                            console.log(arr.join(" "));//如果是空格，真的用空格链接
+                                            console.log(arr.join(""));//空字符是无缝连接
+                                   </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-7">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseThree-7" aria-expanded="false">
+                                    数组元素添加和删除
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-7">
+                            <div class="panel-body">
+                                   <pre>
+                                        push和pop是在数组的最末尾添加或者删除;
+                                        unshift和shift是在数组的最前面添加或者删除;‘
+
+                                         var arr = [1,2,3];
+                                        //push和pop
+                                            var aaa = arr.push("abc");//在数组的最末尾添加一个元素;
+                                            console.log(arr);//元素被修改了
+                                            console.log(aaa);//返回值是数组的长度;
+
+                                            aaa = arr.pop();//不需要参数;在数组的最末尾删除一项;
+                                            console.log(arr);//元素被修改了
+                                            console.log(aaa);//被删除的那一项
+
+                                        //unshift和shift
+                                            aaa = arr.unshift("abc");//在数组的最前面添加一个元素;
+                                            console.log(arr);//元素被修改了
+                                            console.log(aaa);//返回值是数组的长度;
+
+                                            aaa = arr.shift();//不需要参数;在数组的最前面删除一项;
+                                            console.log(arr);//元素被修改了
+                                            console.log(aaa);//被删除的那一项
+
+                                        push的底层原理：arr[arr.length] = 元素;
+                                   </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-8">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseThree-8" aria-expanded="false">
+                                    数组元素排序
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-8">
+                            <div class="panel-body">
+                                   <pre>
+                                       排序方法
+                                        reverse()	//翻转数组
+                                        sort(); 	//即使是数组sort也是根据字符，从小到大排序
+
+                                        1.reverse()	//翻转数组?
+                                        var arr1 = [1,2,3,4,5];
+                                        var aaa = arr1.reverse();
+                                        console.log(arr1);
+                                        console.log(aaa);
+                                        console.log(aaa === arr1);
+
+                                        数组反转有三种办法，但是reverse底层用的应该是第三种：元素前后交换位置;
+                                        function rev(array){
+                                            for(var i=0;i&lt;array.length/2;i++){
+                                                var temp = array[i];
+                                                array[i] = array[array.length-1-i];
+                                                array[array.length-1-i] = temp;
+                                            }
+                                            return array;
+                                        }
+
+                                        2.sort();数组中元素排序;(默认：从小到大)
+
+                                        var arr = [4,5,1,13,2,7,6];
+                                       默认：按照首个字符的Unicode编码排序;如果第一个相同那么就比较第二个...
+
+                                        var arr = [4,5,1,3,2,7,6];
+                                        var aaa =arr.sort();
+
+                                        console.log(arr);
+                                        console.log(aaa);
+                                        console.log(aaa === arr);//原数组被排序了(冒泡排序)
+                                        //默认还可以排列字母;
+                                        var arr2 = ["c","e","d","a","b"];
+                                        var bbb = arr2.sort();
+                                        console.log(arr2);
+                                        console.log(bbb);
+                                        console.log(bbb===arr2);
+
+                                        数值大小排序方法：sort();需要借助回调函数;
+                                        var arr = [4,5,1,13,2,7,6];
+
+                                        //回调函数里面返回值如果是：参数1-参数2;升幂；   参数2-参数1;降幂；
+                                        arr.sort(function (a,b) {
+                                        //   return a-b;//升序
+                                            return b-a;//降序
+                                            return b.value-a.value;//按照元素value属性的大小排序;
+                                        });
+                                        console.log(arr);
+
+                                        拓展：sort方法底层原理;
+
+                                        回顾一下冒泡排序;
+                                        function bubbleSort(array){
+                                            //外循环控制轮数，内循环控制次数，都是元素个数-1;
+                                            for(var i=0;i&lt;array.length-1;i++){
+                                                for(var j=0;j&lt;array.length-1-i;j++){//次数优化，多比较一轮，少比较一次;
+                                                    //满足条件交换位置;
+                                            //      if(array[j]>array[j+1]){//大于升幂排序；否则降幂;
+                                                    //a-b>0  和  a>b是一个意思;
+                                                    if(array[j]-array[j+1]>0){//大于升幂排序；否则降幂;
+                                                        var temp = array[j];
+                                                        array[j] = array[j+1];
+                                                        array[j+1] = temp;
+                                                    }
+                                                }
+                                            }
+                                            //返回数组
+                                            return array;
+                                        }
+
+                                        //sort原理：
+
+                                        var aaa = bubbleSort([1,12,3], function (a,b) {
+                                        //  return a-b;//实参：array[j]-array[j+1]；
+                                            return b-a;//实参：array[j+1]-array[j]；
+                                        });
+                                        console.log(aaa);
+
+
+                                        function bubbleSort(array,fn){
+                                            //外循环控制轮数，内循环控制次数，都是元素个数-1;
+                                            for(var i=0;i&lt;array.length-1;i++){
+                                                for(var j=0;j&lt;array.length-1-i;j++){//次数优化，多比较一轮，少比较一次;
+                                                    //满足条件交换位置;
+                                                //      if(array[j]>array[j+1]){//大于升幂排序；否则降幂;
+                                                    //a-b>0  和  a>b是一个意思;
+                                                    //b-a>0  和  a&lt;b是一个意思;
+                                            //      if(array[j]-array[j+1]>0){//升幂排序
+                                                //      if(array[j+1]-array[j]>0){//降幂排序
+                                                    //把两个变量送到一个函数中;
+                                                        if(fn(array[j],array[j+1])>0){
+                                                            var temp = array[j];
+                                                            array[j] = array[j+1];
+                                                            array[j+1] = temp;
+                                                        }
+                                                }
+                                            }
+                                            //返回数组
+                                            return array;
+                                        }
+                                    </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-9">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseThree-9" aria-expanded="false">
+                                    数组元素的操作
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-9">
+                            <div class="panel-body">
+                                   <pre>
+                                        concat()  	//把参数拼接到当前数组
+                                        slice() 	//从当前数组中截取一个新的数组，不影响原来的数组，参数start从0开始,end从1开始
+                                        splice()	//删除或替换当前数组的某些项目，参数start, deleteCount, options(要替换的项目)
+
+                                        1.数组1.concat(数组2);链接两个数组;
+                                            var arr1 = [1,2,3];
+                                            var arr2 = ["a","b","c"];
+                                            var arr3 = arr1.concat(arr2);
+                                            console.log(arr1)
+                                            console.log(arr2)
+                                            console.log(arr3)
+
+                                       数组.slice(开始索引值，结束索引值);  数组截取;
+                                            console.log(arr3.slice(3));//从索引值为3截取到最后;
+                                            console.log(arr3.slice(0,3));//包左不包右;
+                                            console.log(arr3.slice(-2));//负数是后几个;
+                                            console.log(arr3.slice(3,0));//如果前面的比后面的大，那么就是[];
+                                            console.log(arr3);//原数组不被修改;
+
+                                        数组.splice(开始索引值，删除几个，替换内容1，替换内容2，...);   替换和删除;
+                                            改变原数组;返回值是被删除/替换的内容
+                                            console.log(arr3.splice(3));//从索引值为3截取到最后;(删除)
+                                            console.log(arr3.splice(2,1));//(删除指定内容)
+                                            console.log(arr3.splice(1,3));//(删除指定个数)
+                                            替换
+                                            console.log(arr3.splice(2,2));//(删除指定个数)
+                                            console.log(arr3.splice(3,3,"aaa","bbb","ccc"));//(删除指定个数)
+                                            添加
+                                            console.log(arr3.splice(3,0,"aaa","bbb","ccc"));//(删除指定个数)
+                                            console.log(arr3);//截取或者替换之后的;
+                                    </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-10">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseThree-10" aria-expanded="false">
+                                    数组元素的位置
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-10">
+                            <div class="panel-body">
+                                   <pre>
+                                        数组.indexOf(元素);      给元素，查索引(从前往后)
+                                        数组.lastIndexOf(元素);  给元素，查索引(从后往前)
+
+                                        注意：数组一旦建立，索引值就固定了！
+
+                                        var arr = ["a","b","c","d","c","b","b"];
+
+                                        //从前往后查
+                                        console.log(arr.indexOf("b"));//1//查到以后立刻返回；
+                                        console.log(arr.indexOf("c"));//2
+                                        console.log(arr.indexOf("xxx"));//-1;  没有就返回-1；
+
+                                        //数组.lastIndexOf(元素);  给元素，查索引(从后往前)
+                                        console.log(arr.lastIndexOf("b"));//找到以后立刻返回
+                                        console.log(arr.lastIndexOf("xxx"));//没有-1;
+                                        console.log(arr);
+                                   </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-11">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseThree-11" aria-expanded="false">
+                                    数组的迭代（遍历）
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-11">
+                            <div class="panel-body">
+                                   <pre>
+                                        作为了解:
+                                        every()、filter()、forEach()、map()、some()
+                                        返回：bool     arr     undefined  arr    bool
+
+                                        var arr = [111,222,333,444,555];
+
+                                        1.every();
+                                            对数组中每一项运行回调函数，如果都返回true，every返回true，
+                                            如果有一项返回false，则停止遍历 every返回false；不写默认返回false
+                                            像保镖失误一次，游戏结束！！！
+
+                                        every();用法
+                                        arr.every(function (a,b,c) {
+                                            console.log(a);//元素
+                                            console.log(b);//索引值
+                                            console.log(c);//数组本身;
+                                            console.log("-----");//数组本身;
+                                            //数组中元素赋值：c[b] = 值;      a=有时候无法赋值;
+                                            return true;
+                                        });
+
+                                        every返回一个bool值，全部是true才是true；有一个是false，结果就是false
+                                        var bool = arr.every(function (element, index, array) {
+                                            //判断：我们定义所有元素都大于200;
+                                            //if(element > 100){
+                                            if(element > 200){
+                                                return true;
+                                            }else{
+                                                return false;
+                                            }
+                                        })
+
+                                        alert(bool);
+
+                                        2.filter();
+                                           对数组中每一项运行回调函数，该函数返回结果是true的项组成的新数组
+                                                新数组是有老数组中的元素组成的，return为ture的项;
+                                        var newArr = arr.filter(function (element, index, array) {
+                                            //只要是奇数，就组成数组;(数组中辨别元素)
+                                            if(element%2 === 0){
+                                                return true;
+                                            }else{
+                                                return false;
+                                            }
+                                        })
+
+                                        console.log(newArr);
+
+                                        3.forEach();   和for循环一样；没有返回值;
+                                        var sum = 0;
+                                        var aaa = arr.forEach(function (element,index,array) {
+                                            //数组中元素求和;
+                                            sum += element;
+                                        });
+
+                                        console.log(sum);
+                                        console.log(aaa);//undefined；
+
+                                        4.map();
+                                          对数组中每一项运行回调函数，返回该函数的结果组成的新数组
+                                            return什么新数组中就有什么;不return返回undefined;
+                                                对数组二次加工
+
+                                        var newArr = arr.map(function (element, index, array) {
+                                                if(index == 2){
+                                                    return;
+                                                }
+                                            return element*100;
+                                        })
+
+                                        console.log(newArr);
+
+                                        5.some();
+                                          对数组中每一项运行回调函数，如果该函数对某一项返回true，则some返回true
+                                            像杀手，有一个成功，就胜利了！！！
+
+                                        var bool = arr.some(function (ele,i,array) {
+                                            //判断：数组中有3的倍数
+                                            if(ele%7 == 0){
+                                                if(ele%3 == 0){
+                                                return true;
+                                            }
+                                            return false;
+                                        })
+
+                                        alert(bool);
+                                   </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-12">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseThree-12" aria-expanded="false">
+                                    数组清空
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-12">
+                            <div class="panel-body">
+                                   <pre>
+                                        伪数组: 就是长的像数组，但是没有数组的方法;也不能添加和删除元素;
+                                                    推荐： arr = [];
+
+                                        清空数组(用的比较少)：3种方法;
+
+                                        var arr = [1,2,3];
+                                        console.log(arr);
+
+                                        1.arr.length = 0;(不好，伪数组无法清空)
+                                        arr.length = 0;
+                                        console.log(arr);
+
+                                        2.arr.splice(0);   伪数组没有这个方法;
+                                        console.log(arr.splice(0));
+                                        console.log(arr);
+
+                                        3.arr = [];       可以操作伪数组;
+                                        arr = [];
+                                        console.log(arr);
+
+                                            fn(111,222,333);
+                                            function fn(){
+                                                //a;
+                                        //        arguments.length = 0;
+                                                //b;
+                                        //         arguments.splice(0);
+                                                //c;
+                                                arguments = [];
+                                                console.log(arguments);
+                                                console.log(arguments[0]);
+                                                console.log(arguments[1]);
+                                                console.log(arguments[2]);
+                                            }
+                                    </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-13">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseThree-13" aria-expanded="false">
+                                        数组案例
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-13">
+                            <div class="panel-body">
+                                   <pre>
+                                        1.将一个字符串数组输出为|分割的形式，比如“刘备|张飞|关羽”。使用两种方式实现
+                                        2.将一个字符串数组的元素的顺序进行反转。["a", "b", "c", "d"] -> [ "d","c","b","a"]。使用两种种方式实现。提示：第i个和第length-i-1个进行交换
+                                        3.工资的数组[1500, 1200, 2000, 2100, 1800],把工资超过2000的删除
+                                        4.["c", "a", "z", "a", "x", "a"]找到数组中每一个a出现的位置
+                                        5.编写一个方法去掉一个数组的重复元素
+
+                                        1.将一个字符串数组输出为|分割的形式，比如“刘备|张飞|关羽”。使用两种方式实现
+                                       var arr = ["刘备","张飞","关羽"];
+                                       var separator = "|";
+                                       //通过for循环累加
+                                       var str = arr[0];
+                                       for(var i=1;i&lt;arr.length;i++){
+                                           str += separator+arr[i];
+                                       }
+                                       console.log(str);
+
+                                       //join()可以把数组中的元素链接成字符串;
+                                       console.log(arr.join("|"));
+
+                                        2.将一个字符串数组的元素的顺序进行反转。["a", "b", "c", "d"] -> [ "d","c","b","a"]。使用两种种方式实现。提示：第i个和第length-i-1个进行交换
+                                       var arr = ["a", "b", "c", "d"];
+                                       console.log(arr.reverse());
+
+                                        三种：1.正向遍历，反向添加;  2.反向遍历，正向添加;   3.元数组元素交换位置;
+                                       for(var i=0;i&lt;arr.length/2;i++){
+                                           var temp = arr[i];
+                                           arr[i] = arr[arr.length-1-i];
+                                           arr[arr.length-1-i] = temp;
+                                       }
+
+                                        3.工资的数组[1500, 1200, 2000, 2100, 1800],把工资超过2000的删除
+                                       var arr = [1500, 1200, 2000, 2100, 1800];
+                                       //利用filter()形成一个数组;return true;组成的数组;
+                                       var newArr = arr.filter(function (ele, i, array) {
+                                           //2000以上返回false;
+                                           if(ele&lt;2000){
+                                               return true;
+                                           }else{
+                                               return false;
+                                           }
+                                       });
+                                       console.log(newArr);
+
+                                        4.["c", "a", "z", "a", "x", "a"]找到数组中每一个a出现的位置
+                                       var arr = ["c", "a", "z", "a", "x", "a"];
+                                       //遍历数组(for/while/do...while)    forEach();
+                                       arr.forEach(function (ele, index, array) {
+                                           //如果元素等于“a”，那么就输出索引值；
+                                           if("a" === ele){
+                                               console.log(index);
+                                           }
+                                       });
+
+                                        5.编写一个方法去掉一个数组的重复元素
+                                       var arr = ["鸣人","鸣人","佐助","佐助","小樱","小樱"];
+
+                                        方法1：  思路：定义一个新数组，遍历老数组，判断，如果新数组里面没有老数组的元素就添加，否则就不添加；
+                                       var newArr = [];
+                                       //遍历老数组
+                                       arr.forEach(function (ele,index,array) {
+                                           //检测老数组中的元素，如果新数组中存在就不添加了，不存在才添加;
+                                           if(newArr.indexOf(ele) === -1){//不存在就添加;（去新数组中查找元素索引值，如果为-1就是没有）
+                                               newArr.push(ele);
+                                           }
+                                       });
+                                       console.log(newArr);
+
+                                        //方法2: 原生js：外循环遍历老数组，内循环遍历新数组;
+                                        //      判断：如果新数组中任何一个元素和老数组中的元素相同也不能添加进新数组;
+
+                                        var newArr = [];
+                                        //外循环遍历老数组
+                                        for(var i=0;i&lt;arr.length;i++){
+                                            //控制器，开闭原则
+                                            var flag = true;
+                                            //内循环遍历新数组
+                                            for(var j=0;j&lt;newArr.length;j++){
+                                                //判断：老数组中的元素和新数组中的任何一个元素相同也不能添加;（开闭原则）
+                                                if(arr[i] === newArr[j]){
+                                                    flag = false;
+                                                    break;
+                                                }
+                                            }
+                                            //是否允许添加，就看flag，如果是true说明没有一个相同的就可以添加;
+                                            //是否允许添加，就看flag，如果是false说明有至少一个相同的就不可以添加;
+                                            if(flag){
+                                                newArr[newArr.length] = arr[i];
+                                            }
+                                        }
+                                    </pre>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div role="tabpanel" class="tab-pane" id="messages">
+                <div class="panel-group" id="accordion-2"  aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-14">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-14" aria-expanded="false">
+                                    包装类型和字符串的不可变性
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-14">
+                            <div class="panel-body">
+                                   <pre>
+                                        1.包装类型;
+                                            var obj = new Object();
+                                            obj.aaa = 111;//自定义属性
+                                            console.log(obj.aaa);//获取属性值
+
+                                        number：简单数据类型不可以自定义属性
+                                            var num = 111;
+                                            num.bbb = 222;
+                                        console.log(num.bbb);//简单数据类型不可以自定义属性;
+
+                                        简单数据类型有属性！！！
+                                            var str = "abc";
+                                            console.log(str.length);
+
+
+                                        包装类型！！！简单数据类型对应的复杂形势！
+                                            var strObj = new String("abc");
+                                            console.log(strObj);//包装类型！
+                                            console.log(typeof strObj);//包装类型！
+                                            strObj.bbb = 222;
+                                            console.log(strObj.bbb);
+
+                                        简单数据类型在使用属性和方法的时候是强制转换成了对应的包装类型，
+                                         调用完毕后，在变回简单数据类型！(只能调用自己的无法自定义)
+
+                                        包装类型：String/Number/Boolean;
+                                        简单类型：string/number/boolean/undefined/null;
+
+                                        2.字符串的不可变性;（字符串一旦定义就不会被修改,想要修改重新开辟空间）
+                                        var num = 0;
+                                        for(var i=1;i<=300000;i++){
+                                            num+=i;
+                                        }
+                                        console.log(num);
+
+                                        var str = "";
+                                        for(var i=1;i<=300000;i++){
+                                            str += i;
+                                        }
+                                        console.log(str);
+
+                                            var str = "";
+                                            var arr = [];
+                                            for(var i=1;i<=300000;i++){
+                                                arr[arr.length] = i;
+                                            }
+                                            console.log(arr.join(""));
+                                    </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-15">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-15" aria-expanded="false">
+                                    给索引查字符
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-15">
+                            <div class="panel-body">
+                                   <pre>
+                                        charAt()    	//获取指定位置处字符
+                                        str[0]   		//HTML5，IE8+支持 和charAt()等效
+                                        charCodeAt()  	//获取指定位置处字符的ASCII码
+
+                                        var str = "0Aabcd我&";
+
+                                        1.字符串.charAt(索引值);    字符串中对应索引值的字符。
+                                            兼容性很棒;
+                                            console.log(str.charAt(0));
+                                            console.log(str.charAt(1));
+                                            console.log(str.charAt(2));
+                                            console.log(str.charAt(3));
+                                            console.log(str.charAt(str.length-2));
+                                            console.log(str.charAt(str.length-1));
+
+                                        2.字符串[索引值] :  和数组一样；但是兼容性不好;H5新增，ie678不支持;
+                                            用法和charAt一样
+                                            console.log(str[0]);
+                                            console.log(str[1]);
+                                            console.log(str[2]);
+                                            console.log(str[str.length-2]);
+                                            console.log(str[str.length-1]);
+
+                                        3.字符串.charCodeAt(索引值);  给索引，查对应的Unicode编码;
+                                            console.log(str.charCodeAt(0));
+                                            console.log(str.charCodeAt(1));
+                                            console.log(str.charCodeAt(2));
+                                            console.log(str.charCodeAt(str.length-2));
+                                   </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-16">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-16" aria-expanded="false">
+                                    给字符查索引
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-16">
+                            <div class="panel-body">
+                                   <pre>
+                                        给字符查索引；
+
+                                        indexOf();        给字符查索引(从前往后)
+                                        lastIndexOf();    给字符查索引(从后往前)
+
+                                        var str = "abcdcbb";
+
+                                        indexOf();        给字符查索引(从前往后)
+                                        console.log(str.indexOf("a"));//0
+                                        console.log(str.indexOf("b"));//1
+                                        console.log(str.indexOf("c"));//2
+                                        console.log(str.indexOf("xxx"));//-1
+                                        //查多个字符
+                                        console.log(str.indexOf("abc"));//以首个单词字符为准;
+                                        console.log(str.indexOf("ac"));//不完整或者顺序不对都是-1;
+                                        console.log(str.indexOf("acb"));//不完整或者顺序不对都是-1;
+
+                                        lastIndexOf();    给字符查索引(从后往前)
+                                            同理indexOf；
+                                            字符串一旦声明，索引值就固定了，无论从前往后，还是从后往前，索引值都是固定的
+                                        console.log(str.lastIndexOf("b"));//6
+                                    </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-17">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-17" aria-expanded="false">
+                                    字符串连接和截取
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-17">
+                            <div class="panel-body">
+                                   <pre>
+                                        concat()   		//拼接字符串，等效于+，+更常用
+                                        slice()最多； 		//从start位置开始，截取到end位置，end取不到
+                                        substr()   		//从start位置开始，截取length个字符
+                                        substring() 	//从start位置开始，截取到end位置，  end取不到
+
+                                        1.concat()   		//拼接字符串，等效于+，+更常用
+                                        var str1 = "123";
+                                        var str2 = "abc";
+                                        var str3 = str1.concat(str2);
+                                        console.log(str1);
+                                        console.log(str2);
+                                        console.log(str3);
+                                        链接字符我们更喜欢用 + ；
+                                        console.log(str1+str2);
+
+                                        2.slice()    		//从start位置开始，截取到end位置，end取不到
+                                            和数组的完全一样： 字符串.slice(开始索引值，结束索引值);
+                                        console.log(str3.slice(3));//从索引值为3的元素截取到最后
+                                        console.log(str3.slice(0,3));//包左不包右
+                                        console.log(str3.slice(-2));//从后面截取两个
+                                        console.log(str3.slice(3,0));//前面大，后面小;  "";
+
+                                        3.substr()   		//开始索引值，截取几个;
+                                        console.log(str3.substr(3));//从索引值为3的元素截取到最后
+                                        console.log(str3.substr(2,1));//从索引值为3的元素截取到最后
+                                        console.log(str3.substr(-2));//从后面截取两个
+                                        //前后不一样大没问题，因为第二个参数是截取几个的意思;
+
+                                        4.substring() 	//开始索引值，结束索引值;
+                                            和slice()；同样
+                                        console.log(str3.substring(3));//从索引值为3的元素截取到最后
+                                        console.log(str3.substring(0,3));//包左不包右
+                                        //不同:
+                                        console.log(str3.substring(-2));//全部截取
+                                        console.log(str3.substring(3,0));//智能调换
+                                    </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-18">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-18" aria-expanded="false">
+                                    字符串大小写转换
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-18" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-18">
+                            <div class="panel-body">
+                                   <pre>
+                                        str.toLowerCase();//小写；
+                                        str.toUpperCase();//大写；
+
+                                        var str = "123aaaBBBccc你好%%%&&&";
+                                        console.log(str.toUpperCase());//只有字母大写;
+                                        console.log(str.toLowerCase());//只有字母大写;
+
+                                        上传文件的时候用;   因为后缀名，不区分大小写;
+                                    </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-19">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-19" aria-expanded="false">
+                                    字符串其他方法
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-19">
+                            <div class="panel-body">
+                                   <pre>
+                                       前三个和正则有关;
+                                            trim()  		//只能去除字符串前后的空白
+                                            search()      //给字符索引
+                                            replace()     //替换
+                                       字符串转换成数组;和join是一对！
+                                            split()
+
+                                       trim()  		//只能去除字符串前后的空白
+                                            var str = "   aaa   bbb   ccc   ";
+                                            console.log(str);
+                                            console.log(str.trim());
+
+                                       search()      //给字符索引
+                                            var str = "abcdefg";
+                                            console.log(str.search("a"));
+                                            console.log(str.search("ab"));
+                                            console.log(str.search("bc"));
+                                            console.log(str.search("bdc"));
+
+                                       replace()     //替换
+                                            var str = "Today is a good day, today is a good day.";
+                                            console.log(str.replace("Today","Tomorrow"));//无法忽略大小写，而且只能替换一个
+                                            console.log(str.replace(/today/ig,"Tomorrow"));//无法忽略大小写，而且只能替换一个
+                                            //g: 全局替换;       i: 忽略大小写！
+
+                                       字符串转换成数组;和join是一对！
+                                            //    split()  和    join();
+                                            var str = "aaa|bbb|ccc";//字符串会根据参数被分割成几部分;变成一个数组;
+                                            console.log(str.split("|"));//参数不会出现在数组中；
+                                            console.log(str.split());//不带参数，整体作为一个元素;
+                                            console.log(str.split(""));//"":每一个字符都算一个元素;
+                                    </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree-20">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-20" aria-expanded="false">
+                                    字符串案例（<p style="color:red; display: inline">作业驼峰命名</p>）
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree-20" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-20">
+                            <div class="panel-body">
+                                   <pre>
+                                        1.截取字符串"我爱中华人民共和国"，中的"中华"
+                                        2."abcoefoxyozzopp"查找字符串中所有o出现的位置
+                                        3.把字符串中所有的o替换成!
+                                        4.把字符串中的所有空白去掉'   abc       xyz  a    123   '
+                                        5.判断一个字符串中出现次数最多的字符，统计这个次数
+                                        6.获取url中?后面的内容，并转化成对象的形式。例如：http://www.itheima.com/login?name=zs&age=18&a=1&b=2
+
+                                        1.截取字符串"我爱中华人民共和国"，中的"中华"
+                                            var str = "我爱中华人民共和国";
+                                            console.log(str);
+                                            console.log(str.slice(2,4));
+
+                                        2."abcoefoxyozzopp"查找字符串中所有o出现的位置
+                                            var str = "abcoefoxyozzopp";
+                                            for(var i=0;i&lt;str.length;i++){
+                                                //判断：如果等于“o”,就输出索引值
+                                                if(str.charAt(i) === "o"){
+                                                    console.log(i);
+                                                }
+                                            }
+
+                                        3.把字符串中所有的o替换成!
+                                            var str = "abcoefoxyozzopp";
+                                            //console.log(str.replace("o","!"));
+                                            console.log(str.replace(/o/g,"!"));//g是全局替换；
+
+                                        4.把字符串中的所有空白去掉'   abc       xyz  a    123   '
+                                            var str = '   abc       xyz  a    123   ';
+                                            console.log(str);
+                                            第一种
+                                            console.log(str.replace(/ /g,""));//把空格替换成"";
+
+                                            第二种；
+                                            var newStr = "";
+                                            for(var i=0;i&lt;str.length;i++){
+                                                if(str.charAt(i) != " "){
+                                                    newStr+=str.charAt(i);
+                                                }
+                                            }
+                                            console.log(newStr);
+
+                                        5.判断一个字符串中出现次数最多的字符，统计这个次数
+                                            var str = "abcoefoxyozzopp";
+                                                a:1,b:1,c:1......   键值对;    对象或者json记录;
+                                            思路：遍历字符串中的每一个元素，从json/对象中查找.
+                                                    判断：有的话，值自增1;没有的话，设置该属性，值为1;
+                                            var json = {};//将来往里面装属性和值；{属性就是字符串中的元素，值就是出现的次数}
+                                            //for循环遍历
+                                            for(var i=0;i&lt;str.length;i++){
+                                                //判断：有的话，值自增1;没有的话，设置该属性，值为1;
+                                                var zimu = str.charAt(i);//str里面的每一个字符串；根据i自增可以获取到每一个
+                                                if(json[zimu] === undefined){//把字符作为json中的属性查找，如果为undefined就说明不存在;
+                                                    //没有就添加一个
+                                                    json[zimu] = 1;//给这个属性，赋值为1；
+                                                }else{
+                                                    //如果存在，就把值在原有基础上+1;
+                                                    json[zimu] += 1;
+                                                }
+                                            }
+                                            console.log(json);
+
+                                        6.获取url中?后面的内容，并转化成对象的形式。例如：http://www.itheima.com/login?name=zs&age=18&a=1&b=2
+                                            var str = "http://www.itheima.com/login?name=zs&age=18&a=1&b=2";
+                                            //思路：找到?,然后截取到最末尾;把字符串按照& 分割;可以再次按照=分割，然后创建对象
+                                            var index = str.lastIndexOf("?");
+                                            var str2 = str.slice(index+1);
+                                        //    console.log(str2);
+                                            //转换成数组；
+                                            var arr = str2.split("&");
+                                        //    console.log(arr);
+
+                                            var obj = new Object();
+                                            //for循环把数组中的每一个元素都遍历出来，然后前面的做属性，后面的做值;
+                                            for(var i=0;i&lt;arr.length;i++){
+                                                //把数组中的元素，再次切割，然后根据索引值设置属性和值;
+                                                var newArr = arr[i].split("=");
+                                                //新数组中的第一个做属性，第二个做值;
+                                                obj[newArr[0]] = newArr[1];
+                                            }
+                                            console.log(obj);
+
+                                      <p style="color:red; display: inline">作业：把ooopppqqqxxxyyyzzz  转换成驼峰命名  "aaaBbbCccDddEee";</p>
+                                            var str = "ooo-ppp-qqq-xxx-yyy-zzz";
+                                            var arr = str.split('-');
+                                            console.log(arr);
+                                            for(i=0;i&lt;arr.length;i++){
+                                                arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].substring(1);
+
+                                            }
+                                            console.log(arr.join(""));
+
+                                            function fn(){
+                                            var str="ooo-ppp-qqq-xxx-yyy-zzz";
+                                             String.prototype.transform = function(){
+                                              var arr = this.split('-');
+                                              for(var i=1;i&lt;arr.length;i++){
+                                                  arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].substring(1);
+                                              }
+                                              return arr.join('')
+                                             }
+                                            }
+                                             alert(string.transform());
+
+                                            console.log(str.replace("p","P","q","Q","y","Y"));
+                                    </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /标签页 -->
+
+
+</body>
+
+    <script src="assets/jquery/jquery.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</html>

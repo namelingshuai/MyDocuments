@@ -1,0 +1,16 @@
+a {
+    display: inline-block;
+    text-align: center;
+}
+
+.panel-title {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+.nav-tabs {
+    padding-left: 500px ;
+    /*text-align: center;*/
+}

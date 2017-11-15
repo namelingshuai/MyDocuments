@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+/* 开头 */
+
+.w {
+    width:980px;
+    margin: 0 auto;
+}
+.box {
+    width: 100%;
+    height: 100px;
+
+}
+
+.shouye {
+    height: 100px;
+
+}
+
+.shouone {
+    width: 300px;
+    height: 100px;
+    float: left;
+}
+.shoutwo {
+    width: 500px;
+    height: 100px;
+    float: right;
+}
+.shoutwo li {
+    list-style: none;
+}
+/* 中部上面 */
+
+.biao {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border-left: 3px solid red;
+    border-bottom: 3px solid pink;
+    border-top: 3px solid  blue;
+    border-right: 3px solid green;
+    position: fixed;
+    right:3px;
+    top: 60px;
+    animation: wode 1s linear infinite;
+}
+
+@keyframes wode {
+    0% {
+        transform: rotateZ(0)
+    }
+
+    100% {
+        transform: rotateZ(360deg)
+    }
+}
+
+audio {
+    outline-style: none;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    height: 30px;
+}
+.yinyue {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    right: 150px;
+    top: 150px;
+    transform: scaleZ(0.4)
+}

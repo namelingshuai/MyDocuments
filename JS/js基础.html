@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css"/>
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        a:link {
+
+            text-decoration: none;
+        }
+
+        .dingbu {
+            opacity: 0.3;
+            /*background-color: #FFF;*/
+            overflow: hidden;
+        }
+
+        .dingbu .ding {
+            padding-top: 8px;
+            opacity: 1;
+            text-align: center;
+        }
+        .dingbu .ding a {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="list-group">
+    <a href="index.html" class="list-group-item active">
+        返回总链接页面
+    </a>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-top dingbu">
+    <div class="container ding">
+        <a href="#j-1" class="btn btn-danger btn-register">体验js</a>
+        <a href="#j-2" class="btn btn-danger btn-register">JS的书写位置</a>
+        <a href="#j-3" class="btn btn-danger btn-register">js的注释</a>
+        <a href="#j-4" class="btn btn-danger btn-register">变量命名规则</a>
+        <a href="#j-5" class="btn btn-danger btn-register">变量交换</a>
+        <a href="#j-6" class="btn btn-danger btn-register">数据类型</a>
+        <a href="#j-7" class="btn btn-danger btn-register">运算符</a>
+        <a href="#j-8" class="btn btn-danger btn-register">流程控制</a>
+    </div>
+</nav>
+
+
+<h3><a id="j-1" href="#">体验js</a></h3>
+    <pre>
+                            1.体验js; 弹窗输出;
+                                alert("hello world!!!");//兼容性不好，一般不用; 程序员用它弹窗出某些值，进行排错;
+
+                            2.体验js; 控制台输出;
+                                console.log("吃了吗...");//console：控制台;  log: 日志;
+                                console.warn("吃了吗...");//console：控制台;  warn: 警告;
+                                console.error("吃了吗...");//console：控制台;  error: 错误;
+
+                            3.体验js; 页面输出;
+                                document.write("&lt;li&gt;我可以在页面中输出内容，而且识别标签&lt;/li&gt;")
+    </pre>
+
+
+<h3><a id="j-2" href="#">JS的书写位置</a></h3>
+    <pre>
+                             JS的书写位置：  三种；    类比css;    "行内，内嵌，外链"
+                            &lt;script type="text/javascript"&gt;
+                                1.我是内嵌式;
+                                console.log("我是第一种: 内嵌式;");
+                            &lt;/script&gt;
+
+                            2.我是第二种: 外链式
+                            &lt;script src="thrid.js">&lt;/script&gt;
+
+
+                            3.我是第三种: 行内式
+                            &lt;div onclick="console.log('我是第三种: 行内式;')"&gt;我是第三种: 行内式&lt;/div&gt;
+    </pre>
+
+
+<h3><a id="j-3" href="#">js的注释</a></h3>
+    <pre>
+                            js的注释有两种，三类;
+                            1.单行注释；   2.多行注释;
+
+                            1.单行注释；    //          ctrl+/
+                            我们就是单行注释；
+                            我们就是单行注释；
+                            我们就是单行注释；
+
+                            2.1.多行注释;   /*内容*/    选中内容+shift+ctrl+/
+                            /*我们就多行注释
+                              我们就多行注释
+                              我们就多行注释   */
+
+                            2.2.多行注释变种;  方法注释;
+                            /**
+                             * 功能：两个数相加;
+                             * @param a
+                             * @param b
+                             * @returns {*}
+                             */
+                               function fn(a,b){
+                                   return a+b;
+                               }
+    </pre>
+
+
+<h3><a href="#" id="j-4">变量命名规则</a></h3>
+    <pre>
+                            变量：存储数值用的，操作起来比较方便，值改了，还可以继续使用;
+                                    使用方法：js中所有变量全部使用var定义;
+
+                            1.定义完毕，然后赋值；
+                            var age; //定义了一个变量名，值没有定义;
+                            age = 18;// = 在编程语言中是赋值的意思;
+                            console.log(age);
+
+                            2.定义的同时赋值;
+                            var age = 18;
+                            console.log(age);
+
+                            3.定义多个变量;
+                            var a, b, c;
+                            a = 111;
+                            b = 222;
+                            c = 333;
+                            console.log(a,b,c);//打印多个值，中间用打印的时候空格隔开;使用的时候用逗号隔开；
+
+                            - 规则 - 必须遵守的，不遵守会报错
+                            - 由字母、数字、下划线、$符号组成，不能以数字开头
+                            var AAAaaa123_$ = 111;
+                            var Aa%1_$ = 222;//特殊符号不可以
+                            var Aa我1_$ = 222;//中文可以
+                            var 我爱你 = "我的祖国";//但是不兼容使用;
+                            var 1aaa1 = 222;//数字最最前面不行，在其他位置可以；
+
+                                console.log(AAAaaa123_$);
+                            console.log(Aa%1_$);
+                            console.log(Aa我1_$);
+                            console.log(我爱你);
+
+                            - 不能是关键字和保留字，例如：for、while。
+                            var class for  if switch  break;//
+                            var top = 111;//他是window下的一个顶级对象;  只读;
+                            console.log(top);
+
+                            - 区分大小写
+                            var aaa = 111;
+                            var AaA = 222;
+                            var aAa = 333;
+                            var AAA = 444;
+                            console.log(aaa);
+                            console.log(AaA);
+                            console.log(aAa);
+                            console.log(AAA);
+
+                            - 规范 - 建议遵守的，不遵守不会报错
+                            - 变量名必须有意义
+                            var age = 18;
+                            var name = "张三";
+                            var address = "三里屯";
+
+                            - 遵守驼峰命名法。首字母小写，后面单词的首字母需要大写。例如：userName、userPassword
+                                font-size;   background-color;....      getElementById();
+                            var userName = "张三";
+    </pre>
+
+
+<h3><a href="#" id="j-5">变量交换</a></h3>
+    <pre>
+                            需求：让两个变量的值相互交换;
+                                    原理：利用第三方变量，存储好值，在进行覆盖;
+                                    思路：把a的值存储好，然后在把b的值传给a，把存储好的值传给b；
+                                    技术点：第三方变量；
+                            步骤:
+                            1.定义两个变量;
+                            2.把其中一个给另一个；
+                            3.在把另一个的值给原来那一个;
+
+                            1.定义两个变量;
+                            var num1 = 0;
+                            var num2 = 1;
+                            console.log(num1,num2);
+                            2.把其中一个给另一个；
+                            num1 = num2;
+                            3.在把另一个的值给原来那一个;
+                            num2 = num1;
+                            console.log(num1,num2);
+
+                            正确（未来用的最多）
+                            1.定义两个变量和一个第三方变量;
+                            2.把a的值存储好到第三方，然后在把b的值传给a，
+                            3.在把第三方的值给b;
+
+                            1.定义两个变量和一个第三方变量;
+                            var num1 = 0;
+                            var num2 = 1;
+                            var temp;
+                            console.log(num1,num2);
+                            2.把a的值存储好到第三方，然后在把b的值传给a，
+                            temp = num1;//num1已经被存储好，可以被覆盖了
+                            num1 = num2;
+                            3.在把第三方的值给b;
+                            num2 = temp;
+                            console.log(num1,num2);
+
+                            思考题：不使用第三方变量，交换两个数值；(思路：先求和，然后用和减去一个，在减另一个)
+
+                            需求：不使用第三方变量，交换两个数值；
+                                (思路：先求和，然后用和减去一个，在减另一个)
+                            步骤:
+                            1.求和;
+                            2.用和减去其中一个赋值给本身；
+                            3.在减去把另一个的值给原来那一个;
+
+
+                            1.求和;
+                            var num1 = 111;
+                            var num2 = 222;
+                            var temp;//临时值;
+
+                            temp = num1 + num2;
+                            2.用和减去其中一个赋值给本身；
+                            num1 = temp - num1;//num1 和 num2此时就相等了...
+                            3.在减去把另一个的值给原来那一个;
+                            num2 = temp - num1;//num2,在最初用过一次，在最后又用了一次;
+
+                            最终版
+                            var num1 = 111;
+                            var num2 = 222;
+                            console.log(num1,num2);
+                            num2 = num1 + num2;//知道和，知道其中一个值，另一个值可以计算，所以我们把其中一个值作为和存储起来；
+                            2.用和减去其中一个赋值给本身；
+                            num1 = num2 - num1;//num1 和 num2此时就相等了...
+                            3.在减去把另一个的值给原来那一个;
+                            num2 = num2 - num1;//num2,在最初用过一次，在最后又用了一次;
+                            console.log(num1,num2);
+    </pre>
+
+
+<h3><a href="#" id="j-6">数据类型</a></h3>
+<!--<pre>-->
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                   aria-expanded="true" aria-controls="collapseOne">
+                    js中对数据的划分，主要分为两种：
+                </a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+                        <pre>
+                            1.简单数据类型(值类型)；
+                                 string,boolean,number,undefined;null;
+                            2.复杂数据类型(引用类型)
+                                 Array,function,Date,Math.....
+
+                            引入一个方法，typeof,检测一个数据的数据类型;
+                            简单数据类型打印：string,boolean,number,undefined;
+                            复杂数据类型打印：object,function...
+
+                                console.log(typeof(111));
+                                console.log(typeof("111"));
+                        </pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+                   aria-expanded="false" aria-controls="collapseTwo">
+                    数据类型-string类型
+                </a>
+            </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+                       <pre>
+                           简单数据类型：stirng,boolean,number,undefined,null;
+
+                            第一个stirng：带有""或者''里面的内容都可以成为字符串;
+                                    在谷歌浏览器中内容颜色为：黑色;
+                                    字符串和其他数据类型或者变量的唯一区别就是没有引号;
+
+                            1.双引号或者单引号里面的内容都可以成为字符串;
+                                但是不能一个单一个双;不能多个引号同时使用;引号部分前后;
+                                var str1 = "我是程序员";
+                                var str2 = 111;
+                                console.log(str1);
+                                console.log(str2);
+
+                            2.在字符串中输入带有特殊意义的内容的时候可以使用转译符;
+                                var str1 = "你好，我的\"亲\"！"
+                                var str2 = "你好:\n我的\"亲\"！"
+                                var str3 = "你好:\\我的\"亲\"！"
+                                console.log(str1);
+                                console.log(str2);
+                                console.log(str3);
+
+                            3.字符串的长度;就是有多少个字符；
+                                var str1 = "abcdefg";
+                                var str2 = "a  我";
+                                var str3 = "\t";
+                                var str4 = "    ";
+                                console.log(str1.length);
+                                console.log(str2.length);
+                                console.log(str3.length);
+                                console.log(str4.length);
+
+                            4.字符串的拼接;  两个内容拼接，如果有一个是字符串那么也会变成拼接;
+                                    +；代表加法还是连接就看他两边的内容有没有"";
+                                var str1 = "111";
+                                var str2 = "abc";
+                                var num1 = 222;
+                                var num2 = 111;
+                                console.log(str1+str2);
+                                console.log(str1+num1);
+                                console.log(num2+num1);
+                       </pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+                   aria-expanded="false" aria-controls="collapseThree">
+                    数据类型-boolean类型
+                </a>
+            </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+                       <pre>
+                           简单数据类型：stirng,boolean,number,undefined,null;
+
+                            第二个boolean：只有两个值：true和false;
+                                    注意：boolean和string唯一的区别就是有没有"";
+                                        和字符串的颜色不同，为蓝色;
+                                var bool1 = true;
+                                var bool2 = false;
+                                console.log(bool1);
+                                console.log(bool2);
+                                console.log(typeof bool1);
+                                console.log(typeof(bool2));
+                                console.log("false");
+                                console.log(typeof "false");
+
+                            1.区分大小写; boolean值都是小写的;
+                                var bool = True;
+                                console.log(bool);
+
+                            2.任何数据类型都有一种对应的boolean值;
+                       </pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingFour">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"
+                   aria-expanded="false" aria-controls="collapseFour">
+                    数据类型-number类型
+                </a>
+            </h4>
+        </div>
+        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+            <div class="panel-body">
+                <pre>
+                        简单数据类型：stirng,boolean,number,undefined,null;
+
+                        第三个number：数值类型; 指的是0-9;
+                        注意：十六进制和其他进制有特指;
+
+                        1.数字有进制问题;   二进制: 0-1;   八进制：0-7;  010;    十进制;   十六进制：0x11;0-9abcdef;
+                            var num1 = 10;//二进制和十进制在电脑中有时候不容易区分;
+                            console.log(num1);
+                            console.log(10);
+                            var num2 = 010;//直接打印会转换成10进制;
+                            console.log(num2);
+                            var num3 = 0x10;//直接打印会转换成10进制;
+                            console.log(num3);
+
+                        2.浮点数，就是小数;
+                        js中小数运算容易出现精度丢失问题；
+                        运算容易出现丢失，不是结果是小数出现丢失;
+                            var num1 = 0.1;
+                            var num2 = 0.002;
+                            var num3 = 0.2;
+                            console.log(num1);
+                            console.log(num2);
+                            console.log(num1+num3);//0.30000000000000004
+                            console.log(0.1+0.1);//0.2
+                            console.log(100*0.07);//7.000000000000001
+                            console.log(7/100);//结果是小数不会出现精度丢失，运算是小数才容易出现精度丢失；
+                            console.log(2/100);//结果是小数不会出现精度丢失，运算是小数才容易出现精度丢失；
+                            不要比较
+                            console.log(0.1+0.2 == 0.3);
+
+                        3.数值范围;
+                            console.log(Number.MAX_VALUE);//1.7976931348623157e+308
+                            console.log(Number.MAX_VALUE+100);
+                            console.log(Number.MIN_VALUE);//5e-324
+                            console.log(Number.MIN_VALUE/10);//0
+                            最大值;
+                            console.log(1/0);
+                            console.log(-1/0);
+
+                        4.NaN;  Not a Number;
+                            console.log(Number.NaN);
+                            console.log(NaN);
+                            console.log("abc"/100);
+                            console.log(typeof NaN);//用number类型定义了一个不是数字;
+                            console.log(NaN == 1);//false；
+                            console.log(NaN == 2);//false；
+                            console.log(NaN == NaN);//false；NaN和自己都不相等
+
+                        isNaN(): 是否符合一个标准，不是一个数字的标准;如果符合了不是数字,如果不符合就是一个数字;
+                            console.log(isNaN(111));//false;
+                            console.log(isNaN("abc"));//true;
+                            console.log(isNaN("123"));//false;
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingFive">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive"
+                   aria-expanded="false" aria-controls="collapseFive">
+                    数据类型-undefined和null类型
+                </a>
+            </h4>
+        </div>
+        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+            <div class="panel-body">
+               <pre>
+                    简单数据类型：stirng,boolean,number,undefined,null;
+
+                    第四个undefined：就undefined自己;  我们把他和null一起讲；
+                            注意：null是从undefined里面分离出来的数据;
+
+                        console.log(null == undefined);//true;
+                        console.log(null === undefined);//false;
+
+                        console.log(typeof undefined);//undefined；
+                        console.log(typeof null);//object；
+
+                    undefined对应的数值为NaN;
+                    null对应的数值为0;
+                        console.log(undefined+1);//NaN
+                        console.log(null+1);//1；
+
+                    undefined是定义了变量没有赋值;
+                    变量名字都不定义直接使用就是报错;
+               </pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingSix">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix"
+                   aria-expanded="false" aria-controls="collapseSix">
+                   简单数据类型转换-转换成string-boolean-number
+                </a>
+            </h4>
+        </div>
+        <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+            <div class="panel-body">
+                <pre>
+                    数据类型转换只有3种比较有意义;
+
+                    1.转换成string;
+                        var boo = true;
+                        var num = 123;
+                        var aaa = undefined;
+                        var bbb = null;
+                      a.变量+"";//值没变，数据类型变为了string；
+                        console.log(boo+"");
+                        console.log(num+"");
+                        console.log(aaa+"");
+                        console.log(bbb+"");
+                        console.log(typeof(boo+""));
+                        console.log(typeof(num+""));
+                        console.log(typeof(aaa+""));
+                        console.log(typeof(bbb+""));
+
+                      b.String(变量);  构造函数法;
+                        console.log(String(boo));
+                        console.log(String(num));
+                        console.log(String(aaa));
+                        console.log(String(bbb));
+                        console.log(typeof String(boo));
+                        console.log(typeof String(num));
+                        console.log(typeof String(aaa));
+                        console.log(typeof String(bbb));
+
+                      c.变量.toString();
+                        console.log(boo.toString());
+                        console.log(num.toString());
+                        console.log(typeof boo.toString());
+                        console.log(typeof num.toString());
+                            undefined和null: 不配拥有toString();
+                        console.log(aaa.toString());
+                        console.log(bbb.toString());
+
+                    2.转换成number;(要注意：容易出现NaN)
+                      var str = "123.123";//数值本身或者NaN;
+                      var boo = true;//true：1;   false: 0;
+                      var aaa = undefined; // NaN
+                      var bbb = null; //0;
+
+                      a. 变量-*/数值;   -0;   *1   /1  值不变；
+                        console.log(str-0);
+                        console.log(boo-0);
+                        console.log(aaa-0);
+                        console.log(bbb-0);
+                        console.log(typeof(str-0));
+                        console.log(typeof(boo-0));
+                        console.log(typeof(aaa-0));
+                        console.log(typeof(bbb-0));
+
+
+                      b.Number(变量);   构造函数法;
+                        console.log(Number(str));//可以获取小数点后面的数值；但是容易出现NaN；
+                        console.log(Number(boo));//0/1
+                        console.log(Number(aaa));//NaN
+                        console.log(Number(bbb));//0
+                        console.log(typeof Number(str));//number
+                        console.log(typeof Number(boo));//number
+                        console.log(typeof Number(aaa));//number
+                        console.log(typeof Number(bbb));//number
+
+                        c.parseInt()/parseFloat();取整数或者去浮点数;只操作字符串;
+                        console.log(parseInt("123.123abc"));
+                        console.log(typeof parseInt("123.123abc"));
+                        console.log(parseFloat("123.123abc"));
+                        console.log(typeof parseFloat("123.123abc"));
+
+
+                        console.log(parseInt("aaa123.123abc"));//NaN
+                        console.log(typeof parseInt("aaa123.123abc"));
+                        console.log(parseFloat("aaa123.123abc"));//NaN
+                        console.log(typeof parseFloat("aaa123.123abc"));
+
+                    3.转换成boolean;(所有数据类型都有boolean)
+                        字符串：              "":false；   "a"," ","^*&^*&%","123":true;
+                        数值：                NaN.0:false；  非0:true;
+                        undefined：          false；
+                        null：               false；
+                        所有对象：            true；
+
+                        var str = "abc";
+                        var num = 123;
+                        var aaa = null
+                        var bbb = undefined;
+                        var ccc = NaN;
+                        a.Boolean(变量);  构造函数法;
+                        console.log(Boolean(str));
+                        console.log(Boolean(num));
+                        console.log(Boolean(aaa));
+                        console.log(Boolean(bbb));
+                        console.log(Boolean(ccc));
+
+                      b.!!变量;     取反在取反;
+                        console.log(!!str);
+                        console.log(!!num);
+                        console.log(!!aaa);
+                        console.log(!!bbb);
+                        console.log(!!ccc);
+
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingSeven">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven"
+                   aria-expanded="false" aria-controls="collapseSeven">
+                   简单数据类型转换-总结
+                </a>
+            </h4>
+        </div>
+        <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+            <div class="panel-body">
+                <pre>
+                    1.简单数据类型：
+                        a.识别数据类型;   "123";   123;   true;  undefined; null;
+                        b.string: 4点;   number: 4点;   boolean: 2个;
+
+                    2.简单数据类型转换：
+                        a.类型转换通则：String();  Number();  Boolean();
+                        b.string:3种;    number: 3种;     boolean: 2种;
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--</pre>-->
+
+
+<h3><a href="#" id="j-7" >运算符</a></h3>
+<div class="box">
+    <div class="panel-group" id="accordion-1" aria-multiselectable="true">
+    <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingEight">
+        <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                 算数运算符
+            </a>
+        </h4>
+        </div>
+        <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+            <div class="panel-body">
+               <pre>
+                    运算符包括四类：1.算数运算符;   2.逻辑运算符;     3.比较运算符;   4.赋值运算符;
+
+                    1.算数运算符;
+                        a.一元(目)运算符;(+-(正负)/++--(明天))
+                        b.二元(目)运算符;(+-*/%)
+                        c.三元(目)运算符;(A?B:C)(明天)
+                   
+
+                    a.一元(目)运算符;(+-(正负)/++--(明天))
+                        var a = 1;
+                        console.log(+1);
+                        console.log(-1);
+                        console.log(++a);//在原有基础上增加1
+                        console.log(--a);//在原有基础上减少1
+
+                    b.二元(目)运算符;(+-*/%)
+                        console.log(1+1);//算数字
+                        console.log(1-1);//-*/;
+                        console.log(10%3);//取余数;
+
+                    c.三元(目)运算符;(A?B:C)(明天)
+                        console.log(1>2?1:2);//A为true就返回B，否则返回C；
+               </pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" id="headingNine">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                   逻辑运算符
+                </a>
+            </h4>
+        </div>
+        <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
+            <div class="panel-body">
+                <pre>
+                     运算符包括四类：1.算数运算符;   2.逻辑运算符;     3.比较运算符;   4.赋值运算符;
+
+                    2.逻辑运算符;
+                        只有三个： ||(或)    &&(且与)    !(非)
+
+                        a.||: 链接两个值如果有一个是true，结果就是true；
+                              只有两个都是false，结构才是false；
+                        b.&&: 链接两个值如果有一个是false，结果就是false；
+                              只有两个都是true，结构才是true；
+                        c.! : 取反，true变成false，false变成true；
+
+                    a.||: 链接两个值如果有一个是true，结果就是true；
+                        只有两个都是false，结构才是false；
+                        console.log(true||true);//短路运算：第一个如果是true；第二个就不看了
+                        console.log(true||false);//短路运算：第一个如果是true；第二个就不看了
+                        console.log(false||true);//短路运算：第一个如果是true；第二个就不看了
+                        console.log(false||false);//短路运算：第一个如果是true；第二个就不看了
+
+                    b.&&: 链接两个值如果有一个是false，结果就是false；
+                        只有两个都是true，结构才是true；
+                        console.log(true&&true);//短路运算：第一个如果是false；第二个就不看了
+                        console.log(true&&false);//短路运算：第一个如果是false；第二个就不看了
+                        console.log(false&&true);//短路运算：第一个如果是false；第二个就不看了
+                        console.log(false&&false);//短路运算：第一个如果是false；第二个就不看了
+
+                    c.! : 取反，true变成false，false变成true；
+                        console.log(!true);
+                        console.log(!false);
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" id="headingTen">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                比较运算符
+                </a>
+            </h4>
+        </div>
+        <div id="collapseTen" class="panel-collapse collapse"  aria-labelledby="headingTen">
+            <div class="panel-body">
+                <pre>
+                     运算符包括四类：1.算数运算符;   2.逻辑运算符;     3.比较运算符;   4.赋值运算符;
+
+                    3.比较运算符;
+                        返回值永远都是boolean;
+                              <  >  >=  <= == != === !==
+
+                        console.log(1>2);
+                        console.log(1<2);
+                        console.log(1<1);//1不小于1,   1和1相等;
+
+                        console.log(111 == "111");//值相等，数据类型不相等;
+                        console.log(111 != "111");//false
+
+                        console.log(111 === "111");//值相等，数据类型不相等;
+                        console.log(111 !== "111");//true；
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" id="headingTen-1">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseTen-1" aria-expanded="false" aria-controls="collapseTen-1">
+                    赋值运算符
+                </a>
+            </h4>
+        </div>
+        <div id="collapseTen-1" class="panel-collapse collapse" aria-labelledby="headingTen-1">
+            <div class="panel-body">
+                <pre>
+                    运算符包括四类：1.算数运算符;   2.逻辑运算符;     3.比较运算符;   4.赋值运算符;
+
+                    4.赋值运算符;
+                        赋值运算都是最后进行的；
+                        =   +=   -=   *=   /=   %=
+
+                    = 是赋值的意思;
+                        var num  = 111;
+                        num = 222;
+                        console.log(num);
+
+                        +=   -=   *=   /=   %=
+                             += :   num = num + 值;
+                        var num = 10;
+                         += :   num = num + 10;
+                        console.log(num+=10);//20
+                        console.log(num-=10);//0
+                        console.log(num*=10);//100
+                        console.log(num/=10);//1
+                        console.log(num%=3);//1
+                </pre>
+            </div>
+        </div>
+    </div>
+        <div class="panel panel-default">
+            <div class="panel-heading"  id="headingTen-2">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseTen-2" aria-expanded="false" aria-controls="collapseTen-2">
+                       运算符的自增自减的高级用法
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTen-2" class="panel-collapse collapse"  aria-labelledby="headingTen-2">
+                <div class="panel-body">
+                   <pre>
+                       ++ 和 -- : 1.就是让数值自增1和自减1;
+                        ++ 和 -- : 2.在变量前和在变量后意义不同;
+
+                        2.在变量前和在变量后意义不同;
+                            ++在前先自增(在前面着急++),后运算;++在后先运算，在自增;
+
+                            var a = 1;
+                            console.log(++a + 1);//++在前先自增,后运算；
+                            console.log(a++ + 1);//++在后先运算，在自增;
+                            console.log(a);
+
+                        面试题：
+                            var a = 1; var b = ++a + ++a; console.log(b);
+                            var a = 1; var b = a++ + ++a; console.log(b);
+                            var a = 1; var b = a++ + a++; console.log(b);
+                            var a = 1; var b = ++a + a++; console.log(b);
+                   </pre>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading"  id="headingTen-3">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseTen-3" aria-expanded="false" aria-controls="collapseTen-3">
+                        运算符优先级
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTen-3" class="panel-collapse collapse" aria-labelledby="headingTen-3">
+                <div class="panel-body">
+                   <pre>
+                        1. ()  优先级最高
+                        2. 一元运算符  ++   --   !
+                        3. 算数运算符  先*  /  %   后 +   -
+                        4. 关系运算符  >   >=   <   <=
+                        5. 相等运算符   ==   !=    ===    !==
+                        6. 逻辑运算符 先&&   后||
+                        7. 赋值运算符
+
+                         练习1：
+                            alert(4 >= 6 || '人' != '阿凡达' && !(12 * 2 == 144) && true);
+                                   4 >= 6 || '人' != '阿凡达' && !false && true
+                                   false || true && true && true
+                                   false || true
+                                   true
+
+                         练习2：
+                            var num = 10;
+                            alert(5 == num / 2 && (2 + 2 * num).toString() === '22')
+                            5 == num / 2 && '22' === '22'
+                            5 == 5 && '22' === '22'
+                            true && true
+                            true
+                   </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<h3><a href="#" id="j-8">流程控制(判断和循环)</a></h3>
+    <div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">表达式和语句</a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">判断分支语句</a></li>
+            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">循环语句</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <pre>
+                     1.表达式一个式子或者一个结果;
+                      var num = 1;
+                      "abc";
+                      true;
+                      1>3
+                      !!5;
+                      111 === "111";
+
+                    2.语句，就是程序的控制类型;
+                        判断语句（2种）
+                        循环语句（3种）
+
+                    流程(程序)控制：三类;(顺序结构，选择结构，循环结构)
+
+                    1.顺序结构(从上往下，从左往右，从内到外)
+                         alert(111);
+                         alert(222);
+                         alert(333);
+                         alert(111);alert(222);alert(333);
+                         console.log(alert(111));
+
+                    2.选择结构（分支结构）;(2个)
+                        if语句和switch语句;
+
+                    3.循环结构;(3个)
+                        while语句和do...while语句和for语句;
+                </pre>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="profile">
+                    <div class="panel-group" id="accordion-2" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" id="headingTen-4">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapseTen-4" aria-expanded="false" aria-controls="collapseTen-4">
+                                        if语句使用方法
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTen-4" class="panel-collapse collapse"  aria-labelledby="headingTen-4">
+                                <div class="panel-body">
+                                    <pre>
+                                    选择结构（分支结构）;(2个)
+                                    if语句和switch语句;
+
+                                    if语句有4种用法;
+
+                                    第一种用法
+                                        if(false){//()里面的值如果是true，那么就会执行{}里面的逻辑代码，如果是false就不会执行;
+                                            alert(111);
+                                        }
+
+                                    第二种用法
+                                    if语句()里面有强制类型判断：只判断，不会重新赋值;
+                                        var num = 0;
+                                        if(num){//如果这里是true，就执行111，否则就执行222；
+                                            alert(111);
+                                        }else{
+                                            alert(222);
+                                        }
+                                        alert(num);
+
+                                    第三种用法
+                                        var num = 666;
+                                        if(num == 111){
+                                            alert(111);
+                                        }else if(num == 222){
+                                            alert(222);
+                                        }else if(num == 333){
+                                            alert(333);
+                                        }else if(num == 444){
+                                            alert(444);
+                                        }else if(num == 555){
+                                            alert(555);
+                                        }else{
+                                            alert("不是12345");
+                                        }
+
+                                    第四种用法
+                                        var num = 111;
+                                        if(num == 111){
+                                            alert(111);
+                                        }else if(num == 222){
+                                            alert(222);
+                                        }else if(num == 333){
+                                            alert(333);
+                                        }
+
+                                    注意：if语句()里面有强制类型判断：只判断，不会重新赋值;
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTen-5">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapseTen-5" aria-expanded="false" aria-controls="collapseTen-5">
+                                        if语句案例
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTen-5" class="panel-collapse collapse"  aria-labelledby="headingTen-5">
+                                <div class="panel-body">
+                                  <pre>
+                                    1.求两个数的最大数
+                                    2.判断一个数是偶数还是奇数
+                                    3.分数转换，把百分制转换成ABCDE   <60  E  60-70 D  70-80 C  80-90 B  90 - 100 A
+                                    4.判断一个年份是闰年还是平年，闰年：能被4整除，但不能被100整除的年份 或者 能被400整除的年份
+
+                                    1.求两个数的最大数
+                                    var num1 = 111;
+                                    var num2 = 222;
+                                    if(num1>num2){
+                                        alert(num1);
+                                    }else{
+                                        alert(num2);
+                                    }
+
+                                    2.判断一个数是偶数还是奇数
+                                        从页面获取内容;  prompt(提示内容，默认值);获取到的内容为字符串;
+                                    var str = prompt("请输入：","输入的内容必须为数值，而且不能为小数");
+                                    var num = Number(str);//   -*/   parseInt();
+                                    //判断：如果莫于2等于0就是偶数；否则就是奇数；
+                                    if(num%2 == 0){
+                                        alert("偶数");
+                                    }else{
+                                        alert("奇数");
+                                    }
+
+                                    confirm();弹窗，获取boolean值;true/false;
+                                    var bool = confirm("你今年是否年满18周岁？？？");
+                                    console.log(bool);
+
+                                    3.分数转换，把百分制转换成ABCDE   <60  E  60-70 D  70-80 C  80-90 B  90 - 100 A
+                                    var num = 59;
+                                    if(num<=100 && num>=90){
+                                        alert("A");
+                                    }else if(num<90 && num>=80){
+                                        alert("B");
+                                    }else if(num<80 && num>=70){
+                                        alert("C");
+                                    }else if(num<70 && num>=60){
+                                        alert("D");
+                                    }else{
+                                        alert("E");
+                                    }
+
+                                    简化
+                                    var num = 59;
+                                    if(num<=100 && num>=90){//if语句尽量从大到小判断;
+                                        alert("A");
+                                    }else if(num>=80){
+                                        alert("B");
+                                    }else if(num>=70){
+                                        alert("C");
+                                    }else if(num>=60){
+                                        alert("D");
+                                    }else{
+                                        alert("E");
+                                    }
+
+                                    错误//从小到大判断，尽量详细
+                                    var num = 59;
+                                    if(num>=60){//if语句尽量从大道小判断;
+                                        alert("A");
+                                    }else if(num>=70){
+                                        alert("B");
+                                    }else if(num>=80){
+                                        alert("C");
+                                    }else if(num>=90){
+                                        alert("D");
+                                    }else{
+                                        alert("E");
+                                    }
+
+                                    4.判断一个年份是闰年还是平年，闰年：能被4整除，但不能被100整除的年份 或者 能被400整除的年份
+                                            四年一闰，百年不闰，四百年再闰。
+                                    var year = 3;//平年
+                                    var year = 4;//闰年
+                                    var year = 100;//平年
+                                    var year = 400;//闰年
+                                    四年一闰，百年不闰，四百年再闰。
+                                    if((year%4==0 && year%100 != 0) || year%400 == 0){
+                                        alert("闰年");
+                                    }else{
+                                        alert("平年");
+                                    }
+                                  </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTen-6">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapseTen-6" aria-expanded="false" aria-controls="collapseTen-6">
+                                        三元运算符
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTen-6" class="panel-collapse collapse"  aria-labelledby="headingTen-6">
+                                <div class="panel-body">
+                                  <pre>
+                                      三元运算符是if...else...的简化版;简单操作可以用三元运算符;
+                                      A?B:C;    A如果是true，就返回B，如果是false就返回C;
+
+                                      var num = 1>2?1:2;
+                                      alert(num)
+
+                                      是否年满18岁
+                                        var age = 2;
+                                        var str = age>=18?"成年":"未成年";
+                                        alert(str);
+
+                                      从两个数中找最大值
+                                        var num1 = 111;
+                                        var num2 = 222;
+                                        var max = num1>num2?num1:num2;
+                                        alert(max);
+                                  </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTen-7">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapseTen-7" aria-expanded="false" aria-controls="collapseTen-7">
+                                        switch语句使用方法
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTen-7" class="panel-collapse collapse"  aria-labelledby="headingTen-7">
+                                <div class="panel-body">
+                                  <pre>
+                                      选择结构（分支结构）;(2个)
+                                            if语句和switch语句;
+
+                                        switch语句;
+                                        var str = "111";
+                                        var str = 111;
+
+                                        //switch语句在多判断的时候比if..else if...快一些;
+                                        switch (str){//1.switch语句底层是 === 判断;
+                                            case 111:
+                                                alert(111);
+                                                break;//2.不写break会出现穿透,下一个case不判断直接执行;
+                                            case 222:
+                                                alert(222);
+                                              break;
+                                            case 333:
+                                                alert(333);
+                                                break;
+                                            default://3.写不写都行;
+                                                alert("不是123");
+                                                break;//写不写都行;
+                                        }
+
+                                        用switch语句判断范围;
+                                        var num = 88;
+                                        switch (true){//判断是否等于true；
+                                            case num>=90://1.从大到小 判断;
+                                                alert("90+");
+                                                break;
+                                            case num>=80:
+                                                alert("80+");
+                                                break;
+                                            case num>=70:
+                                                alert("70+");
+                                                break;
+                                            default :
+                                                alert("70-");
+                                        }
+                                  </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTen-8">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapseTen-8" aria-expanded="false" aria-controls="collapseTen-8">
+                                        switch语句案例
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTen-8" class="panel-collapse collapse"  aria-labelledby="headingTen-8">
+                                <div class="panel-body">
+                                  <pre>
+                                        1.显示月份对应的四季;
+                                        2.素质教育（把分数变成ABCDE）千万不要写100个case哟
+
+                                        1.显示月份对应的四季;
+                                        var month = 2;
+
+                                        //switch判断月份对应的季节
+                                        switch (month){
+                                            case 1:
+                                            case 2:
+                                            case 3:
+                                                alert("春");
+                                                break;
+                                            case 4:
+                                            case 5:
+                                            case 6:
+                                                alert("夏");
+                                                break;
+                                            case 7:
+                                            case 8:
+                                            case 9:
+                                                alert("秋");
+                                                break;
+                                            case 10:
+                                            case 11:
+                                            case 12:
+                                                alert("冬");
+                                        }
+
+                                        2.素质教育（把分数变成ABCDE）千万不要写100个case哟
+                                        方法1：
+                                        var num = 69;
+
+                                       通过范围确定值;
+                                        switch (true){
+                                            case num<=100&&num>=90:
+                                                alert("A");
+                                                break;
+                                            case num>=80:
+                                                alert("B");
+                                                break;
+                                            case num>=70:
+                                                alert("C");
+                                                break;
+                                            case num>=60:
+                                                alert("D");
+                                                break;
+                                            default :
+                                                alert("E");
+                                        }
+
+                                        方法2：
+                                            思路：把值缩小10倍；然后取整优秀就是10和9；B: 8;  C: 7....
+                                        var num = 77;
+                                        //缩小10倍然后取整，只要十位数上面的值;
+                                        num = parseInt(num/10);
+                                        //10和9: A；  8：B;    7:C.....
+                                        switch (num){
+                                            case 10:
+                                            case 9:
+                                                alert("A");
+                                                break;
+                                            case 8:
+                                                alert("B");
+                                                break;
+                                            case 7:
+                                                alert("C");
+                                                break;
+                                            case 6:
+                                                alert("D");
+                                                break;
+                                            default :
+                                                alert("E");
+                                        }
+                                  </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="messages">
+                <div class="panel-group" id="accordion-3" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTen-9">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen-9" aria-expanded="true" aria-controls="collapseTen-9">
+                                     循环语句-while语句使用方法
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTen-9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen-9">
+                            <div class="panel-body">
+                               <pre>
+                                     循环结构;(3个)
+                                    while语句和do...while语句和for语句;
+
+                                    while语句;
+
+                                    死循环-没有跳出条件，一般无意义！
+                                        while(true){
+                                            console.log(1);
+                                        }
+
+                                    正规用法
+                                        var i = 1;
+                                        while(i<10){//当i == 10的时候，i<10就是false了就进不去了
+                                            console.log(i);
+                                            i++;
+                                        }
+
+                                    跳出的时候i的值；
+                                         alert(i);
+                               </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTen-10">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-3" href="#collapseTen-10" aria-expanded="false" aria-controls="collapseTen-10">
+                                    while语句案例
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTen-10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen-10">
+                            <div class="panel-body">
+                               <pre>
+                                    循环结构;(3个)
+                                    while语句和do...while语句和for语句;
+
+                                    案例
+                                    1.打印1-100之间的所有数字
+                                    2.打印1-100之间的所有数字之和
+                                    3.打印100以内7的倍数
+                                    4.打印100以内所有偶数
+                                    5.打印100以内所有偶数的和
+
+                                   1.打印1-100之间的所有数字
+                                    var i = 1;
+                                    while(i<=100){
+                                        console.log(i);
+                                        i++;//如果不加加就是死循环;
+                                    }
+
+                                    2.打印1-100之间的所有数字之和
+                                    var i = 1;
+                                    //计数器思想；
+                                    var sum = 0;
+
+                                    while(i<=100){
+                                        sum += i;
+                                        i++;
+                                    }
+
+                                    alert(sum);
+
+                                    3.打印100以内7的倍数
+                                    var i=1;
+                                    while(i<=100){
+                                        //7的倍数：能够整除7；莫于7===0；
+                                        if(i%7 == 0){
+                                            console.log(i);
+                                        }
+                                        i++;
+                                    }
+
+                                    4.打印100以内所有偶数
+                                    var i=1;
+                                    while(i<=100){
+                                        if(i%2 == 0){
+                                            console.log(i);
+                                        }
+                                        i++;//i自增，否则就是死循环；
+                                    }
+
+                                    5.打印100以内所有偶数的和
+                                    var i=1;
+                                    var evenSum = 0;
+
+                                    while(i<=100){
+                                        //判断：能够被2整除才累加;
+                                        if(i%2 == 0){
+                                            evenSum += i;
+                                        }
+                                        i++;
+                                    }
+                                    console.log(evenSum);
+                               </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTen-11">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-3" href="#collapseTen-11" aria-expanded="false" aria-controls="collapseTen-11">
+                                    循环语句-do...while语句使用方法
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTen-11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen-11">
+                            <div class="panel-body">
+                                <pre>
+                                    循环结构;(3个)
+                                    while语句和do...while语句和for语句;
+
+                                    do...while语句;(和while类似,一定会执行一次)
+
+                                    死循环: 没有跳出条件，就没有意义;
+                                    do{
+                                        console.log(1);
+                                    }while(true);
+
+                                    do...while的正规用法
+
+                                    定义变量在do之外；
+                                    var i = 1;
+                                    do{//do里面的代码第一次执行不需要判断，从第二次开始，才需要判断；
+                                        console.log(i);
+                                        i++;
+                                    }while(i<=10);
+
+                                    11的时候跳出
+                                    alert(i);
+                                </pre>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTen-12">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-3" href="#collapseTen-12" aria-expanded="false" aria-controls="collapseTen-12">
+                                    do...whlie语句案例
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTen-12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen-12">
+                            <div class="panel-body">
+                               <pre>
+                                   循环结构;(3个)
+                                   while语句和do...while语句和for语句;
+
+                                    案例
+                                   1.求100以内所有3的倍数的和
+                                   2.使用do-while循环：输出询问“我爱你，嫁给我吧？”，选择“你喜欢我吗？(y/n):"，如果输入为y则打印”我们形影不离“，若输入为n,则继续询问
+
+                                    1.求100以内所有3的倍数的和;
+                                    var i = 1;
+                                    var sum = 0;
+                                    do{
+                                        //判断：能被3整除才有资格累加；
+                                        if(i%3 == 0){
+                                            sum += i;
+                                        }
+                                        i++;//没有就是死循环；
+                                    }while(i<=100);
+
+                                    alert(sum);
+                                    alert(5050/3);
+
+                                    2.程序员求婚;
+                                    do{
+                                        var bool = confirm("翠花儿，我老爱你啦，嫁给我吧...");
+                                        //判断：如果是true,翠花儿就同意了，那么臭不要脸一点儿带她去三亚...；
+                                        //判断：如果是false,翠花儿不同意，那么臭不要脸一点儿一直弹...；
+                                        if(bool == true){
+                                            alert("太好了，我们去三亚吧，听说那里结婚照3折优惠，我去定火车票......");
+                                        }
+                                    }while(!bool);//点击同意，就要变成false，不在循环；点击不同意，就要变成true，继续循环;
+
+                                    笔记中的案例
+                                    do{
+                                        var str = prompt("翠花儿，嫁给我吧...","y/n  :  y是同意，是不同意;")
+                                        //判断：如果是y，就不要在弹窗了，如果不是y，继续弹窗
+                                        if(str == "y"){
+                                            alert("欧耶，我成功了！！！");
+                                        }
+                                    }while(str !== "y");
+                               </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTen-13">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-3" href="#collapseTen-13" aria-expanded="false" aria-controls="collapseTen-13">
+                                    循环语句-for语句使用
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTen-13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen-13">
+                            <div class="panel-body">
+                                <pre>
+                                    3.循环结构;(3个)
+                                    while语句           不指定次数;
+                                    do...while语句      势必执行一次;
+                                    for语句             指定次数;
+
+                                    for语句
+                                    死循环: 没有跳出条件，就没有意义；
+                                    for(;;){
+                                        console.log(1);
+                                    }
+
+                                    正规用法
+                                    for(var i=1;i<=3;i++){//变量的声明，条件控制，变量自增；
+                                        //只做逻辑控制;
+                                        console.log(i);
+                                    }
+
+                                    //特殊用法
+                                    var i = 1;
+                                    for(;i<=10;i+=2){
+                                        console.log(i);
+                                    }
+
+                                    //跳出时候的值；
+                                    alert(i);
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTen-14">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-3" href="#collapseTen-14" aria-expanded="false" aria-controls="collapseTen-14">
+                                    for循环语句案例
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTen-14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen-14">
+                            <div class="panel-body">
+                                <pre>
+                                    循环结构;(3个)
+                                    while语句           不指定次数;
+                                    do...while语句      势必执行一次;
+                                    for语句             指定次数;
+
+                                    for案例
+                                    1.打印1-100之间所有数
+                                    2.求1-100之间所有数的和
+                                    3.求1-100之间所有数的平均值
+                                    4.求1-100之间所有偶数的和
+                                    5.同时求1-100之间所有偶数和奇数的和
+
+                                    1.打印1-100之间所有数
+                                    for(var i=1;i<=100;i++){
+                                        console.log(i);
+                                    }
+
+                                    2.求1-100之间所有数的和
+                                    var sum = 0;
+                                    for(var i=1;i<=100;i++){
+                                        sum += i;
+                                    }
+                                    alert(sum);
+
+                                    3.求1-100之间所有数的平均值
+                                    var sum = 0;
+                                    for(var i=1;i<=100;i++){
+                                        sum+=i;
+                                    }
+
+                                    var avg = sum/(i-1);//i是跳出条件时的值;
+                                    alert(avg);
+
+                                    4.求1-100之间所有偶数的和
+                                    var evenSum = 0;
+                                    for(var i=1;i<=100;i++){
+                                        //判断：能莫于2等于0才有资格累加
+                                        if(i%2 == 0){
+                                            evenSum += i;
+                                        }
+                                    }
+                                    alert(evenSum);
+
+                                    5.同时求1-100之间所有偶数和奇数的和
+                                    var evenSum = 0;
+                                    var oddSum = 0;
+                                    for(var i=1;i<=100;i++){
+                                        //判断：奇数还是偶数
+                                        if(i%2 == 0){
+                                            evenSum += i;
+                                        }else{
+                                            oddSum += i;
+                                        }
+                                    }
+                                    alert(evenSum);
+                                    alert(oddSum);
+
+
+                                     求1-100之间所有数的乘积
+                                    求1-100之间所有奇数的和
+                                    计算1-100之间能3整除的数的和
+                                    计算1-100之间不能被7整除的数的和
+                                    // 讲解思路。如果不会写程序，可以先把数学公式准备好
+                                    重点1.本金10000元存入银行，年利率是千分之三，每过1年，将本金和利息相加作为新的本金。计算5年后，获得的本金是多少？
+
+                                    求1-100之间所有数的乘积
+                                    var product = 1;
+                                    for(var i=1;i<=5;i++){
+                                        product*=i;
+                                    }
+                                    alert(product);
+
+                                    讲解思路。如果不会写程序，可以先把数学公式准备好
+                                    重点1.本金10000元存入银行，年利率是千分之三，每过1年，将本金和利息相加作为新的本金。计算5年后，获得的本金是多少？
+                                        第二年的本金 = 当年的本金+当年的利息;(for循环周而复始的运算，运算5次)
+                                    var money = 10000;
+                                    for(var i=1;i<=5;i++){
+                                        //第二年的本金 = 当年的本金+当年的利息;
+                                        money = money + money*0.003;
+                                    }
+                                    alert(money);
+
+                                    优化
+                                    var money = 10000;
+                                    var rate = 0.003;
+                                    for(var i=1;i<=5;i++){
+                                        //第二年的本金 = 当年的本金+当年的利息;
+                                            //   money = money + money*0.003;
+                                            //   money = money*(1+0.003);
+                                            //   money *= (1+0.003);
+                                        money *= 1+rate;
+                                    }
+                                    alert(money);
+
+
+                                    for案例
+                                    1.打印正方形
+                                    2.打印直角三角形
+                                    3.打印九九乘法表
+
+                                    1.打印正方形(   document.write()   )
+
+                                    像这样的正方形，来3个；
+                                    for(var k=1;k<=3;k++){
+                                        //像这样一行一行的五角星给我来9行
+                                        for(var j=1;j<=9;j++){//外循环控制行数
+                                            //用for打印9个☆
+                                            for(var i=1;i<=9;i++){//内循环控制列数
+                                                document.write("☆");
+                                            }
+                                            //打印九个以后直接换行
+                                            document.write("&lt;br&gt;");
+                                        }
+                                        //打印一个正方形后换行
+                                        document.write("&lt;br&gt;");
+                                    }
+
+                                    2.打印直角三角形
+
+                                    正方形;
+                                    for(var j=1;j<=9;j++){
+                                        //转换三角形：每行个数不同;  第一行一个；第二行两个，第三行三个....
+                                            //j就代表着行数，每一行由i决定打印多少，j直接决定打印的个数;
+                                        for(var i=1;i<=j;i++){
+                                            document.write("☆");
+                                        }
+                                        document.write("&lt;br&gt;");
+                                    }
+
+                                    3.打印九九乘法表
+                                    for(var i = 1;i<=9;i++){
+                                        for(var j=1;j<=i;j++){
+                                            把☆改成久久乘法表的内容；
+                                                        前两个值由i和j决定；后面的值是算出来的;
+                                            document.write(j+"*"+i+"="+i*j+"&nbsp ;");
+                                        }
+                                        document.write("&lt;br&gt;");
+                                    }
+
+                                    在一个字符串中加入另外一个字符串;
+                                    var str = "bbb";
+                                    console.log("aaa"+str+"ccc");//断断++；
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTen-15">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-3" href="#collapseTen-15" aria-expanded="false" aria-controls="collapseTen-15">
+                                    循环语句-break和continue
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTen-15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen-15">
+                            <div class="panel-body">
+                               <pre>
+                                    break:          直接跳出循环;(跳出大括号)
+                                    continue:       立即跳出当前循环，继续下一次循环（跳到i++的地方）
+
+                                    求整数1～100的累加值，但要求碰到个位为3的数则停止累加
+                                    求整数1～100的累加值，但要求跳过所有个位为3的数
+
+                                    求整数1～100的累加值，但要求碰到个位为3的数则停止累加
+                                        var sum = 0;
+                                        for(var i=1;i<=100;i++){
+                                            //个位不为3，就累加，为3就跳出；
+                                            if(i%10 == 3){
+                                                break;
+                                            }else{
+                                                sum += i;
+                                            }
+                                        }
+
+                                        alert(sum);
+
+                                    求整数1～100的累加值，但要求跳过所有个位为3的数
+                                        var sum = 0;
+                                        for(var i=1;i<=20;i++){
+                                            if(i%10 == 3){
+                                                continue;
+                                            }else{
+                                                sum += i;
+                                            }
+                                        }
+                                        alert(sum);
+
+                                        1.while死循环求和;(break让死循环意义)
+                                        var sum = 0;
+                                        var i=1;
+                                        while(true){
+                                            sum+=i;
+                                            i++;
+                                            //如果i==101;就应该跳出了...
+                                            if(i==101){//跳出条件
+                                                break;
+                                            }
+                                        }
+                                        alert(sum);
+
+                                        2.程序员求婚死循环;
+                                        do{
+                                            var bool = confirm("嫁给我吧...");
+                                            //如果是true，就不弹窗了，跳出循环;
+                                            if(bool){//bool值没有必要和true进行比较；
+                                                alert("欧耶，我成功了！！！");
+                                                break;//跳出循环
+                                            }
+                                        }while(true);//无论点击哪个都会继续弹窗;
+                               </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTen-16">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-3" href="#collapseTen-16" aria-expanded="false" aria-controls="collapseTen-16"  style="color:red;">
+                                    斐波那契数列
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTen-16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen-16">
+                            <div class="panel-body">
+                              <pre>
+                                    有个人想知道，一年之内一对兔子能繁殖多少对？于是就筑了一道围墙把一对兔子关在里面。
+                                          已知一对兔子每个月可以生一对小兔子，而一对兔子从出生后第3个月起每月生一对小兔子。
+                                          假如一年内没有发生死亡现象，那么，一对兔子一年内（12个月）能繁殖成多少对？
+                                              （兔子的规律为数列: 1,1,2,3,5,8,13,21,34,55,89,144...）
+
+                                        思路1：第一项和第二项无法计算;只能通过变量定义;
+                                        思路2：从第三项开始，当前项等于前两项之和;(n3=n1+n2;n4=n3+n2,n5=n4+n3...)
+                                                通过for循环，把n1和n2这两个值重新赋值;
+                                            思路：两个变量的和赋值给后一个，然后在把后一个原有的值，赋值给前一个;
+
+                                    //定义前两个变量
+                                    var n1 = 1;
+                                    var n2 = 1;
+                                    //for循环：两个变量的和赋值给后一个，然后在把后一个原有的值，赋值给前一个;
+                                        //注意：前两项不需要循环，因为这两个变量是直接定义的，不需要计算；
+                                    for(var i=3;i<=12;i++){
+                                        //把后面的变量的值存储好
+                                        var temp = n2;
+                                        //两个变量的和赋值给后一个；
+                                        n2 = n1+n2;
+                                        //把存储好的变量赋值给前一个
+                                        n1 = temp;
+                                    }
+                                    alert(n2);
+                              </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<script src="assets/jquery/jquery.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>

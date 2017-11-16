@@ -147,8 +147,8 @@
 				</div>
         <div id='readme' style='width:70%;margin-left:20%;'>
           	<article class='markdown-body'>
-            	<p>#
-<a href="../index.html"></a></p>
+            	<h1 id="-">首页</h1>
+<p><a href="../index.html">首页</a></p>
 <h1 id="-">函数</h1>
 <h2 id="-">函数的定义和使用</h2>
 <pre><code class="lang-JavaScript">    什么是函数：可以重复执行的代码块！
@@ -883,6 +883,1064 @@
         var a = 1;
         console.log(a);
 </code></pre>
+<h1 id="-">函数的进阶</h1>
+<h2 id="-">函数也是对象</h2>
+<pre><code class="lang-JavaScript">    函数的定义有三种方法：
+
+    //1.字面量: 函数声明提升可以让任何位置都可以访问到这个函数;
+    function fn1(){
+        console.log(&quot;我是第一种!&quot;);
+    }
+
+    //2.匿名函数赋值（函数表达式）: 使用函数必须在定义函数之后;
+    var fn2 = function (){
+        console.log(&quot;我是第二种!&quot;);
+    }
+
+    3.构造函数法：函数也是对象！(函数都是Function构造函数实例化出来的对象)
+        Function和Array/Date/String...  都是内置对象;
+    var fn3 = new Function(&quot;num1&quot;,&quot;num2&quot;,&quot;console.log(num1+num2)&quot;);
+    console.log(fn3);
+
+    fn3(111,222);
+    console.log(typeof fn3);
+
+    函数也是对象的一种：可以定义属性和方法;
+            函数也有自己的属性和方法：属性：name/prototype/__proto__
+            函数也有自己的属性和方法：方法：call()/apply()/bind();
+    fn3.name = &quot;fn3&quot;;
+    fn3.age = &quot;1周岁&quot;;
+    fn3.sayHi = function () {
+        console.log(&quot;我是fn3！！！&quot;)
+    }
+
+    console.log(fn3.name);//函数名是只读的，不能写入;
+    console.log(fn3.age);//可以自定义属性;
+    fn3.sayHi();//可以自定义方法
+</code></pre>
+<h2 id="-">函数的调用方法</h2>
+<pre><code class="lang-JavaScript">   函数的调用方法：
+    - 1.普通函数
+    - 2.构造函数
+    - 3.对象方法
+
+        - 1.普通函数
+    fn1();
+    function fn1(){
+        console.log(1);
+    }
+
+        - 2.构造函数
+    var aaa = new Stu();
+    console.log(aaa);
+    function Stu(){
+        this.name = &quot;222&quot;;
+    }
+
+        - 3.对象方法
+    var t1 = new Teacher();
+    t1.teach();
+    function Teacher(){
+        this.teach = function () {
+            console.log(&quot;扶我起来，我还可以在敲一段......&quot;)
+        }
+    }
+
+    其他：
+    setInterval(function () {
+        console.log(1);
+    },1000)
+
+    document.addEventListener(&quot;click&quot;, function () {
+        console.log(2);
+    })
+    document.onclick();
+</code></pre>
+<h2 id="this-">this的指向</h2>
+<pre><code class="lang-JavaScript">    函数中this的指向问题：
+
+    普通函数调用        window
+    构造函数调用        实例对象
+    原型方法中          this:实例对象
+    对象方法调用        该方法所属对象（实例对象）
+    事件绑定方法        绑定事件对象(事件源)
+    定时器函数          window
+
+    普通函数调用        window
+    fn1();
+    function fn1(){
+        console.log(this);
+    }
+    构造函数调用        实例对象
+    var bbb = null;
+    var aaa = new Stu(&quot;张三&quot;);
+    console.log(aaa)
+    console.log(aaa === bbb)//同一片内存空间；
+    function Stu(name){
+        this.name = name;
+        console.log(this);
+        bbb = this;
+    }
+
+    原型方法中          this:实例对象
+    function Stu(){}
+    //原型方法定义，没有变量声明提升;
+    Stu.prototype.sayHi = function () {
+        console.log(this);
+        bbb = this;
+    }
+
+    var bbb = null;
+    var aaa = new Stu();
+    aaa.sayHi();
+    console.log(aaa);
+    console.log(aaa === bbb);
+
+    对象方法调用        该方法所属对象（实例对象）
+    var bbb = null;
+    var aaa = new Stu();
+    aaa.sayHi();
+    console.log(aaa);
+    console.log(aaa === bbb);
+    function Stu(){
+        this.sayHi = function () {
+            bbb = this;
+            console.log(this);
+        }
+    }
+
+    事件绑定方法        绑定事件对象(事件源)
+    document.onclick = function () {
+        console.log(this);
+    }
+
+    定时器函数          window
+    var timer = setInterval(function () {
+        console.log(this);
+    },1000);
+</code></pre>
+<h2 id="this-call-apply-bind-">this的指向可以改变（call-apply-bind）</h2>
+<pre><code class="lang-JavaScript">   函数中this的指向可以改变;
+        利用函数中的call()/apply()/bind();
+
+    call();是任何函数都有的内置方法;  作用就是把this从原来的指向改为指定项;
+        用法;   函数.call(指定项，参数1，参数2.....);  直接执行;
+
+    var obj = new Object();
+    obj.name = &quot;用于测试改变this&quot;;
+    (function(){
+        console.log(this);
+    }).call(obj);
+
+    给文档绑定点击事件
+    document.onclick = function () {
+        console.log(&quot;很多逻辑。。。&quot;);
+        console.log(this);
+        console.log(&quot;很多逻辑。。。&quot;);
+    }
+
+    //onmouseover的时候也调用documnet.onclick的逻辑，但是this要指向别处;
+    document.onmouseenter = function () {
+        var obj = new Object();
+        obj.name = &quot;我是学生！&quot;
+        document.onclick.call(obj);
+    }
+
+    从今以后就不能在说能用this都用this了！
+</code></pre>
+<h2 id="-this">改变this</h2>
+<pre><code class="lang-javascript">   //for循环绑定事件的时候函数中一般不用i，用this；
+    var liArr = document.getElementsByTagName(&quot;li&quot;);
+    for(var i=0;i&lt;liArr.length;i++){
+        liArr[i].onclick = function () {
+            console.log(this);
+        }
+
+       /* 闭包
+        liArr[i].onclick = function (aaa) {
+            return function () {
+                console.log(liArr[aaa]);
+            }
+        }(i);*/
+    }
+
+    /*function Stu(name,age){
+        this.name = name;
+        this.age = age;
+    }*/
+    var stu1 = new Stu(&quot;真三&quot;,18);
+
+    liArr[0].onclick();//第一个直接被绑定;
+    liArr[0].onclick.call(stu1);
+</code></pre>
+<h2 id="-">数组中函数的调用</h2>
+<pre><code class="lang-javascript">     var arr = [
+        function () {
+            console.log(&quot;我是数组中的第1个&quot;);
+        },
+        function () {
+            console.log(&quot;我是数组中的第2个&quot;);
+        },
+        function () {
+            console.log(&quot;我是数组中的第3个&quot;);
+        }
+    ];
+
+    执行数组中的元素;（第一种）
+    arr[0]();
+    for(var i=0;i&lt;arr.length;i++){
+        (arr[i])();
+    }
+
+    执行数组中的元素;（第二种）
+    arr.forEach(function (ele,index,array) {
+        ele();//推荐
+        array[index]();
+        arr[index]();
+    })
+</code></pre>
+<h2 id="-this-call-apply-bind-">改变this的指向（call-apply-bind）</h2>
+<pre><code class="lang-javascript">     call()/apply()/bind()
+        调用者：函数;
+        参数：  要改变this的指向的对象;  调用者需要的参数...
+        功能：  执行函数/返回函数并改变this的指向
+        返回值：undefined、并改变this之后的函数;
+
+    1.call();
+        调用者：函数;
+        参数：  要改变this的指向的对象;  调用者需要的参数...(单个传递)
+        功能：  执行函数函数并改变this的指向
+        返回值：undefined；
+            this的指向对象不写或者写null都指向window；
+
+    function fn(num1,num2){
+        console.log(num1+num2);
+        console.log(this);
+    }
+
+    var aaa = fn(111,222);
+    fn.call(document,333,666);
+    fn.call(null,333,666);      //this的指向对象不写或者写null都指向window；
+    fn.call();
+    console.log(aaa)
+
+    2.apply();
+        调用者：函数;
+        参数：  要改变this的指向的对象;  调用者需要的参数数组...(数组)
+        功能：  执行函数函数并改变this的指向
+        返回值：undefined；
+            this的指向对象不写或者写null都指向window；
+
+    var bbb = fn.apply(document.body,[333,444]);
+    fn.apply(null,[111,222])
+
+    3.bind();
+        调用者：函数;
+        参数：  要改变this的指向的对象;  调用者需要的参数...(单个传递)
+        功能：  执行函数函数并改变this的指向然后赋值
+        返回值：改变了this指向的一个函数(参数已经设置完毕不能修改了)；
+            this的指向对象不写或者写null都指向window；
+
+    var aaa = fn.bind(document.documentElement,111,222);
+    console.log(aaa);
+    aaa();
+    aaa(222,333);//改变不了里面的变量
+</code></pre>
+<h3 id="-">赋值改变指向问题</h3>
+<pre><code class="lang-javascript">     赋值改变指向问题
+    var num = 111;
+    var obj = {
+        num: 222,
+        fire: function () {
+            console.log(this.num);
+        }
+    };
+
+  /*  var fn = obj.fire;
+    fn();*/
+
+    var fn = obj.fire.bind(obj);
+    fn();
+</code></pre>
+<h2 id="call-apply-bind-">call-apply-bind区别总结</h2>
+<pre><code class="lang-javascript">   call()/apply()/bind()
+
+    总结：1.调用者都是函数，都是为了改变this的指向;
+    总结：2.调用者函数有的执行(call/apply)有的不执行(bind);
+    总结：3.根据传递参数的不同：单个参数传递(call/bind)和数组形式传递(appley);
+
+    总结：4.call()直接调用改变this / bind()返回一个函数实体用于执行;
+</code></pre>
+<h2 id="call-apply-bind-">call-apply-bind使用场景分析</h2>
+<pre><code class="lang-javascript">     call()/bind()
+        什么时候使用？ 想改变this的指向的时候使用;
+        想用逻辑还不想用this，不想用this指的值;
+
+    call();
+        简单数据类型检测：typeof;
+        复杂数据类型检测：A instanceof B;  A是否是B类型
+        用call方法检测复杂数据类型是什么创建出来的！
+    console.log(Object.prototype.toString())
+    console.log(Object.prototype.toString.call(Math))
+    console.log(Object.prototype.toString.call(new Date()))
+    console.log(Object.prototype.toString.call(new Array))
+    function Student(){}
+    //不支持自定义对象验证;
+    console.log(Object.prototype.toString.call(new Student()))
+    console.log(new Student().__proto__.constructor)
+
+    bind();
+        贪吃蛇演示;
+    (function(window){
+        function Game(map){
+            this.food = new Food();
+            this.snake = new Snake();
+            this.map = map;
+        }
+
+        /*把原来贪吃蛇中内部的一个独立方法改为，
+        Game构造函数原型上的一个方法;(因为变成了原型方法，就可以不传递food/snake/map)
+        改用this.food;this.snake;this.map;*/
+        Game.prototype.pressKey = function () {
+            //1.在页面上按键，改变方向;
+            //  var that = this;
+            document.onclick = function () {
+                //根据按钮，改变蛇的deriction的属性值；
+                //this代指函数调用者;document;(我们要的是Game的实体对象;)
+                //2.改变this的指向
+                this.snake.deriction = &quot;left&quot;;
+                //外面已经保存完毕;
+             // that.snake.deriction = &quot;left&quot;;
+            }.bind(this);
+        }
+
+        window.Game = Game;
+    }(window))
+</code></pre>
+<h2 id="-">函数中的几个成员</h2>
+<pre><code class="lang-javascript">    - arguments
+      - 实参伪数组
+    - caller
+      - 函数的调用者
+            全局范围内调用null；
+            另一个函数中调用，就是外面的那个函数;
+    - length
+      - 形参的个数
+    - name
+      - 函数的名称
+
+    window.fn1(111,222,333);
+    function fn1(n1,n2){
+      /*  console.log(fn1.arguments);//内置对象，是fn1的属性: 也可以省略函数名
+                arguments：lenght；实参个数;
+                arguments：callee；整个函数;
+        console.log(arguments);// 也可以省略函数名
+        console.log(fn1.caller);//函数没有调用者是null*/
+        console.log(fn1.length);
+        console.log(fn1.name);
+
+        fn2();
+        function fn2(){
+            console.log(fn2.caller);
+        }
+    }
+
+    arguments.callee.name;//函数名；
+</code></pre>
+<h2 id="-">沙箱</h2>
+<pre><code class="lang-javascript">   沙箱：一个封闭的空间里面可以写自己的逻辑;(模拟块级作用域)
+
+    其他语言中块级作用域内部的内容，执行完毕内存就回收了！
+    {
+        var num = 111;
+        console.log(num);
+    }
+
+    js用匿名函数自调用模拟沙箱模拟块级作用域;
+    第一种
+    (function(num){
+        var num = 111;
+        //把num提升为全局变量
+        window.num = num;
+    }(111))
+
+    //第二种;
+    (function(window){
+        var aaa = 111;
+        var bbb = 222;
+        var ccc = 333;
+    })(window)
+
+    好处1：可以把局部变量变成全局变量很方便;
+    好处2：可以避免全局变量污染;
+    好处3：可以不管全局变量有什么变量名，我直接使用;
+</code></pre>
+<h2 id="-">沙箱案例</h2>
+<pre><code class="lang-javascript">        &lt;div&gt;我是div&lt;/div&gt;
+        &lt;div&gt;我是div&lt;/div&gt;
+        &lt;div&gt;我是div&lt;/div&gt;
+        &lt;p&gt;我是P标签&lt;/p&gt;
+        &lt;p&gt;我是P标签&lt;/p&gt;
+        &lt;p&gt;我是P标签&lt;/p&gt;
+    &lt;script&gt;
+        //声明提升;
+    //    var getEle;
+    //    function getEle(){
+    //
+    //    }
+
+        //全局变量有名字了局部变量还可以设置：
+        var getEle = 111;
+        var setDiv = 222;
+        var setP = 333;
+
+        (function(){
+            //可以放心大胆的使用变量名！
+            function getEle(str){
+                return document.getElementsByTagName(str);
+            }
+
+            function setDiv(arr){
+                for(var i=0;i&lt;arr.length;i++){
+                    arr[i].style.border = &quot;1px solid skyblue&quot;;
+                }
+            }
+
+            function setP(arr){
+                for(var i=0;i&lt;arr.length;i++){
+                    arr[i].style.border = &quot;1px solid yellowgreen&quot;;
+                }
+            }
+
+            //设置div和p的样式
+            setDiv(getEle(&quot;div&quot;));
+            setP(getEle(&quot;p&quot;));
+
+        }())
+
+        console.log(getEle);
+        console.log(setDiv);
+        console.log(setP);
+    &lt;/script&gt;
+</code></pre>
+<h2 id="-">方法的种类</h2>
+<pre><code class="lang-javascript">    方法的位置：
+            1.普通对象方法;
+            2.原型方法;
+            3.模拟静态方法;（把方法绑定到构造函数上）
+
+        function Student(name){
+            this.name = name;
+            //1.普通对象方法;
+            this.sayHi = function () {
+                console.log(&quot;1.普通对象方法;&quot;);
+            }
+        }
+        //2.原型方法;
+        Student.prototype.init = function () {
+            console.log(&quot;2.原型方法;&quot;);
+        }
+        Student.aaa = function () {
+            console.log(&quot;3.模拟静态方法;（把方法绑定到构造函数上）&quot;);
+        }
+
+        var stu = new Student(&quot;张三&quot;);
+        //1.普通对象方法;
+        stu.sayHi();
+        //2.原型方法;
+        stu.init();
+        //3.模拟静态方法;（把方法绑定到构造函数上）
+        Student.aaa();
+</code></pre>
+<h2 id="-3-">函数的高级操作（3种）</h2>
+<pre><code class="lang-javascript">    1.回调函数: 函数当作参数进行传递和调用;
+        2.闭包: 函数作为返回值;
+        3.递归: 函数自己调用自己;
+
+        1.回调函数: 函数当作参数进行传递和调用;
+        setInterval(function () {
+            console.log(111);
+        },1000);
+
+        forEach();sort();document.addEventListener()......
+
+        2.闭包: 函数作为返回值;
+                一般关键在于返回值;
+        function fn(){
+            return function () {
+                console.log(222);
+            }
+        }
+
+        var aaa = fn();
+        aaa();
+
+        3.递归: 函数自己调用自己;
+                递归必须有跳出条件，否则就是死循环
+                省去for循环;
+        var num = 0;
+        function fn(){
+            num++;
+            console.log(num);
+            if(num &lt; 3){
+                fn();
+            }
+        }
+
+        fn();
+</code></pre>
+<h2 id="-">闭包</h2>
+<pre><code class="lang-javascript">     &lt;ul&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+        &lt;li&gt;4&lt;/li&gt;
+        &lt;li&gt;5&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;script&gt;
+
+        1.回调函数: 函数当作参数进行传递和调用;
+        2.闭包: 函数作为返回值;
+        3.递归: 函数自己调用自己;
+
+        2.闭包: 函数作为返回值;
+            很高的概率在于使用函数内部的变量;
+                a.普通变量;
+                b.形参;
+
+        function fn(){
+            return function () {
+                console.log(&quot;体验闭包&quot;);
+            }
+        }
+
+        第一种;
+        var aaa = fn();
+        aaa();//执行了一次闭包，但结果被执行了四次;
+        aaa();//执行了一次闭包，但结果被执行了四次;
+        aaa();//执行了一次闭包，但结果被执行了四次;
+        aaa();//执行了一次闭包，但结果被执行了四次;
+        第二种;
+        fn()();//执行了四次闭包;
+        fn()();//执行了四次闭包;
+        fn()();//执行了四次闭包;
+        fn()();//执行了四次闭包;
+
+        真是体验;(使用函数中的局部变量)
+
+        function fn(){
+            var num = 1;//当做全局变量用
+            //return num;//让外部使用内部的值;是把1返回，让外部使用;
+            return function () {//让函数外部能够使用函数内部的变量
+                return ++num;
+            }
+        }
+
+        第一种;
+        var aaa = fn();
+        console.log(aaa());//2
+        console.log(aaa());//3
+        console.log(aaa());//4
+        console.log(aaa());//5
+
+        第二种：(禁止这样闭包)
+        console.log(fn()());//2;每次执行闭包，num都被初始化为1；
+        console.log(fn()());//2;每次执行闭包，num都被初始化为1；
+        console.log(fn()());//2;每次执行闭包，num都被初始化为1；
+        console.log(fn()());//2;每次执行闭包，num都被初始化为1；
+
+        b.形参;(弹出索引值)
+        var liArr = document.getElementsByTagName(&quot;li&quot;);
+
+        for(var i=0;i&lt;liArr.length;i++){
+            liArr[i].onclick = fn(i);//函数自调用
+        }
+
+        function fn(num) {
+            //匿名函数中的i不能使用;
+            return function () {
+                console.log(num);
+            }
+        }
+
+        测试debug
+        function fnn(){
+            console.log(111);
+            console.log(222);
+            console.log(333);
+        }
+
+    &lt;/script&gt;
+</code></pre>
+<h2 id="-tab-">闭包案例（tab栏）</h2>
+<pre><code class="lang-css">&lt;style&gt;
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 400px;
+            height: 300px;
+            overflow: hidden;
+            margin: 150px auto;
+            border: 1px solid #ccc;
+        }
+
+        ul {
+            overflow: hidden;
+        }
+
+        ul li {
+            float: left;
+            width: 80px;
+            height: 40px;
+            text-align: center;
+            font: 20px/40px &#39;simsun&#39;;
+            cursor: pointer;
+            background-color: yellowgreen;
+        }
+
+        span {
+            display: none;
+            width: 400px;
+            height: 260px;
+            text-align: center;
+            background-color: skyblue;
+            font: 700 80px/260px &#39;simsun&#39;;
+        }
+
+        .current {
+            background-color: skyblue;
+        }
+
+        .show {
+            display: block;
+        }
+    &lt;/style&gt;
+</code></pre>
+<pre><code class="lang-javascript">    &lt;script&gt;
+        window.onload = function () {
+            var liArr = document.getElementsByTagName(&quot;li&quot;);
+            var spanArr = document.getElementsByTagName(&quot;span&quot;);
+            //绑定事件
+            for (var i = 0; i &lt; liArr.length; i++) {
+                //利用闭包获取i然后在设置;
+                liArr[i].onclick = function (num) {
+                    //闭包要返回一个函数
+                    return function () {
+                        //num就是真实点击的i;
+                        //排他思想
+                        for(var j=0;j&lt;liArr.length;j++){
+                            liArr[j].className = &quot;&quot;;
+                            spanArr[j].className = &quot;&quot;;
+                        }
+                        //剩下我自己;
+                        this.className = &quot;current&quot;;
+                        //num就是真实点击的i;
+                        spanArr[num].className = &quot;show&quot;;
+                    }
+                }(i);
+            }
+        }
+    &lt;/script&gt;
+</code></pre>
+<pre><code class="lang-HTML">    &lt;div class=&quot;box&quot;&gt;
+    &lt;ul&gt;
+        &lt;li class=&quot;current&quot;&gt;裤子&lt;/li&gt;
+        &lt;li&gt;袜子&lt;/li&gt;
+        &lt;li&gt;裙子&lt;/li&gt;
+        &lt;li&gt;鞋子&lt;/li&gt;
+        &lt;li&gt;帽子&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;span class=&quot;show&quot;&gt;裤子区域1&lt;/span&gt;
+    &lt;span&gt;袜子区域2&lt;/span&gt;
+    &lt;span&gt;裙子区域3&lt;/span&gt;
+    &lt;span&gt;鞋子区域4&lt;/span&gt;
+    &lt;span&gt;帽子区域5&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<h2 id="-">闭包案例（模拟缓存）</h2>
+<pre><code class="lang-javascript">    模拟缓存：空间有限，如果超出覆盖掉之前的内容;
+
+        function fn(){
+            //我们在这个对象中只允许存放3对数据;
+            var obj = {};
+            //如何判断obj里面有几对数据;(设置一个数组，把属性放入数组中)
+            var arr = [];
+            //使用闭包返回一个函数，让外部可以使用obj;
+            return function (key,value) {
+                //判断：obj里面有几对数据;
+                if(arr.length &lt; 3){//不能等于3,如果等于了再添加就变成4对了
+                    //不足3对，设置设置属性值;
+                    obj[key] = value;
+                    //添加到数组中
+                    arr.push(key);
+                }else{
+                    //等于3对，删除第一个，添加新的属性值；
+                    //a.删除第一个
+                    delete obj[arr[0]];//把obj里面的数组中的第一个属性删除;
+                    arr.shift();
+
+                    //添加新的属性值；
+                    obj[key] = value;
+                    arr.push(key);
+                }
+                //让外部能够看到
+                return obj;
+            }
+        }
+
+        //测试
+        var aaa = fn();
+        console.log(aaa(&quot;a&quot;,1));
+        console.log(aaa(&quot;b&quot;,2));
+        console.log(aaa(&quot;c&quot;,3));
+        console.log(aaa(&quot;d&quot;,4));
+        console.log(aaa(&quot;e&quot;,5));
+
+        var aaa = fn();
+        console.log(aaa(&quot;a&quot;,1));
+
+        //点赞
+</code></pre>
+<h2 id="-">递归</h2>
+<pre><code class="lang-javascript">    1.回调函数: 函数当作参数进行传递和调用;
+        2.闭包: 函数作为返回值;
+        3.递归: 函数自己调用自己;
+
+        3.递归: 函数自己调用自己;
+            递归必须能够停止否则就是死循环;
+                递归非常相似for循环;
+            a.停止递归：不在调用;
+            b.停止递归：跳出函数(在调用函数之前跳出);
+
+        体验递归
+        var num = 1;
+        fn();//函数中需要的变量之后调用;
+
+        function fn(){
+            console.log(&quot;从前有座山，山里有座庙，
+            庙里有个老和尚，老和尚给小和尚讲故事，讲的什么故事呢?.....&quot;+num);
+            num++;
+            //a.停止递归：不在调用;
+               //  if(num&lt;100){
+               // fn();
+            //}
+            //b.停止递归：跳出函数(在调用函数之前跳出);
+            if( num &gt; 5 ){
+                return;
+            }
+            fn();
+        }
+
+        求和1-100;
+        var sum = 0;
+        var num = 1;
+
+        function getSum(){
+            sum += num;
+            num++;
+            if(num&lt;=100){
+                getSum();
+            }
+        }
+
+        getSum();
+        alert(sum);
+</code></pre>
+<h2 id="-5-">递归案例（5个）</h2>
+<pre><code class="lang-javascript">    1.求和;(不能使用全局变量，可以使用参数)
+        2.阶乘;(不能使用全局变量，可以使用参数)
+
+        3.求等差数列(  1   3   5   7   9);   前多少位;
+        4.求等比数列(  1   3   9   27   );   前多少位;
+
+        5.求斐波那契数列( 1 1 2 3 5 8 13..);  指定位;
+
+
+        1.求和;(不能使用全局变量，可以使用参数)
+        function getSum(num){
+            if(num == 1){
+                return 1;
+            }
+            return num+getSum(num-1);
+        }
+
+        alert(getSum(100));
+
+        2.阶乘;(不能使用全局变量，可以使用参数)
+        function getJC(num){
+            if(num === 1){
+                return 1;
+            }
+            return num*getJC(num-1);
+        }
+
+        alert(getJC(3))
+
+        3.求等差数列(  1   3   5   7   9  );   前多少位;
+        function getDCSL(num){
+            if(num === 1){
+                return 1;
+            }
+            return 2*num-1+getDCSL(num-1);
+        }
+
+        alert(getDCSL(5));
+
+        4.求等比数列(  1   3   9   27   );   前多少位;
+        function getDB(num){
+            if(num == 1){
+                return 1;
+            }
+            return Math.pow(3,num-1)+getDB(num-1);
+        }
+
+        alert(getDB(4));
+
+        5.求斐波那契数列( 1 1 2 3 5 8 13..);  指定位;
+        function FBNQSL(n){
+            if(n ==1 || n==2){
+                return 1;
+            }
+            //累加
+            return FBNQSL(n-1)+FBNQSL(n-2);
+        }
+
+        alert(FBNQSL(12));
+</code></pre>
+<h2 id="-">闭包案例</h2>
+<pre><code class="lang-css">    &lt;style&gt;
+        button {
+            margin: 20px;
+            width: 120px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    &lt;/style&gt;
+</code></pre>
+<pre><code class="lang-javascript">    &lt;script&gt;
+        window.onload = function () {
+            //需求：点击按钮，里面的次数+1；
+                //思路：1.不用全局变量；2.不用自定义属性;
+                //思路：用闭包控制局部变量;
+
+            //步骤：老三步;
+
+            var btnArr = document.querySelectorAll(&quot;button&quot;);
+            //绑定事件
+            for(var i=0;i&lt;btnArr.length;i++){
+                btnArr[i].onclick = fn();
+            }
+
+            //封装fn；（闭包实现点击以后数值增加）
+            function fn(){
+                var value = 0;
+                return function () {
+                    //不需要改变this的指向，所以this值事件调用者(被点击的按钮);
+                    this.innerHTML = &quot;赞（&quot;+(++value)+&quot;次）&quot;;
+                }
+            }
+        }
+    &lt;/script&gt;
+</code></pre>
+<pre><code class="lang-html">    &lt;button&gt;赞（0次）&lt;/button&gt;
+    &lt;button&gt;赞（0次）&lt;/button&gt;
+    &lt;button&gt;赞（0次）&lt;/button&gt;
+    &lt;button&gt;赞（0次）&lt;/button&gt;
+    &lt;button&gt;赞（0次）&lt;/button&gt;
+</code></pre>
+<h2 id="-">浅层复制对象</h2>
+<pre><code class="lang-javascript">   var obj1 = {
+        &quot;name&quot;: &quot;小沈阳&quot;,
+        &quot;age&quot;: 28,
+        &quot;sayHi&quot;: function () {
+            console.log(111);
+        },
+        &quot;address&quot;: [&quot;中国&quot;,&quot;辽宁省&quot;,&quot;铁岭市&quot;,&quot;莲花乡&quot;,&quot;池水沟村&quot;],
+        &quot;teacher&quot;: {&quot;name&quot;:&quot;赵老憨儿&quot;,&quot;age&quot;:58}
+    };
+
+    封装一个方法，可以赋值对象里面的每一个属性值;
+    function extend(object1,object2){
+        //用for...in...把第一个里面的属性和方法都设置到第二个中;
+        for(var k in object1){
+            //把object1里面的属性值，赋值到object2中
+            object2[k] = object1[k];
+        }
+    }
+
+    var obj2 = {};
+
+    console.log(obj2);
+
+    调用extend方法
+    extend(obj1,obj2);
+
+    obj1.teacher.name = &quot;李四&quot;;//复杂数据类型传递的是地址;
+    console.log(obj2);
+</code></pre>
+<h2 id="-">深层复制对象（递归）</h2>
+<pre><code class="lang-javascript">   var obj1 = {
+        &quot;name&quot;: &quot;小沈阳&quot;,
+        &quot;age&quot;: 28,
+        &quot;sayHi&quot;: function () {
+            console.log(111);
+        },
+        &quot;address&quot;: [&quot;中国&quot;,&quot;辽宁省&quot;,&quot;铁岭市&quot;,&quot;莲花乡&quot;,&quot;池水沟村&quot;],
+        &quot;teacher&quot;: {&quot;name&quot;:&quot;赵老憨儿&quot;,&quot;age&quot;:58}
+    };
+
+    封装一个方法，可以赋值对象里面的每一个属性值;
+    function extend(object1,object2){
+        //用for...in...把第一个里面的属性和方法都设置到第二个中;
+        for(var k in object1){
+            //把object1里面的属性值，赋值到object2中
+
+            //想要深处赋值，要注意：如果是对象/数组，要创建新的利用递归实现深层复制;
+            //object2[k] = object1[k];
+            if(object1[k] instanceof Array){
+                var value = [];
+                //然后利用递归设置;
+                object2[k] = value;
+                extend(object1[k],value);
+            }else if(object1[k] instanceof Object){
+                var value = {};
+                //然后利用递归设置;
+                object2[k] = value;
+                extend(object1[k],value);
+            }else{
+                object2[k] = object1[k];
+            }
+        }
+    }
+
+    var obj2 = {};
+
+    console.log(obj2);
+
+    调用extend方法
+    extend(obj1,obj2);
+
+    obj1.teacher.name = &quot;李四&quot;;//复杂数据类型传递的是地址;
+    console.log(obj1);
+    console.log(obj2);
+</code></pre>
+<h2 id="-dom-">遍历DOM树</h2>
+<pre><code class="lang-javascript">    &lt;script&gt;
+        window.onload = function () {
+            //需求：获取页面上的所有元素，打印他们的标签名;
+                    //思路：获取html-&gt;在获取他的子元素--&gt;在获取他的子元素--&gt;...
+
+            //测试：hmtl
+            var root = document.documentElement;
+           // forDom(root);
+
+            测试2：
+            forDom(root, function (element) {
+                element.onclick = function (event) {
+                    alert(this.tagName);
+                    //取消冒泡
+                    event.stopPropagation();
+                }
+            })
+
+            第一种实现：
+            打印所有标签的标签名;
+            function forDom(ele){//不包括ele本身元素;
+                //获取ele里面的所有子元素，打印名字;
+                for(var i=0;i&lt;ele.children.length;i++){
+                    //功能实现;(将来功能拓展可以传递其他功能)
+                    console.log(ele.children[i].tagName);
+                    //判断：如果该标签有子孙元素，可以继续调用forDom;
+                    if(ele.children[i].children.length !== 0){
+                        forDom(ele.children[i]);
+                    }
+                }
+            }
+
+            拓展：(功能拓展：功能不能仅仅就是打印名字)
+            function forDom(ele,fn){//fn作为回调函数，可以传递功能
+                //获取ele里面的所有子元素，打印名字;
+                for(var i=0;i&lt;ele.children.length;i++){
+                    //功能实现;(将来功能拓展可以传递其他功能)
+                  // console.log(ele.children[i].tagName);
+                    fn(ele.children[i]);
+                    //判断：如果该标签有子孙元素，可以继续调用forDom;
+                    //&amp;&amp;运算优化;(利用短路)
+                    ele.children[i].children.length!=0 &amp;&amp; forDom(ele.children[i],fn);
+                }
+            }
+
+        }
+    &lt;/script&gt;
+</code></pre>
+<pre><code class="lang-css">    &lt;ul&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;ol&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;1&lt;/p&gt;
+    &lt;p&gt;2&lt;/p&gt;
+    &lt;p&gt;3&lt;/p&gt;
+
+    &lt;div&gt;
+        &lt;ul&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;&quot;/&gt;&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;i&gt;4&lt;/i&gt;
+    &lt;i&gt;5&lt;/i&gt;
+    &lt;i&gt;6&lt;/i&gt;
+</code></pre>
+<h2 id="-">作用域变量预解析</h2>
+<pre><code class="lang-javascript">   1.作用域：全局作用域和局部作用域;
+    2.变量：全局变量和局部变量;
+    3.预解析:
+        a.检查语法错误;
+        a.生命提升;
+            I.变量声明提升，只提升变量名，不提升变量值;
+            II.函数声明提升，是整体提升
+            III.变量声明提升在函数声明提升之前
+</code></pre>
+<h2 id="-">伪数组</h2>
+<pre><code class="lang-javascript">    伪数组不是数组是看着像数组;
+        1.他是对象;   2.没有数组里面的方法;   3.看着像;  [1,2,3]和length;
+
+
+    模拟伪数组;
+    function Arr(){
+        for(var i=0;i&lt;arguments.length;i++){
+            this[i] = arguments[i];
+        }
+        this.length = arguments.length;
+    }
+    Arr.prototype.push = function (ele) {
+        this[this.length] = ele;
+        this.length += 1;
+        return this.length;
+    }
+
+    //看看伪数组;
+    var weiArr = new Arr(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;);
+    var aaa = weiArr.push(&quot;123&quot;);
+    console.log(weiArr);
+    console.log(aaa);
+</code></pre>
 
           	</article>
         </div>
@@ -903,6 +1961,11 @@ $(document).ready(function(){
   		});
     var css_conf = eval(markdown_panel_style);
     $('#readme').css(css_conf)
+    
+
+
+
+
     
     var conf = eval(jquery_ztree_toc_opts);
 		$('#tree').ztree_toc(conf);

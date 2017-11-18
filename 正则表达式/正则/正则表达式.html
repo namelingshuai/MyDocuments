@@ -1,0 +1,730 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:正则表达式</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+		<!-- <link href="toc/css/highlight/agate.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/androidstudio.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/arduino-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/arta.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/ascetic.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-cave-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-cave-light.css" media="all" rel="stylesheet" type="text/css"/> -->
+		<!-- <link href="toc/css/highlight/atelier-dune-dark.css" media="all" rel="stylesheet" type="text/css"/> -->
+		<!-- <link href="toc/css/highlight/atelier-dune-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-estuary-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-estuary-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-forest-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-forest-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-heath-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-heath-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-lakeside-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-lakeside-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-plateau-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-plateau-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-savanna-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-savanna-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-seaside-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-seaside-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-sulphurpool-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-sulphurpool-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atom-one-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atom-one-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/brown-paper.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/codepen-embed.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/color-brewer.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/darcula.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/darkula.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/default.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/docco.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/dracula.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/far.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/foundation.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/github-gist.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/github.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/googlecode.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/grayscale.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/gruvbox-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/gruvbox-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/hopscotch.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/hybrid.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/idea.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/ir-black.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/kimbie.dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/kimbie.light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/magula.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/mono-blue.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/monokai-sublime.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/monokai.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/obsidian.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/ocean.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/paraiso-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/paraiso-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/pojoaque.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/purebasic.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/qtcreator_dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/qtcreator_light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/railscasts.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/rainbow.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/routeros.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/school-book.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/solarized-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/solarized-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/sunburst.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/tomorrow-night-blue.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/tomorrow-night-bright.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/tomorrow-night-eighties.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/tomorrow-night.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/tomorrow.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/vs.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/vs2015.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/xcode.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/xt256.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/zenburn.css" media="all" rel="stylesheet" type="text/css"/> -->
+
+		<link href="toc/css/highlight/school-book.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="../../js/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="-">首页</h1>
+<p><a href="../../index.html">首页</a></p>
+<h1 id="-">正则表达式</h1>
+<h2 id="-">定义方法和测试方法</h2>
+<pre><code class="lang-javascript">     正则的定义有两种方法:(对象)
+
+    1.字面量；
+    var reg1 = /abc/;//注释里面添加内容就是正则表达式;
+
+    console.log(reg1);
+    console.log(typeof reg1);
+
+    2.构造函数法;
+    var reg2 = new RegExp(/xyz/);
+    console.log(reg2);
+
+    var reg3 = new RegExp(&quot;xyz&quot;);
+    console.log(reg3);
+
+    使用方法：（测试方法）
+        返回一个boolean值，看参数是否符合标准;
+    var reg = /abc/;
+    console.log(reg.test(&quot;abc&quot;));
+    console.log(reg.test(11111111111111));
+</code></pre>
+<h2 id="-">五大内部类（学习方法一）</h2>
+<pre><code class="lang-javascript">    内部类：定义好的东西，拿去直接使用;
+
+    --------------1.预定义类---------------(不写不行)
+
+    a.   .:除去换行和回车和空字符串以外的任意字符！(  \r\n   &quot;&quot;  不行)
+    console.log(/./.test(&quot;&quot;));//false;
+    console.log(/./.test(&quot;\n&quot;));//false;
+    console.log(/./.test(&quot;\r\n&quot;));//false;
+
+    console.log(/./.test(&quot; &quot;));//true;
+    console.log(/./.test(&quot;asdf&quot;));//true;
+    console.log(/./.test(&quot;123^*&amp;^&quot;));//true;
+
+    b.   \d: 数字;[0-9]        \D: 非数字;[除了0-9都行]
+    console.log(/\d/.test(0));//true;
+    console.log(/\d/.test(&quot;2&quot;));//true;
+    console.log(/\d/.test(1));//true;
+
+    console.log(/\d/.test(&quot;a&quot;));//false;
+    console.log(/\d/.test(&quot; &quot;));//false;
+    console.log(/\d/.test(&quot;&amp;&quot;));//false;
+
+    console.log(/\D/.test(0));//false;
+    console.log(/\D/.test(&quot;2&quot;));//false;
+    console.log(/\D/.test(1));//false;
+
+    console.log(/\D/.test(&quot;a&quot;));//true;
+    console.log(/\D/.test(&quot; &quot;));//true;
+    console.log(/\D/.test(&quot;&amp;&quot;));//true;
+
+    c.    \s: 空白字符;(是这些\r\n&quot; &quot;\f)      \S: 非空白字符;（不能是这些\r\n&quot; &quot;\f）
+    console.log(/\s/.test(&quot;   &quot;));//true;
+    console.log(/\s/.test(&quot;\r&quot;));//true;
+    console.log(/\s/.test(&quot;\n&quot;));//true;
+
+    console.log(/\s/.test(&quot;aaa&quot;));//false;
+    console.log(/\s/.test(&quot;123&quot;));//false;
+    console.log(/\s/.test(&quot;$^%&quot;));//false;
+
+    console.log(/\S/.test(&quot;   &quot;));//false;
+    console.log(/\S/.test(&quot;\r&quot;));//false;
+    console.log(/\S/.test(&quot;\n&quot;));//false;
+
+    console.log(/\S/.test(&quot;aaa&quot;));//true;
+    console.log(/\S/.test(&quot;123&quot;));//true;
+    console.log(/\S/.test(&quot;$^%&quot;));//true;
+
+    d.    \w: 单词字符；[a-zA-Z0-9_];    \W: 非单词字符；[不能是这些a-zA-Z0-9_];
+    console.log(/\w/.test(&quot;abc&quot;));//true;
+    console.log(/\w/.test(&quot;AAA123&quot;));//true;
+    console.log(/\w/.test(&quot;_&quot;));//true;
+
+    console.log(/\w/.test(&quot;!!!&quot;));//false;
+    console.log(/\w/.test(&quot;%^&amp;&quot;));//false;
+    console.log(/\w/.test(&quot;   &quot;));//false;
+
+    console.log(/\W/.test(&quot;abc&quot;));//false;
+    console.log(/\W/.test(&quot;AAA123&quot;));//false;
+    console.log(/\W/.test(&quot;_&quot;));//false;
+
+    console.log(/\W/.test(&quot;!!!&quot;));//true;
+    console.log(/\W/.test(&quot;%^&amp;&quot;));//true;
+    console.log(/\W/.test(&quot;   &quot;));//true;
+
+    --------------2.简单类---------------
+        有两种体验形式;
+            a. /直接书写/：         /abc/     /234/   :必须是完整的，只多不能少
+            b. /[写入中括号]/       /[abc]/   /[123]/ :只要包含里面的任何一个就可以
+
+    a. /直接书写/：         /abc/     /234/
+    console.log(/abc/.test(&quot;abc&quot;));//true;
+    console.log(/abc/.test(&quot;abcc&quot;));//true;
+    console.log(/abc/.test(&quot;xabcd&quot;));//true;
+
+    console.log(/abc/.test(&quot;a&quot;));//false;
+    console.log(/abc/.test(&quot;ac&quot;));//false;
+    console.log(/abc/.test(&quot;bc&quot;));//false;
+    console.log(/abc/.test(&quot;aabbcc&quot;));//false;
+
+    b. /[写入中括号]/       /[abc]/   /[123]/
+    console.log(/[lvchao]/.test(&quot;l&quot;));//true;
+    console.log(/[lvchao]/.test(&quot;vxxx&quot;));//true;
+    console.log(/[lvchao]/.test(&quot;yyycyyyy&quot;));//true;
+
+    console.log(/[lvchao]/.test(&quot;xxx&quot;));//false;
+    console.log(/[lvchao]/.test(&quot;zzzzzz&quot;));//false;
+    console.log(/[lvchao]/.test(&quot;yyyyyyy&quot;));//false;
+
+    --------------3.负向类---------------
+         把^写到[]里面就是：负向类;
+            不能仅仅是括号里面的字符
+            (仅仅是一部分不行，超出哪怕一个就没有问题了)。
+    console.log(/[^abc]/.test(&quot;a&quot;));//false;
+    console.log(/[^abc]/.test(&quot;ab&quot;));//false;
+    console.log(/[^abc]/.test(&quot;ac&quot;));//false;
+    console.log(/[^abc]/.test(&quot;abc&quot;));//false;
+
+    console.log(/[^abc]/.test(&quot;abc &quot;));//true;
+    console.log(/[^abc]/.test(&quot;abcd&quot;));//true;
+    console.log(/[^abc]/.test(&quot;xxcx&quot;));//true;
+
+    --------------4.范围类---------------
+        [a-c]   [1-5]   [A-D]
+    console.log(/[a-c]/.test(&quot;a&quot;));//true;
+    console.log(/[a-c]/.test(&quot;b&quot;));//true;
+    console.log(/[a-c]/.test(&quot;c&quot;));//true;
+
+    console.log(/[a-c]/.test(&quot;1&quot;));//false;
+    console.log(/[a-c]/.test(&quot;A&quot;));//false;
+    console.log(/[a-c]/.test(&quot;^*&amp;&quot;));//false;
+
+    --------------5.组合类---------------
+        把范围类组合在一起：[a-c1-5A-D]
+    console.log(/[a-c1-5A-D]/.test(&quot;b&quot;));//true;
+    console.log(/[a-c1-5A-D]/.test(&quot;3&quot;));//true;
+    console.log(/[a-c1-5A-D]/.test(&quot;C&quot;));//true;
+
+    console.log(/[a-c1-5A-D]/.test(&quot;z&quot;));//false;
+    console.log(/[a-c1-5A-D]/.test(&quot;8&quot;));//false;
+    console.log(/[a-c1-5A-D]/.test(&quot;G&quot;));//false;
+</code></pre>
+<h2 id="-">五大内部类（学习方法二）</h2>
+<pre><code class="lang-javascript">   正则边界: 正则要能够设置开头和结尾;
+    ^: 写在[]里面是非的意思;(负向类)
+
+    ^: 写在进入正则的最前面就是开始的意思;/^aaa/
+    $: 写在进入正则的最后面就是结束的意思;/aaa$/
+
+    console.log(/^abc/.test(&quot;abc&quot;));//true;
+    console.log(/^abc/.test(&quot;abcd&quot;));//true;
+    console.log(/^abc/.test(&quot;abcde&quot;));//true;
+    console.log(/^abc/.test(&quot;abcdef&quot;));//true;
+
+    console.log(/^abc/.test(&quot;defabc&quot;));//false;
+    console.log(/^abc/.test(&quot;dabcd&quot;));//false;
+    console.log(/^abc/.test(&quot;aaaaa&quot;));//false;
+
+
+
+    console.log(/abc$/.test(&quot;aabc&quot;));//true;
+    console.log(/abc$/.test(&quot;aaabc&quot;));//true;
+    console.log(/abc$/.test(&quot;aababc&quot;));//true;
+    console.log(/abc$/.test(&quot;aabxabc&quot;));//true;
+
+    console.log(/abc$/.test(&quot;abca&quot;));//false;
+    console.log(/abc$/.test(&quot;aabca&quot;));//false;
+    console.log(/abc$/.test(&quot;axyza&quot;));//false;
+
+    ^$组合在一起，以后就离不开了；
+        必须就是这个东西，一个不多，一个不少;
+    console.log(/^abc$/.test(&quot;abc&quot;));//true;
+
+    console.log(/^abc$/.test(&quot;aabc&quot;));//false;
+    console.log(/^abc$/.test(&quot;abcc&quot;));//false;
+    console.log(/^abc$/.test(&quot;abbc&quot;));//false;
+
+    console.log(/^abc$/.test(&quot;abcabc&quot;));//false
+</code></pre>
+<h2 id="-">五大内部类（学习方法三）</h2>
+<pre><code class="lang-javascript">    *       重复零次或更多    (&gt;=0)
+    +       重复一次或更多次  (&gt;=1)
+    ?       重复零次或一次   （0||1）  要么有 要么没有
+
+    *       重复零次或更多    (&gt;=0)
+    console.log(/^a*$/.test(&quot;&quot;));//true;
+    console.log(/^a*$/.test(&quot;a&quot;));//true;
+    console.log(/^a*$/.test(&quot;aa&quot;));//true;
+
+    console.log(/^a*$/.test(&quot;aab&quot;));//false;
+    console.log(/^a*$/.test(&quot;axtyz&quot;));//false;
+
+    +       重复一次或更多次  (&gt;=1)
+    console.log(/^a+$/.test(&quot;&quot;));//false;
+    console.log(/^a+$/.test(&quot;a&quot;));//true;
+    console.log(/^a+$/.test(&quot;aa&quot;));//true;
+
+    console.log(/^a+$/.test(&quot;aab&quot;));//false;
+    console.log(/^a+$/.test(&quot;asdfsdfg&quot;));//false;
+
+
+    ?       重复零次或一次   （0||1）  要么有 要么没有
+    console.log(/^a?$/.test(&quot;&quot;));//true;
+    console.log(/^a?$/.test(&quot;a&quot;));//true;
+    console.log(/^a?$/.test(&quot;aa&quot;));//false;
+    console.log(/^a?$/.test(&quot;aaa&quot;));//false;
+    console.log(/^a?$/.test(&quot;aaaa&quot;));//false;
+
+
+
+    {n}    n次    （x=n）
+    {n,}    重复n次或更多  (x&gt;=n)
+    {n,m} 重复出现的次数比n多但比m少 (n&lt;=x&lt;=m)
+
+
+    {n}    n次    （x=n）
+    console.log(/^a{2}$/.test(&quot;a&quot;));//false;
+    console.log(/^a{2}$/.test(&quot;aa&quot;));//true;
+    console.log(/^a{2}$/.test(&quot;aaa&quot;));//false;
+
+    {n,}    重复n次或更多  (x&gt;=n)
+    console.log(/^a{2,}$/.test(&quot;a&quot;));//false;
+    console.log(/^a{2,}$/.test(&quot;aa&quot;));//true;
+    console.log(/^a{2,}$/.test(&quot;aaa&quot;));//true;
+    console.log(/^a{2,}$/.test(&quot;aaaa&quot;));//true;
+
+    {n,m} 重复出现的次数比n多但比m少 (n&lt;=x&lt;=m)
+    console.log(/^a{2,4}$/.test(&quot;a&quot;));//false;
+    console.log(/^a{2,4}$/.test(&quot;aa&quot;));//true;
+    console.log(/^a{2,4}$/.test(&quot;aaa&quot;));//true;
+    console.log(/^a{2,4}$/.test(&quot;aaaa&quot;));//true;
+    console.log(/^a{2,4}$/.test(&quot;aaaaa&quot;));//false;
+    console.log(/^a{2,4}$/.test(&quot;aaaaaa&quot;));//false;
+</code></pre>
+<h2 id="-">五大内部类（学习方法四）</h2>
+<pre><code class="lang-javascript">    1.（）   2.^$    3.| ,   4.从左到右
+</code></pre>
+<h2 id="-">校验中文姓名</h2>
+<pre><code class="lang-css">    span {
+            color: #ccc;
+            display: inline-block;
+            margin: 0 20px;
+        }
+        .right {
+            color: greenyellow;
+        }
+        .wrong {
+            color: red;
+        }
+</code></pre>
+<pre><code class="lang-html">   &lt;input type=&quot;text&quot;/&gt;&lt;span&gt;请输入中文姓名&lt;/span&gt;
+</code></pre>
+<pre><code class="lang-javascript">    需求：当input失去焦点的时候，判断里面的内容是否是中文名字;
+            怎么校验中文名字???    Unicode编码; [中文值有取值范围];
+                [\u4e00-\u9fa5]
+
+    var inp = document.getElementsByTagName(&quot;input&quot;)[0];
+    绑定事件;
+    inp.onblur = function () {
+        //去除bug: 不写内容，不能判断;
+        if(this.value === &quot;&quot;){
+            return;
+        }
+
+        //看input里面的值是否符合正则表达式;
+        var reg = /^[\u4e00-\u9fa5]{2,5}$/;
+        if(reg.test(this.value)){
+            //让后面的span，显示正确的类，和正确的信息;
+            this.nextSibling.innerHTML = &quot;恭喜您，输入正确!!!&quot;
+            this.nextSibling.className = &quot;right&quot;;
+        }else{
+            //否则显示错误信息
+            this.nextSibling.innerHTML = &quot;对不起，您输入的为非法字符！！！&quot;
+            this.nextSibling.className = &quot;wrong&quot;;
+        }
+    }
+</code></pre>
+<h2 id="-">校验座机号</h2>
+<pre><code class="lang-css">    span {
+            color: #ccc;
+            display: inline-block;
+            margin: 0 20px;
+        }
+        .right {
+            color: greenyellow;
+        }
+        .wrong {
+            color: red;
+        }
+</code></pre>
+<pre><code class="lang-html">   &lt;input type=&quot;text&quot;/&gt;&lt;span&gt;请输入座机号&lt;/span&gt;
+</code></pre>
+<pre><code class="lang-javascript">   需求：当input失去焦点的时候，判断里面的内容是否是座机号;
+            普通市：  0314-3160186;
+            直辖市：  010-31601867;
+
+    老三步
+    var inp = document.getElementsByTagName(&quot;input&quot;)[0];
+    inp.onblur = function () {
+        //设置正则表达式;
+       // var reg = /^0\d{2}-8\d{7}$/;
+        //var reg = /^0\d{3}-3\d{6}$/;
+        var reg = /(^0\d{2}-8\d{7}$)|(^0\d{3}-3\d{6}$)/;
+        //判断: input里面的内容是否符合正则表达式;
+        if(reg.test(this.value)){
+            this.nextSibling.innerHTML = &quot;恭喜您，输入正确！&quot;;
+            this.nextSibling.className = &quot;right&quot;;
+        }else{
+            this.nextSibling.innerHTML = &quot;对不起，您输入的为非法字符！&quot;;
+            this.nextSibling.className = &quot;wrong&quot;;
+        }
+    }
+</code></pre>
+<h2 id="-">校验表单（重点）</h2>
+<pre><code class="lang-css">   body {
+            background: #ccc;
+        }
+
+        label {
+            width: 40px;
+            display: inline-block;
+        }
+
+        .container {
+            margin: 100px auto;
+            width: 400px;
+            padding: 50px;
+            line-height: 40px;
+            border: 1px solid #999;
+            background: #efefef;
+        }
+
+        span {
+            margin-left: 30px;
+            font-size: 12px;
+            padding: 2px 20px 0;
+            color: #ccc;
+        }
+
+        .wrong {
+            color: red;
+            background: url(images/error.png) no-repeat;
+        }
+
+        .right {
+            color: green;
+            background: url(images/right.png) no-repeat;
+        }
+
+        .pwd {
+            width: 220px;
+            height: 20px;
+            background: url(&quot;images/strong.jpg&quot;) no-repeat;
+        }
+
+        .str1 {
+            background-position: 0 -20px;
+        }
+
+        .str2 {
+            background-position: 0 -40px;
+        }
+
+        .str3 {
+            background-position: 0 -60px;
+        }
+
+        .str4 {
+            background-position: 0 -80px;
+        }
+</code></pre>
+<pre><code class="lang-javascript">window.onload = function () {
+        //需求：表单校验;
+                //正则表达式一个都不用我们写了！
+
+        //老三步,按照前两个案例设置;
+
+        var inpArr = document.querySelectorAll(&quot;input&quot;);
+        var password = document.getElementById(&quot;password&quot;);
+        //校验QQ号;
+        fn(inpArr[0],/^[1-9][0-9]{4,11}$/);
+        //校验手机号;
+        fn(inpArr[1],/^((13[0-9])|(15[^4,\D])|(18[0-9]))\d{8}$/);
+        //校验邮箱号;
+        fn(inpArr[2],/^[\w\-\.]+\@[\w]+\.[\w]{2,4}$/);
+        //校验座机号;
+        fn(inpArr[3],/^0\d{2}-\d{8}$|^0\d{3}-\d{7}$/);
+        //校验用户名;
+        fn(inpArr[4],/^[\w$-]{3,16}$/);
+
+        //校验密码
+        inpArr[5].onblur = function () {
+            //bug：不输入内容，不进行判断;
+            if(this.value == &quot;&quot;){
+                return;
+            }
+
+            //书写正则
+            if(/^[\$a-zA-Z0-9_-]{6,18}$/.test(this.value)){
+                //控制后面的span标签，让他显示正确并设置内容;
+                this.nextSibling.innerHTML = &quot;恭喜您，输入正确&quot;;
+                this.nextSibling.className = &quot;right&quot;;
+
+                //拓展：密码强度;
+                    //从严密到低级来;  因为满足高级的同样也满足低级;
+                if(/^[A-Za-z0-9]+[_$]+[A-Za-z0-9]*$/.test(this.value)){
+                    //密码强度最高;
+                    password.className = &quot;pwd str4&quot;;
+                }else if(/^([a-z].*[0-9])|([A-Z].*[0-9])|([0-9].*[a-zA-Z])$/.test(this.value)){
+                    password.className = &quot;pwd str3&quot;;
+                }else if(/^([a-z].*[A-Z])|([A-Z].*[a-z])$/.test(this.value)) {
+                    password.className = &quot;pwd str2&quot;;
+                }else{
+                    password.className = &quot;pwd str1&quot;;
+                }
+            }else{
+                //控制后面的span标签，让他显示错误并设置内容;
+                this.nextSibling.innerHTML = &quot;对不起，格式错误！&quot;;
+                this.nextSibling.className = &quot;wrong&quot;;
+            }
+        }
+
+        //代码复用性特别强，所以封装起来;
+        function fn(ele,reg){
+            ele.onblur = function () {
+                //bug：不输入内容，不进行判断;
+                if(this.value == &quot;&quot;){
+                    return;
+                }
+
+                //书写正则
+                if(reg.test(this.value)){
+                    //控制后面的span标签，让他显示正确并设置内容;
+                    this.nextSibling.innerHTML = &quot;恭喜您，输入正确&quot;;
+                    this.nextSibling.className = &quot;right&quot;;
+                }else{
+                    //控制后面的span标签，让他显示错误并设置内容;
+                    this.nextSibling.innerHTML = &quot;对不起，格式错误！&quot;;
+                    this.nextSibling.className = &quot;wrong&quot;;
+                }
+            }
+        }
+
+
+
+    }
+</code></pre>
+<pre><code class="lang-html">&lt;div class=&quot;container&quot;&gt;
+    &lt;label for=&quot;inp1&quot;&gt;QQ&lt;/label&gt;&lt;input type=&quot;text&quot; id=&quot;inp1&quot;&gt;&lt;span&gt;输入正确的QQ号码&lt;/span&gt;&lt;br&gt;
+    &lt;label for=&quot;inp2&quot;&gt;手机&lt;/label&gt;&lt;input type=&quot;text&quot; id=&quot;inp2&quot;&gt;&lt;span&gt;输入13位手机号码&lt;/span&gt;&lt;br&gt;
+    &lt;label for=&quot;inp3&quot;&gt;邮箱&lt;/label&gt;&lt;input type=&quot;text&quot; id=&quot;inp3&quot;&gt;&lt;span&gt;输入正确邮箱&lt;/span&gt;&lt;br&gt;
+    &lt;label for=&quot;inp4&quot;&gt;座机&lt;/label&gt;&lt;input type=&quot;text&quot; id=&quot;inp4&quot;&gt;&lt;span&gt;输入您的座机&lt;/span&gt;&lt;br&gt;
+    &lt;label for=&quot;inp5&quot;&gt;账号&lt;/label&gt;&lt;input type=&quot;text&quot; id=&quot;inp5&quot;&gt;&lt;span&gt;亲输入您的账号&lt;/span&gt;&lt;br&gt;
+    &lt;label for=&quot;inp6&quot;&gt;密码&lt;/label&gt;&lt;input type=&quot;text&quot; id=&quot;inp6&quot;&gt;&lt;span&gt;请输入您的密码&lt;/span&gt;&lt;br&gt;
+
+    &lt;div id=&quot;password&quot; class=&quot;pwd&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2 id="-replace-trim-search-">三个函数（replace-trim-search）</h2>
+<pre><code class="lang-javascript">   1.replace();
+    var str = &quot;Today is find day;today is find day!&quot;;
+    console.log(str.replace(&quot;Today&quot;,&quot;Tomorrow&quot;));
+    console.log(str.replace(/today/ig,&quot;Tomorrow&quot;));
+    //i: 忽略大小写;   g:全局替换;
+
+    2.trim();   IE678不支持;
+    var str = &quot;   aaa   bbb   ccc   &quot;;
+    console.log(str.trim());
+    console.log(str);
+
+    3.search();   类似于给字符，查索引值;
+    var str = &quot;abcdefg&quot;;
+    console.log(str.search(/abc/));//首个单词字符的索引值;
+    console.log(str.search(/d/));//首个单词字符的索引值;
+    console.log(str.search(/xxx/));//找不到和不完整都是-1；
+    console.log(str.search(/acd/));//找不到和不完整都是-1；
+</code></pre>
+<h2 id="trim-">trim方法封装兼容</h2>
+<pre><code class="lang-javascript">   面试题：你在开发的时候遇到过哪些IE678的兼容问题！
+            开发的时候获取页面值之后去除字符串左右两边的空格ie678不兼容兼容;
+
+    思路：替换前后的空格为&quot;&quot;;中间的空格不替换;
+    function trim(string){
+        var reg = /(^\s+)|(\s+$)/g;
+        return string.replace(reg,&quot;&quot;);
+    }
+
+    var str = &quot;   xxx   yyy   zzz   &quot;;
+    console.log(str);
+    console.log(trim(str));
+</code></pre>
+<h2 id="-">封装一个方法</h2>
+<pre><code class="lang-css">    * {
+            padding: 0;
+            margin: 0;
+        }
+</code></pre>
+<pre><code class="lang-javascript">    封装了jQuery原理的30%;
+
+        探寻document.querySelectorAll();的底层原理;
+
+        类似入口函数;
+        $(function () {
+            //测试：
+            console.log($(&quot;#box&quot;));
+            console.log($(&quot;.box&quot;));
+            console.log($(&quot;li&quot;));
+        });
+
+        封装一个方法，底层有三个调用，根据首个单词字符;
+        function $(str){
+            //拓展：如果传递的是函数：当做入口函数绑定;
+            if(str &amp;&amp; typeof(str) === &quot;function&quot;){
+                window.onload = str;
+                return;
+            }
+
+            //我们判断一下首个单词字符：
+            //1.如果为 # : 底层调用document.getElementById()；
+            //2.如果为 . : 底层调用document.getElementsByClassName()；
+            //3.如否则   : 底层调用document.getElementsByTagName()；
+            //获取第一个单词字符;
+            var char = str.charAt(0);
+            if(char === &quot;#&quot;){
+                return document.getElementById(str.slice(1));//不能带第一个#
+            }else if(char === &quot;.&quot;){
+                return document.getElementsByClassName(str.slice(1));//不能带第一个.
+            }else{
+                return document.getElementsByTagName(str);
+            }
+        }
+</code></pre>
+<pre><code class="lang-html">    &lt;ul&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li class=&quot;box&quot;&gt;2&lt;/li&gt;
+        &lt;li id=&quot;box&quot;&gt;3&lt;/li&gt;
+        &lt;li class=&quot;box&quot;&gt;4&lt;/li&gt;
+        &lt;li&gt;5&lt;/li&gt;
+    &lt;/ul&gt;
+</code></pre>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+<script type="text/javascript" src="toc/js/highlight.pack.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+	$('pre code').each(function(i, block) {
+    		hljs.highlightBlock(block);
+  		});
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+
+
+
+
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+
+		
+  		$('#readme a:eq(0)').addClass('list-group-item active');
+});
+//-->
+//
+
+</SCRIPT>
